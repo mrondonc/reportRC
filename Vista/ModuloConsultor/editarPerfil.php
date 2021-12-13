@@ -115,9 +115,14 @@ $listMod_sap = ManejoMod_sap::getList();
                             <input type="text" class="form-control" name="password" id="password" value="<?php echo $usuario->getContraseña() ?>" >
                           </div>
                       </div> 
-                    </div>                 
-                    <button class="btn btn-primary pull-right" type='submit'>Guardar Cambios</button>
-                    <!--<a  class="btn btn-primary pull-right">Guardar Cambios</a>-->
+                    </div>  
+                    
+                            <button class="btn btn-primary pull-right" >Agregar modulo SAP</button>                 
+                            
+                         
+                      
+                            <button class="btn btn-primary pull-right" type='submit'>Guardar Cambios</button> 
+                    
                     <div class="clearfix"></div>
                   
                 </div>
