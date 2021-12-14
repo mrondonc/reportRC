@@ -55,7 +55,7 @@ class Mod_sapDAO implements DAO
 
         $mod_sap = new Mod_sap();
 
-        $mod_sap->setCod_mod_sap($row[0]);
+        //$mod_sap->setCod_mod_sap($row[0]);
         $mod_sap->setNombre_mod_sap($row[1]);
 
         return $mod_sap;
@@ -70,8 +70,7 @@ class Mod_sapDAO implements DAO
      */
     public function create($mod_sap)
     {
-        $sql = "insert into MOD_SAP values (" . $mod_sap->getCod_mod_sap() . ",
-                                            '" . $mod_sap->getNombre_mod_sap() . "'                                            
+        $sql = "insert into MOD_SAP (nombre_mod_sap) values ('" . $mod_sap->getNombre_mod_sap() . "'                                            
                                         );";
 
         pg_query($this->conexion, $sql);

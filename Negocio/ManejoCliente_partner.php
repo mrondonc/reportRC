@@ -62,6 +62,7 @@
         public static function getList(){
             $cliente_partnerDAO = Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
             $cliente_partner = $cliente_partnerDAO->getList();
+            return $cliente_partner;
         }
 
 	    /**

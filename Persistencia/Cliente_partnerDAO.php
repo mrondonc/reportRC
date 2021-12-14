@@ -117,16 +117,14 @@ class Cliente_partnerDAO implements DAO
     {
 
         $sql = "SELECT * FROM CLIENTE_PARTNER";
-
+        $cliente_partners = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $cliente_partner = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $cliente_partner = new Cliente_partner();
             $cliente_partner->setCod_cliente_partner($row[0]);
             $cliente_partner->setNombre_cliente_partner($row[1]);
-
-            $cliente_partners[] = $cliente_partner;
+            array_push($cliente_partners, $cliente_partner);
         }
         return $cliente_partners;
     }

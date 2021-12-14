@@ -12,6 +12,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'editarPerfil') {
         include_once("../Vista/ModuloConsultor/editarPerfil.php");
     }
+    if ($_GET['menu'] == 'agregarModSap') {
+        include_once("../Vista/ModuloConsultor/agregarModSap.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }
