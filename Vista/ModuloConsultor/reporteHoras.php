@@ -37,6 +37,7 @@ $listMod_sap = ManejoMod_sap::getList();
 
 $listCliente_partner = ManejoCliente_partner::getList();
 ?>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -61,6 +62,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
             </div>
             <!-- Inicio Formulario -->
             <div class="card-body">
+            <form method="POST" action="ModuloConsultor/crearReporteHoras.php" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-10">
                         <div class="form-group">
@@ -68,7 +70,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                         <div class="form-group">
                         <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
                         <div class="form-group">
-                        <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="">
+                        <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="" required>
                         </div>
                         </div>
                         </div>
@@ -91,7 +93,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                         <label>3. Modulo SAP </label>
                         <div class="form-group">
                         <label class="bmd-label-floating"></label>
-                        <select name="mod_sap" id="mod_sap" class="form-control">
+                        <select name="mod_sap" id="mod_sap" class="form-control" required>
                                 <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                 <?php
                                 foreach ($listMod_sap as $t) {
@@ -112,8 +114,8 @@ $listCliente_partner = ManejoCliente_partner::getList();
                         <label>4. Cliente Partner </label>
                         <div class="form-group">
                         <label class="bmd-label-floating"></label>
-                        <select name="cliente_partner" id="cliente_partner" class="form-control">
-                                <option value=''>Seleccione alguna opcion</option>
+                        <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
+                                <option value='0'>Seleccione alguna opcion</option>
                                 <?php
                                 foreach ($listCliente_partner as $e) {
                                     echo '<option value=' . $e->getCod_cliente_partner() . '>' . $e->getNombre_cliente_partner() . '</option>';
@@ -125,11 +127,26 @@ $listCliente_partner = ManejoCliente_partner::getList();
                     </div>
                 </div>
                 
-
                 <a href="?menu=editarPerfil&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary pull-right">Editar Perfil</a>
-                <div class="clearfix"></div>                  
+                <div class="clearfix"></div>
+            </form>                  
             </div>
         </div>
     </div>        
 </div>
         
+<script>
+  function selectTipo() {
+  var cliente_partner = $("#cliente_partner").val();
+  $.ajax({
+    url:"ModuloConsultor/selectTipo.ajax.php",
+    method: "POST",
+    data: {
+      "cliente_partner":cliente_partner
+      },
+      success: function(respuesta){
+        $("#espacioTipo").html(respuesta);
+      }
+    })
+  }
+</script>
