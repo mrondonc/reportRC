@@ -37,6 +37,7 @@ $listMod_sap = ManejoMod_sap::getList();
 
 $listCliente_partner = ManejoCliente_partner::getList();
 ?>
+
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <div class="row">
     <div class="col-md-12">
