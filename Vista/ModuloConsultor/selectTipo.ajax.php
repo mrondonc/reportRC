@@ -16,6 +16,7 @@
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoPep_cliente.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_mod_sap.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_mod_sap.php';
+	session_start();
 	$obj = new Conexion();
 	$conexion = $obj->conectarDB();
 
@@ -28,8 +29,8 @@
 	ManejoSub_mod_sap::setConexionBD($conexion);
 	ManejoCliente_partner::setConexionBD($conexion);
 
-	//$cod_usuario  =  $_SESSION['cod_usuario'];
-	//$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
+	$cod_usuario  =  $_SESSION['cod_usuario'];
+	$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 
 	//$mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
 	$listMod_sap = ManejoMod_sap::getList();
@@ -47,28 +48,32 @@
 	//CLIENTE AXITY
 	if ($cliente_partner == 1) {
 		
-			foreach ($listCliente_partnerAxity as $t) {
+			//foreach ($listCliente_partnerAxity as $t) {
 				//foreach ($listSub_mod_sap as $e) {
 	    echo  
 		'
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-10">
 					<div class="form-group">
 					<label>5. Cliente Axity</label>
 					
 					<div class="form-group">
 					<select name="clienteAxity" id="clienteAxity" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
-                                                          
-								
+								<option value="0">Seleccione alguna opcion</option>';
+								foreach ($listCliente_partnerAxity as $t) {
+								echo '
 									<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>
 
 								
-                                
+                                ';}
+								echo '
                             </select>
 					
 					</div>
 					</div>
+				</div>
+				<div class="col-md-2">
+				<a href="?menu=agregarClienteAxity&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar CLIENTE</a>
 				</div>
 			</div>
 			<div class="row">
@@ -148,23 +153,30 @@
 				</div>
 			</div>
 		';
-			}
+			//}
 		//CLIENTE EVERIS
 	 }else if ($cliente_partner == 2) {
-		foreach ($listCliente_partnerEveris as $t) {
+		//foreach ($listCliente_partnerEveris as $t) {
 	    echo 
 		'
 			<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-10">
 				<div class="form-group">
 				<label>5. Cliente Everis</label>				
 				<div class="form-group">
 				<select name="clienteEveris" id="clienteEveris" class="form-control" required>
-						<option value="0">Seleccione alguna opcion</option>
-						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+						<option value="0">Seleccione alguna opcion</option>';
+						foreach ($listCliente_partnerEveris as $t) {
+							echo'
+						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>
+						';}
+						echo '	
 				</select>					
 				</div>
 				</div>
+				</div>
+				<div class="col-md-2">
+				<a href="?menu=agregarClienteEveris&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar CLIENTE</a>
 				</div>
 			</div>
 			<div class="row">
@@ -213,7 +225,7 @@
 				</div>
 			</div>
 		';
-			}
+			//}
 		//CLIENTE LUCTA
 	 }else if ($cliente_partner == 3) {
 	    echo 
@@ -265,7 +277,7 @@
 		';
 		//CLIENTE MILLO
 	 }else if ($cliente_partner == 4) {
-		foreach ($listCliente_partnerMillo as $t) {
+		//foreach ($listCliente_partnerMillo as $t) {
 	    echo 
 		'
 		<div class="row">
@@ -274,8 +286,12 @@
 				<label>5. Cliente Millo</label>				
 				<div class="form-group">
 				<select name="clienteMillo" id="clienteMillo" class="form-control" required>
-						<option value="0">Seleccione alguna opcion</option>
+						<option value="0">Seleccione alguna opcion</option>';
+						foreach ($listCliente_partnerMillo as $t) {
+							echo'
 						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+						'; }
+						echo '
 				</select>					
 				</div>
 				</div>
@@ -327,7 +343,7 @@
 				</div>
 			</div>	 
 		';
-			}
+			//}
 		//CLIENTE PRAXIS
 	 }else if ($cliente_partner == 5) {
 	    echo 
@@ -380,23 +396,30 @@
 		';
 		//CLIENTE SEIDOR
 	 }else if ($cliente_partner == 6) {
-		foreach ($listPepCliente as $t) {
+		//foreach ($listPepCliente as $t) {
 	    echo 
 		'
 		<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-10">
 			<div class="form-group">
-			<label>5. PEP del cliente</label>				
-			<div class="form-group">
-			<label>Seleccionar el PEP del cliente que atendieron (si no esta el PEP relacionado, antes de cargar, por favor notificar a la Coordinadora y colocar el PEP que falta en el campo otros).</label>				
-			<div class="form-group">
-			<select name="pepCliente" id="pepCliente" class="form-control" required>
-					<option value="0">Seleccione alguna opcion</option>
-					<option value='. $t->getCod_pep_cliente().'>'.$t->getReferencia_pep_cliente().'</option>	
-			</select>					
+				<label>5. PEP del cliente</label>				
+				<div class="form-group">
+				<label>Seleccionar el PEP del cliente que atendieron (si no esta el PEP relacionado, antes de cargar, por favor notificar a la Coordinadora y colocar el PEP que falta en el campo otros).</label>				
+				<div class="form-group">
+				<select name="pepCliente" id="pepCliente" class="form-control" required>
+						<option value="0">Seleccione alguna opcion</option>';
+						foreach ($listPepCliente as $t) {
+							echo '
+						<option value='. $t->getCod_pep_cliente().'>'.$t->getReferencia_pep_cliente().'</option>	
+						'; }
+						echo '
+				</select>					
+				</div>
+				</div>
+				</div>
 			</div>
-			</div>
-			</div>
+			<div class="col-md-2">
+				<a href="?menu=agregarPepCliente&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar PEP</a>
 			</div>
 		</div>
 		<div class="row">
@@ -445,7 +468,7 @@
 			</div>
 		</div>	 
 		';
-			}
+			//}
 		//CLIENTE INTERNO RC
 	 }else if ($cliente_partner == 7) {
 	    echo 
