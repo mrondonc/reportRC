@@ -62,6 +62,7 @@
         public static function getList(){
             $pep_clienteDAO = Pep_clienteDAO::getPep_clienteDAO(self::$conexionBD);
             $pep_cliente = $pep_clienteDAO->getList();
+            return $pep_cliente;
         }
 
 	    /**

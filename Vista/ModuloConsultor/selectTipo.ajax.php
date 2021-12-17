@@ -40,9 +40,11 @@
 	$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxity();
 	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
+	$listPepCliente = ManejoPep_cliente::getList();
 
 	$cliente_partner=$_POST["cliente_partner"];
 
+	//CLIENTE AXITY
 	if ($cliente_partner == 1) {
 		
 			foreach ($listCliente_partnerAxity as $t) {
@@ -52,7 +54,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-					<label>5. Cliente  Axity</label>
+					<label>5. Cliente Axity</label>
 					
 					<div class="form-group">
 					<select name="clienteAxity" id="clienteAxity" class="form-control" required>
@@ -147,36 +149,352 @@
 			</div>
 		';
 			}
-		//}
+		//CLIENTE EVERIS
 	 }else if ($cliente_partner == 2) {
+		foreach ($listCliente_partnerEveris as $t) {
 	    echo 
 		'
-			#
+			<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+				<label>5. Cliente Everis</label>				
+				<div class="form-group">
+				<select name="clienteEveris" id="clienteEveris" class="form-control" required>
+						<option value="0">Seleccione alguna opcion</option>
+						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+				</select>					
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>8. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+                                <option value="1">Remoto-Home office-Teletrabajo</option>
+								<option value="2">Oficina (Presencial)</option>
+                            </select>
+					
+					</div>
+					</div>
+				</div>
+			</div>
 		';
+			}
+		//CLIENTE LUCTA
 	 }else if ($cliente_partner == 3) {
 	    echo 
 		'
-			#  
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>5. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+								<option value="1">Remoto-Home office-Teletrabajo</option>
+								<option value="2">Oficina (Presencial)</option>
+							</select>
+					
+					</div>
+					</div>
+				</div>
+			</div>
 		';
+		//CLIENTE MILLO
 	 }else if ($cliente_partner == 4) {
+		foreach ($listCliente_partnerMillo as $t) {
 	    echo 
 		'
-			#  
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+				<label>5. Cliente Millo</label>				
+				<div class="form-group">
+				<select name="clienteMillo" id="clienteMillo" class="form-control" required>
+						<option value="0">Seleccione alguna opcion</option>
+						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+				</select>					
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>8. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+                                <option value="1">Remoto-Home office-Teletrabajo</option>
+								<option value="2">Oficina (Presencial)</option>
+                            </select>
+					
+					</div>
+					</div>
+				</div>
+			</div>	 
 		';
+			}
+		//CLIENTE PRAXIS
 	 }else if ($cliente_partner == 5) {
 	    echo 
 		'
-			#  
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>5. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+								<option value="1">Remoto-Home office-Teletrabajo</option>
+								<option value="2">Oficina (Presencial)</option>
+							</select>
+					
+					</div>
+					</div>
+				</div>
+			</div>	  
 		';
+		//CLIENTE SEIDOR
 	 }else if ($cliente_partner == 6) {
+		foreach ($listPepCliente as $t) {
 	    echo 
 		'
-			#  
+		<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+			<label>5. PEP del cliente</label>				
+			<div class="form-group">
+			<label>Seleccionar el PEP del cliente que atendieron (si no esta el PEP relacionado, antes de cargar, por favor notificar a la Coordinadora y colocar el PEP que falta en el campo otros).</label>				
+			<div class="form-group">
+			<select name="pepCliente" id="pepCliente" class="form-control" required>
+					<option value="0">Seleccione alguna opcion</option>
+					<option value='. $t->getCod_pep_cliente().'>'.$t->getReferencia_pep_cliente().'</option>	
+			</select>					
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+				<label>6. Descripción de las actividades</label>
+				<div class="form-group">
+				<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+				<div class="form-group">
+				<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+				<div class="form-group">
+				<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+				</div>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+				<label>7. Horas Trabajadas</label>
+				<div class="form-group">
+				<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+				<div class="form-group">
+				<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+				
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+				<label>8. Lugar de trabajo</label>
+				<div class="form-group">
+				<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+							<option value="0">Seleccione alguna opcion</option>
+							<option value="1">Remoto-Home office-Teletrabajo</option>
+							<option value="2">Oficina (Presencial)</option>
+						</select>
+				
+				</div>
+				</div>
+			</div>
+		</div>	 
 		';
+			}
+		//CLIENTE INTERNO RC
 	 }else if ($cliente_partner == 7) {
 	    echo 
 		'
-			#  
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>5. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+								<option value="1">Remoto-Home office-Teletrabajo</option>
+								<option value="2">Oficina (Presencial)</option>
+							</select>
+					
+					</div>
+					</div>
+				</div>
+			</div>	 
 		';
 	 }
 

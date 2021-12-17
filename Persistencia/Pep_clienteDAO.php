@@ -120,17 +120,16 @@ class Pep_clienteDAO implements DAO
     {
 
         $sql = "SELECT * FROM PEP_CLIENTE";
-
+        $pep_clientes = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $pep_cliente = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $pep_cliente = new Pep_cliente();
             $pep_cliente->setCod_pep_cliente($row[0]);
             $pep_cliente->setReferencia_pep_cliente($row[1]);
             $pep_cliente->setCod_cliente_partner($row[2]);
-
-            $pep_clientes[] = $pep_cliente;
+            array_push($pep_clientes, $pep_cliente);
+           
         }
         return $pep_clientes;
     }
