@@ -62,6 +62,7 @@
         public static function getList(){
             $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
             $sub_mod_sap = $sub_mod_sapDAO->getList();
+            return $sub_mod_sap;
         }
 
 	    /**

@@ -63,74 +63,73 @@ $listCliente_partner = ManejoCliente_partner::getList();
             </div>
             <!-- Inicio Formulario -->
             <div class="card-body">
-            <form method="POST" action="ModuloConsultor/crearReporteHoras.php" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="form-group">
-                        <label>1. Fecha de Reporte </label>
-                        <div class="form-group">
-                        <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
-                        <div class="form-group">
-                        <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="" required>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="form-group">
-                        <label>2. Consultor </label>
-                        <div class="form-group">
-                        <label class="bmd-label-floating"></label>
-                        <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
-                        </div>
+                <form method="POST" action="ModuloConsultor/crearReporteHoras.php" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                            <label>1. Fecha de Reporte </label>
+                            <div class="form-group">
+                            <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
+                            <div class="form-group">
+                            <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="" required>
+                            </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="form-group">
-                        <label>3. Modulo SAP </label>
-                        <div class="form-group">
-                        <label class="bmd-label-floating"></label>
-                        <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
-                                <?php
-                                foreach ($listMod_sap as $t) {
-                                    echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
-                                }
-                                ?>
-                            </select>
-                        </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                            <label>2. Consultor </label>
+                            <div class="form-group">
+                            <label class="bmd-label-floating"></label>
+                            <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <a href="?menu=agregarModSap&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary btn-round">Agregar MODULO</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="form-group">
-                        <label>4. Cliente Partner </label>
-                        <div class="form-group">
-                        <label class="bmd-label-floating"></label>
-                        <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
-                                <option value='0'>Seleccione alguna opcion</option>
-                                <?php
-                                foreach ($listCliente_partner as $e) {
-                                    echo '<option value=' . $e->getCod_cliente_partner() . '>' . $e->getNombre_cliente_partner() . '</option>';
-                                }
-                                ?>
-                            </select>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                            <label>3. Modulo SAP </label>
+                            <div class="form-group">
+                            <label class="bmd-label-floating"></label>
+                            <select name="mod_sap" id="mod_sap" class="form-control" required>
+                                    <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                    <?php
+                                    foreach ($listMod_sap as $t) {
+                                        echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            </div>
                         </div>
+                        <div class="col-md-2">
+                            <a href="?menu=agregarModSap&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary btn-round">Agregar MODULO</a>
                         </div>
                     </div>
-                </div>
-                
-                <a href="?menu=editarPerfil&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary pull-right">Editar Perfil</a>
-                <div class="clearfix"></div>
-            </form>                  
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>4. Cliente Partner </label>
+                                <div class="form-group">
+                                <label class="bmd-label-floating"></label>
+                                <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
+                                        <option value='0'>Seleccione alguna opcion</option>
+                                        <?php
+                                        foreach ($listCliente_partner as $e) {
+                                            echo '<option value=' . $e->getCod_cliente_partner() . '>' . $e->getNombre_cliente_partner() . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="customar__field" id="espacioTipo" name="espacioTipo">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right" type='submit'>Enviar</button>
+                    </div>       
+                </form>                  
             </div>
         </div>
     </div>        

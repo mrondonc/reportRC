@@ -120,17 +120,15 @@ class Sub_mod_sapDAO implements DAO
     {
 
         $sql = "SELECT * FROM SUB_MOD_SAP";
-
+        $sub_mod_saps = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $sub_mod_sap = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $sub_mod_sap = new Sub_mod_sap();
             $sub_mod_sap->setCod_sub_mod_sap($row[0]);
             $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
             $sub_mod_sap->setCod_cliente_partner($row[2]);
-
-            $sub_mod_saps[] = $sub_mod_sap;
+            array_push($sub_mod_saps, $sub_mod_sap);
         }
         return $sub_mod_saps;
     }

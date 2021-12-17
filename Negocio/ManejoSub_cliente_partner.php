@@ -62,6 +62,37 @@
         public static function getList(){
             $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partner = $sub_cliente_partnerDAO->getList();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListAxity(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListAxity();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListEveris(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListEveris();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListMillo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListMillo();
+            return $sub_cliente_partner;
         }
 
 	    /**
