@@ -1,3 +1,16 @@
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Mod_sap.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoMod_sap.php';
+
+$obj = new Conexion();
+$conexion = $obj->conectarDB();
+
+ManejoMod_sap::setConexionBD($conexion);
+
+$listMod_sap = ManejoMod_sap::getList();
+
+?>
 <!doctype html>
                         <html>
                             <head>
@@ -58,7 +71,7 @@
 }
 
 .box input[type="text"]:focus,
-.box input[type="password"]:focus {
+.box input[type="password"]:focus{
     width: 300px;
     border-color: #62de67
 }
@@ -148,7 +161,60 @@ a.socialIcon:hover,
     color: #0F344A;
     transition: all 0.8s;
     transition: all 0.8s
-}</style>
+}
+
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.content-select{
+	max-width: 250px;
+	position: relative;
+}
+ 
+.content-select select{
+	border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #30ABBA;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: #0F344A;
+    border-radius: 24px;
+    transition: 0.25s
+}
+ 
+.content-select select:hover{
+	background: none;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #2AC176;
+	border-bottom:4px solid #2AC176;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+	margin-top: 3px;
+}
+</style>
     </head>
     <body oncontextmenu='return false' class='snippet-body'>
     <div class="container" >
@@ -162,11 +228,21 @@ a.socialIcon:hover,
                         <div class="form-row" id="mostrarUsuario">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required> 
+                                 <div class="content-select">
+                                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required> 
                                     <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
                                     <input type="text" id="direccion" name="direccion" placeholder="Dirección de recidencia" required> 
-                                    <input type="text" id="mod_sap" name="mod_sap" placeholder="Módulo SAP" required> 
+                                    <!--<input type="text" id="mod_sap" name="mod_sap" placeholder="Módulo SAP" required> -->                                    
+                                    <select  name="mod_sap" id="mod_sap"  required>
+                                        <option value=0 ><?php echo 'Módulo SAP' ?></option>
+                                        <?php
+                                        foreach ($listMod_sap as $t) {
+                                            echo '<option value=' . $t->getCod_mod_sap() . '   >' . $t->getNombre_mod_sap() . '</option>';
+                                        }
+                                        ?>
+                                    </select>                                  
                                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                                 </div>  
                                 </div>
                             </div>
                             <div class="col-md-6">
