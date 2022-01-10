@@ -71,7 +71,7 @@ class No_ticketDAO implements DAO
      */
     public function create($no_ticket)
     {
-        $sql = "insert into NO_TICKET values (" . $no_ticket->getCod_no_ticket() . ",
+        $sql = "insert into NO_TICKET (referencia_no_ticket, cod_cliente_partner) values (
                                             '" . $no_ticket->getReferencia_no_ticket() . "',
                                             " . $no_ticket->getCod_cliente_partner() . "                                               
                                         );";

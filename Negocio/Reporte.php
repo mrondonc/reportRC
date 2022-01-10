@@ -62,7 +62,7 @@ class Reporte{
     /**
      * Date of change
      *
-     * @return Date
+     * @return String
      */ 
     private $hora_de_registro; 
 
@@ -89,7 +89,7 @@ class Reporte{
     /**
      * Get the value of fecha_de_reporte
      */ 
-    public function getFecha_de_report()
+    public function getFecha_de_reporte()
     {
         return $this->fecha_de_reporte;
     }

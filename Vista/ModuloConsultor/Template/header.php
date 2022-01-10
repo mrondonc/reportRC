@@ -1,4 +1,16 @@
+<?php
 
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
+
+$obj = new Conexion();
+$conexion = $obj->conectarDB();
+ManejoUsuario::setConexionBD($conexion);
+
+$cod_usuario  =  $_SESSION['cod_usuario'];
+$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
+?>
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" >RC BUSINESS CONSULTING</a>

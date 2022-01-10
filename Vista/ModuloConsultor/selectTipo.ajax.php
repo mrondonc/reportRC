@@ -144,8 +144,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-                                <option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+                                <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
 					
 					</div>
@@ -216,8 +216,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-                                <option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+                                <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
 					
 					</div>
@@ -266,8 +266,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-								<option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
 					
 					</div>
@@ -334,8 +334,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-                                <option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+                                <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
 					
 					</div>
@@ -385,8 +385,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-								<option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
 					
 					</div>
@@ -459,8 +459,8 @@
 				<div class="form-group">
 				<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 							<option value="0">Seleccione alguna opcion</option>
-							<option value="1">Remoto-Home office-Teletrabajo</option>
-							<option value="2">Oficina (Presencial)</option>
+							<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 						</select>
 				
 				</div>
@@ -510,8 +510,8 @@
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>
-								<option value="1">Remoto-Home office-Teletrabajo</option>
-								<option value="2">Oficina (Presencial)</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
 					
 					</div>

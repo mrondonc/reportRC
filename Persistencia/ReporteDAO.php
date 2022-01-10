@@ -76,14 +76,14 @@ class ReporteDAO implements DAO
      */
     public function create($reporte)
     {
-        $sql = "insert into REPORTE values (" . $reporte->getCod_reporte() . ",
-                                            " . $reporte->getFecha_de_reporte() . ",
+        $sql = "insert into REPORTE(fecha_de_reporte, cod_usuario, cod_cliente_partner, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, hora_de_registro) 
+                                        values ('" . $reporte->getFecha_de_reporte() . "',
                                             " . $reporte->getCod_usuario() . ",
                                             " . $reporte->getCod_cliente_partner() . ",
-                                            '" . $reporte->getDescripcion_actvidad() . "',
+                                            '" . $reporte->getDescripcion_actividad() . "',
                                             " . $reporte->getHoras_trabajadas() . ",
                                             '" . $reporte->getLugar_de_trabajo() . "',
-                                            " . $reporte->getHora_de_registro() . "
+                                            '" . $reporte->getHora_de_registro() . "'
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -105,7 +105,7 @@ class ReporteDAO implements DAO
                                    descripcion_actividad = '" . $reporte->getDescripcion_actividad() . "',
                                    horas_trabajadas = " . $reporte->getHoras_trabajadas() . ",
                                    lugar_de_trabajo = '" . $reporte->getLugar_de_trabajo() . "',
-                                   hora_de_registro = " . $reporte->getHora_de_registro() . ",
+                                   hora_de_registro = '" . $reporte->getHora_de_registro() . "',
                                    where cod_reporte = " . $reporte->getCod_reporte() . "
                                 ;";
         pg_query($this->conexion, $sql);

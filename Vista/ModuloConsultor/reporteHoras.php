@@ -66,7 +66,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                 <form method="POST" action="ModuloConsultor/crearReporteHoras.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-10">
-                            <div class="form-group">
+                            <div class="form-group"> 
                             <label>1. Fecha de Reporte </label>
                             <div class="form-group">
                             <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
