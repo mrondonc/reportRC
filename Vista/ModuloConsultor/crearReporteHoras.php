@@ -59,13 +59,16 @@ $reporte->setHora_de_registro($hora_de_registro);
 ManejoReporte::createReporte($reporte);
 
 //------CREAR REGISTRO EN LA TABLA NO_TICKET--------
-$numeroTicket = new No_ticket();
-$No_ticket = $_POST['noTicket'];
-$cod_cliente_partner2 = $_POST['cliente_partner'];
+if($cod_cliente_partner == 1){
+    $numeroTicket = new No_ticket();
+    $No_ticket = $_POST['noTicket'];
+    $cod_cliente_partner2 = $_POST['cliente_partner'];
 
-$numeroTicket->setReferencia_no_ticket($No_ticket);
-$numeroTicket->setCod_cliente_partner($cod_cliente_partner2);
-ManejoNo_ticket::createNo_ticket($numeroTicket);
+    $numeroTicket->setReferencia_no_ticket($No_ticket);
+    $numeroTicket->setCod_cliente_partner($cod_cliente_partner2);
+    ManejoNo_ticket::createNo_ticket($numeroTicket);    
+}
+
 
 echo '<script>
 alert("Se ha creado el Reporte de Horas Exitosamente")
