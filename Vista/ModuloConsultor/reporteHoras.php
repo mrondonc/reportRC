@@ -127,7 +127,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                                 <div class="customar__field" id="espacioTipo" name="espacioTipo">
                             </div>
                         </div>
-                        <button class="btn btn-primary pull-right" type='submit'>Enviar</button>
+                        <button class="btn btn-primary" type='submit'>Enviar</button>
                     </div>       
                 </form>                  
             </div>
