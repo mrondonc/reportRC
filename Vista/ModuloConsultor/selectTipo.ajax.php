@@ -130,7 +130,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -202,7 +202,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -253,7 +253,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					</div>
 					</div>
 					</div>
@@ -323,7 +323,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -374,7 +374,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -448,7 +448,7 @@
 				<div class="form-group">
 				<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 				<div class="form-group">
-				<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+				<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 				
 				</div>
 				</div>
@@ -499,7 +499,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>

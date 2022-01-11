@@ -70,8 +70,8 @@ if($cod_cliente_partner == 1){
 }
 
 
-echo '<script>
-alert("Se ha creado el Reporte de Horas Exitosamente")
-window.location="../Consultor.php?menu=reporteHoras";
-</script>';
+//echo '<script>
+//alert("Se ha creado el Reporte de Horas Exitosamente")
+//window.location="../Consultor.php?menu=reporteHoras";
+//</script>';
 ?>
