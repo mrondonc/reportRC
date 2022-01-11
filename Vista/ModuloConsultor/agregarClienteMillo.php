@@ -14,25 +14,25 @@ ManejoSub_cliente_partner::setConexionBD($conexion);
 
 $cod_usuario  =  $_GET['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$listSubClientes = ManejoSub_cliente_partner::getListAxity();
+$listSubClientes = ManejoSub_cliente_partner::getListMillo();
 
 ?>
-<!-- FORMULARIO AGREGAR SUB CLIENTE AXITY -->
+<!-- FORMULARIO AGREGAR SUB CLIENTE MILLO -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">AGREGAR CLIENTE AXITY</h4>
-        <p class="card-category">Verifique previamente si ya esta creado su cliente de AXITY</p>
+        <h4 class="card-title">AGREGAR CLIENTE MILLO</h4>
+        <p class="card-category">Verifique previamente si ya esta creado su cliente MILLO</p>
       </div>
       <div class="card-body">
-        <form method="post" action="ModuloConsultor/agregaClienteAxity.php">
+        <form method="post" action="ModuloConsultor/agregaClienteMillo.php">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Clientes Axity Existentes</label>
+                  <label class="bmd-label-floating">Clientes Millo Existentes</label>
                   <select name="sub_clientes" id="sub_clientes" class="form-control">
-                  <option> Observar Clientes </option>
+                      <option> Observar Clientes </option>
                       <?php
                       foreach ($listSubClientes as $t) {
                           echo '<option value=' . $t->getCod_sub_cliente_partner() . ' disabled >' . $t->getNombre_sub_cliente_partner() . '</option>';
@@ -45,7 +45,7 @@ $listSubClientes = ManejoSub_cliente_partner::getListAxity();
               <div class="row">
               <div class="col-md-7">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Nuevo Cliente Axity</label>
+                  <label class="bmd-label-floating">Nuevo Cliente Millo</label>
                   <input type="text" class="form-control" name="nombreCliente" id="nombreCliente" value="" required>
                 </div>
               </div>

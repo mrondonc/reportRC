@@ -73,7 +73,8 @@ class Sub_cliente_partnerDAO implements DAO
      */
     public function create($sub_cliente_partner)
     {
-        $sql = "insert into SUB_CLIENTE_PARTNER values (" . $sub_cliente_partner->getCod_sub_cliente_partner() . ",
+        $sql = "insert into SUB_CLIENTE_PARTNER (nombre_sub_cliente_partner, cod_cliente_partner) 
+                                        values (
                                             '" . $sub_cliente_partner->getNombre_sub_cliente_partner() . "',
                                             " . $sub_cliente_partner->getCod_cliente_partner() . "                                               
                                         );";

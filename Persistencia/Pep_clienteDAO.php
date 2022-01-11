@@ -71,8 +71,8 @@ class Pep_clienteDAO implements DAO
      */
     public function create($pep_cliente)
     {
-        $sql = "insert into PEP_CLIENTE values (" . $pep_cliente->getCod_pep_cliente() . ",
-                                            '" . $pep_cliente->getReferencia_pep_cliente() . "',
+        $sql = "insert into PEP_CLIENTE (referencia_pep_cliente, cod_cliente_partner) 
+                                        values ('" . $pep_cliente->getReferencia_pep_cliente() . "',
                                             " . $pep_cliente->getCod_cliente_partner() . "                                               
                                         );";
 
@@ -119,7 +119,7 @@ class Pep_clienteDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM PEP_CLIENTE";
+        $sql = "SELECT * FROM PEP_CLIENTE ORDER BY referencia_pep_cliente ASC";
         $pep_clientes = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

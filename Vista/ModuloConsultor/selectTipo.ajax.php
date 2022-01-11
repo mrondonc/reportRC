@@ -130,7 +130,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -202,7 +202,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -253,7 +253,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					</div>
 					</div>
 					</div>
@@ -281,7 +281,7 @@
 	    echo 
 		'
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-10">
 				<div class="form-group">
 				<label>5. Cliente Millo</label>				
 				<div class="form-group">
@@ -295,6 +295,9 @@
 				</select>					
 				</div>
 				</div>
+				</div>
+				<div class="col-md-2">
+				<a href="?menu=agregarClienteMillo&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar CLIENTE</a>
 				</div>
 			</div>
 			<div class="row">
@@ -320,7 +323,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -371,7 +374,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -445,7 +448,7 @@
 				<div class="form-group">
 				<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 				<div class="form-group">
-				<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+				<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 				
 				</div>
 				</div>
@@ -496,7 +499,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
