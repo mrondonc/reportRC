@@ -47,28 +47,83 @@ $descripcion_actividad = $_POST['descripcionActividades'];
 $horas_trabajadas = $_POST['horasTrabajadas'];
 $lugar_de_trabajo = $_POST['lugarTrabajo'];
 $hora_de_registro = date('d-m-y h:i:s');
+$sub_cliente_partnerA = $_POST['clienteAxity'];
+$sub_mod_sap = $_POST['modSapList'];
+//$no_ticketA = $_POST[''];
 
 //$reporte->setCod_reporte($cod_reporte);
-$reporte->setFecha_de_reporte($fecha_de_reporte);
-$reporte->setCod_usuario($usuario->getCod_usuario());
-$reporte->setCod_cliente_partner($cod_cliente_partner);
-$reporte->setDescripcion_actividad($descripcion_actividad);
-$reporte->setHoras_trabajadas($horas_trabajadas);
-$reporte->setLugar_de_trabajo($lugar_de_trabajo);
-$reporte->setHora_de_registro($hora_de_registro);
-ManejoReporte::createReporte($reporte);
 
 //------CREAR REGISTRO EN LA TABLA NO_TICKET--------
 if($cod_cliente_partner == 1){
+    $reporte->setFecha_de_reporte($fecha_de_reporte);
+    $reporte->setCod_usuario($usuario->getCod_usuario());
+    $reporte->setCod_cliente_partner($cod_cliente_partner);
+    $reporte->setDescripcion_actividad($descripcion_actividad);
+    $reporte->setHoras_trabajadas($horas_trabajadas);
+    $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+    $reporte->setHora_de_registro($hora_de_registro);
+    
     $numeroTicket = new No_ticket();
     $No_ticket = $_POST['noTicket'];
     $cod_cliente_partner2 = $_POST['cliente_partner'];
 
     $numeroTicket->setReferencia_no_ticket($No_ticket);
     $numeroTicket->setCod_cliente_partner($cod_cliente_partner2);
-    ManejoNo_ticket::createNo_ticket($numeroTicket);    
-}
+    ManejoNo_ticket::createNo_ticket($numeroTicket);
+    //return $numeroTicket;
+    //echo $numeroTicket;
+    $cod_generado = ManejoNo_ticket::consultarNo_ticket($numeroTicket->getCod_no_ticket());
+    $reporte->setCod_sub_cliente_partner($sub_cliente_partnerA);
+    $reporte->setCod_no_ticket($cod_generado);
+    $reporte->setCod_pep_cliente(47);// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap($sub_mod_sap);
+    ManejoReporte::createReporte($reporte);
 
+}if($cod_cliente_partner == 2){//EVERIS
+    $reporte->setFecha_de_reporte($fecha_de_reporte);
+    $reporte->setCod_usuario($usuario->getCod_usuario());
+    $reporte->setCod_cliente_partner($cod_cliente_partner);
+    $reporte->setDescripcion_actividad($descripcion_actividad);
+    $reporte->setHoras_trabajadas($horas_trabajadas);
+    $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+    $reporte->setHora_de_registro($hora_de_registro);
+    
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 3){//LUCTA
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 4){//MILLO
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 5){//PRAXIS
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 6){//SEIDOR
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 7){//INTERNO RC
+    $reporte->setCod_sub_cliente_partner();
+    $reporte->setCod_no_ticket();
+    $reporte->setCod_pep_cliente();// cod 47 pertenece AXITY RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap();
+    ManejoReporte::createReporte($reporte);
+}
 
 echo '<script>
 alert("Se ha creado el Reporte de Horas Exitosamente")

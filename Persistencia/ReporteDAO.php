@@ -63,6 +63,10 @@ class ReporteDAO implements DAO
         $reporte->setHoras_trabajadas($row[5]);
         $reporte->setLugar_de_trabajo($row[6]);
         $reporte->setHora_de_registro($row[7]);
+        $reporte->setCod_sub_cliente_partner($row[8]);
+        $reporte->setCod_no_ticket($row[9]);
+        $reporte->setCod_pep_cliente($row[10]);
+        $reporte->setCod_sub_mod_sap($row[11]);
 
         return $reporte;
     }
@@ -92,6 +96,10 @@ class ReporteDAO implements DAO
         $reporte->setHoras_trabajadas($row[5]);
         $reporte->setLugar_de_trabajo($row[6]);
         $reporte->setHora_de_registro($row[7]);
+        $reporte->setCod_sub_cliente_partner($row[8]);
+        $reporte->setCod_no_ticket($row[9]);
+        $reporte->setCod_pep_cliente($row[10]);
+        $reporte->setCod_sub_mod_sap($row[11]);
 
         return $reporte;
     }
@@ -105,14 +113,18 @@ class ReporteDAO implements DAO
      */
     public function create($reporte)
     {
-        $sql = "insert into REPORTE(fecha_de_reporte, cod_usuario, cod_cliente_partner, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, hora_de_registro) 
+        $sql = "insert into REPORTE(fecha_de_reporte, cod_usuario, cod_cliente_partner, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, hora_de_registro, cod_sub_cliente_partner, cod_no_ticket, cod_pep_cliente, cod_sub_mod_sap) 
                                         values ('" . $reporte->getFecha_de_reporte() . "',
                                             " . $reporte->getCod_usuario() . ",
                                             " . $reporte->getCod_cliente_partner() . ",
                                             '" . $reporte->getDescripcion_actividad() . "',
                                             " . $reporte->getHoras_trabajadas() . ",
                                             '" . $reporte->getLugar_de_trabajo() . "',
-                                            '" . $reporte->getHora_de_registro() . "'
+                                            '" . $reporte->getHora_de_registro() . "',
+                                            " . $reporte->getCod_sub_cliente_partner() . ",
+                                            " . $reporte->getCod_no_ticket() . ",
+                                            " . $reporte->getCod_pep_cliente() . ",
+                                            " . $reporte->getCod_sub_mod_sap() . "
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -135,6 +147,10 @@ class ReporteDAO implements DAO
                                    horas_trabajadas = " . $reporte->getHoras_trabajadas() . ",
                                    lugar_de_trabajo = '" . $reporte->getLugar_de_trabajo() . "',
                                    hora_de_registro = '" . $reporte->getHora_de_registro() . "',
+                                   cod_sub_cliente_partner = " . $reporte->getCod_sub_cliente_partner() . ",
+                                   cod_no_ticket = " . $reporte->getCod_no_ticket() . ",
+                                   cod_pep_cliente = " . $reporte->getCod_pep_cliente() . ",
+                                   cod_sub_mod_sap = " . $reporte->getCod_sub_mod_sap() . ",
                                    where cod_reporte = " . $reporte->getCod_reporte() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -178,6 +194,10 @@ class ReporteDAO implements DAO
             $reporte->setHoras_trabajadas($row[5]);
             $reporte->setLugar_de_trabajo($row[6]);
             $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
             array_push($reportes, $reporte);
             
         }
@@ -207,6 +227,10 @@ class ReporteDAO implements DAO
             $reporte->setHoras_trabajadas($row[5]);
             $reporte->setLugar_de_trabajo($row[6]);
             $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
             $reportes[] = $reporte;
         }
         return $reportes;

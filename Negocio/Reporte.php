@@ -67,6 +67,34 @@ class Reporte{
     private $hora_de_registro; 
 
     /**
+     * Code of the user to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_sub_cliente_partner;
+
+    /**
+     * Code of the user to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_no_ticket;
+
+    /**
+     * Code of the user to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_pep_cliente;
+
+    /**
+     * Code of the user to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_sub_mod_sap;
+
+    /**
      * Get the value of cod_reporte
      */ 
     public function getCod_reporte()
@@ -222,6 +250,86 @@ class Reporte{
     public function setHora_de_registro($hora_de_registro)
     {
         $this->hora_de_registro = $hora_de_registro;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_sub_cliente_partner
+     */ 
+    public function getCod_sub_cliente_partner()
+    {
+        return $this->cod_sub_cliente_partner;
+    }
+
+    /**
+     * Set the value of cod_sub_cliente_partner
+     *
+     * @return  self
+     */ 
+    public function setCod_sub_cliente_partner($cod_sub_cliente_partner)
+    {
+        $this->cod_sub_cliente_partner = $cod_sub_cliente_partner;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_no_ticket
+     */ 
+    public function getCod_no_ticket()
+    {
+        return $this->cod_no_ticket;
+    }
+
+    /**
+     * Set the value of cod_no_ticket
+     *
+     * @return  self
+     */ 
+    public function setCod_no_ticket($cod_no_ticket)
+    {
+        $this->cod_no_ticket = $cod_no_ticket;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_pep_cliente
+     */ 
+    public function getCod_pep_cliente()
+    {
+        return $this->cod_pep_cliente;
+    }
+
+    /**
+     * Set the value of cod_pep_cliente
+     *
+     * @return  self
+     */ 
+    public function setCod_pep_cliente($cod_pep_cliente)
+    {
+        $this->cod_pep_cliente = $cod_pep_cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_sub_mod_sap
+     */ 
+    public function getCod_sub_mod_sap()
+    {
+        return $this->cod_sub_mod_sap;
+    }
+
+    /**
+     * Set the value of cod_sub_mod_sap
+     *
+     * @return  self
+     */ 
+    public function setCod_sub_mod_sap($cod_sub_mod_sap)
+    {
+        $this->cod_sub_mod_sap = $cod_sub_mod_sap;
 
         return $this;
     }
