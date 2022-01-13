@@ -27,6 +27,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarClienteMillo') {
         include_once("../Vista/ModuloConsultor/agregarClienteMillo.php");
     }
+    if ($_GET['menu'] == 'historialReporte') {
+        include_once("../Vista/ModuloConsultor/historialReporte.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }

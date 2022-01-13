@@ -26,6 +26,13 @@
             return $reporte;
         }
 
+        public static function consultarReporteUsuario($cod_usuario){
+
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->consultUsuario($cod_usuario);
+            return $reporte;
+        }
+
         /**
          * Create an  reporte
          * @param Reporte reporte to create
@@ -61,7 +68,18 @@
          */
         public static function getList(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
-            $reporte = $ReporteDAO->getList();
+            $reporte = $reporteDAO->getList();
+            return $reporte;
+        }
+
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListByUser($cod_usuario);
+            return $reporte;
         }
 
 	    /**

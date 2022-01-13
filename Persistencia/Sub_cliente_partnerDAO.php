@@ -62,7 +62,29 @@ class Sub_cliente_partnerDAO implements DAO
         return $sub_cliente_partner;
     }
 
+    /**
+     * Method to query an sub cliente partner by his code type
+     *
+     * @param int $cod_sub_cliente_partner
+     * @return Sub_cliente_partner
+     */
+    public function consultCodCliente($cod_cliente_partner)
+    {
+        
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = " . $cod_cliente_partner;
 
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        $row = pg_fetch_array($resultado);
+
+        $sub_cliente_partner = new Sub_cliente_partner();
+
+        $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+        $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+        $sub_cliente_partner->setCod_cliente_partner($row[2]);
+
+        return $sub_cliente_partner;
+    }
 
 
     /**

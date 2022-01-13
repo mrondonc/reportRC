@@ -61,6 +61,30 @@ class Sub_mod_sapDAO implements DAO
 
         return $sub_mod_sap;
     }
+    
+    /**
+     * Method to query an sub mod sap by his code type
+     *
+     * @param int $cod_sub_mod_sap
+     * @return Sub_mod_sap
+     */
+    public function consultCodigoCliente($cod_cliente_partner)
+    {
+        
+        $sql = "SELECT * FROM SUB_MOD_SAP WHERE cod_cliente_partner = " . $cod_cliente_partner;
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        $row = pg_fetch_array($resultado);
+
+        $sub_mod_sap = new Sub_mod_sap();
+
+        $sub_mod_sap->setCod_sub_mod_sap($row[0]);
+        $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
+        $sub_mod_sap->setCod_cliente_partner($row[2]);
+
+        return $sub_mod_sap;
+    }
 
 
     /**

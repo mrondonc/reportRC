@@ -95,6 +95,34 @@
             </li>';
         }     
         ?>
+        <?php 
+        if(isset($_GET['menu'])){
+          if($_GET['menu'] == 'historialReporte'){
+            echo '<li class="nav-item active">
+            <a class="nav-link" href="?menu=historialReporte">
+            <i class="material-icons">content_paste</i>
+              <p>Historial Reporte Horas</p>
+              </a>
+            </li>';
+        }else{
+          echo '<li class="nav-item">
+          <a class="nav-link" href="?menu=historialReporte">
+          <i class="material-icons">content_paste</i>
+          <p>Historial Reporte Horas</p>
+              
+              </a>
+            </li>';
+        }     
+        }else{
+          echo '<li class="nav-item">
+          <a class="nav-link" href="?menu=historialReporte">
+          <i class="material-icons">content_paste</i>
+          <p>Historial Reporte Horas</p>
+              
+              </a>
+            </li>';
+        }     
+        ?>
         </ul>
 </div>
       

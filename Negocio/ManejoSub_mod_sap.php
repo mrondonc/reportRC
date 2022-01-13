@@ -26,6 +26,12 @@
             return $sub_mod_sap;
         }
 
+        public static function consultCodigoCliente($cod_cliente_partner){
+
+            $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
+            $sub_mod_sap = $sub_mod_sapDAO->consultCodigoCliente($cod_cliente_partner);
+            return $sub_mod_sap;
+        }
         /**
          * Create an sub modulo sap
          * @param Sub_mod_sap sub mod sap to create

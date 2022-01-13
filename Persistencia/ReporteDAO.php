@@ -59,7 +59,36 @@ class ReporteDAO implements DAO
         $reporte->setFecha_de_reporte($row[1]);
         $reporte->setCod_usuario($row[2]);
         $reporte->setCod_cliente_partner($row[3]);
-        $reporte->setDescripcion_actvidad($row[4]);
+        $reporte->setDescripcion_actividad($row[4]);
+        $reporte->setHoras_trabajadas($row[5]);
+        $reporte->setLugar_de_trabajo($row[6]);
+        $reporte->setHora_de_registro($row[7]);
+
+        return $reporte;
+    }
+
+    /**
+     * Method to query an reporte by his code type
+     *
+     * @param int $cod_usuario
+     * @return Reporte
+     */
+    public function consultUsuario($cod_usuario)
+    {
+        
+        $sql = "SELECT * FROM REPORTE WHERE cod_usuario = " . $cod_usuario;
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        $row = pg_fetch_array($resultado);
+
+        $reporte = new Reporte();
+
+        $reporte->setCod_reporte($row[0]);
+        $reporte->setFecha_de_reporte($row[1]);
+        $reporte->setCod_usuario($row[2]);
+        $reporte->setCod_cliente_partner($row[3]);
+        $reporte->setDescripcion_actividad($row[4]);
         $reporte->setHoras_trabajadas($row[5]);
         $reporte->setLugar_de_trabajo($row[6]);
         $reporte->setHora_de_registro($row[7]);
@@ -135,21 +164,49 @@ class ReporteDAO implements DAO
     {
 
         $sql = "SELECT * FROM REPORTE";
+        $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $reporte = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
             $reporte->setCod_reporte($row[0]);
             $reporte->setFecha_de_reporte($row[1]);
             $reporte->setCod_usuario($row[2]);
             $reporte->setCod_cliente_partner($row[3]);
-            $reporte->setDescripcion_actvidad($row[4]);
+            $reporte->setDescripcion_actividad($row[4]);
             $reporte->setHoras_trabajadas($row[5]);
             $reporte->setLugar_de_trabajo($row[6]);
             $reporte->setHora_de_registro($row[7]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
 
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListByUser($cod_usuario)
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. ";";
+        $reportes = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
             $reportes[] = $reporte;
         }
         return $reportes;

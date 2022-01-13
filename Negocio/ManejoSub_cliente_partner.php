@@ -26,6 +26,13 @@
             return $sub_cliente_partner;
         }
 
+        public static function consultarSub_cliente_partnerPorCLiente($cod_cliente_partner){
+
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->consultCodCliente($cod_cliente_partner);
+            return $sub_cliente_partner;
+        }
+
         /**
          * Create an sub cliente partner
          * @param Sub_cliente_partner sub cliente partner to create

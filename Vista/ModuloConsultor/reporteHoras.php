@@ -91,7 +91,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                     <div class="row">
                         <div class="col-md-10">
                             <div class="form-group">
-                            <label>3. Modulo SAP </label>
+                            <label>3. Módulo SAP </label>
                             <div class="form-group">
                             <label class="bmd-label-floating"></label>
                             <select name="mod_sap" id="mod_sap" class="form-control" required>
