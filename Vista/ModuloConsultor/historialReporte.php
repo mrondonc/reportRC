@@ -39,7 +39,7 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
 <div class="card">
     <div class="card-header card-header-primary">
         <h4 class="card-title ">Historial Reporte de Horas</h4>
-        <p class="card-category"> Here is a subtitle for this table</p>
+        <p class="card-category"> Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas.</p>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -63,16 +63,16 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
                     ?>
                 <tr>
                     <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
-                    <td style="font-size: small;"> <?php echo $codSap;?> </td>
-                    <td style="font-size: small;"> <?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?> </td>
-                    <td style="font-size: small;"> <?php if( ($reportes[$i]->getCod_cliente_partner()) != 3 AND 5 AND 6 AND 7 ){ echo ManejoSub_cliente_partner::consultarSub_cliente_partnerPorCLiente($reportes[$i]->getCod_cliente_partner())->getNombre_sub_cliente_partner();}?> </td>
-                    <td style="font-size: small;"> <?php if( ($reportes[$i]->getCod_cliente_partner()) == 1 ){ echo ManejoSub_mod_sap::consultCodigoCliente($reportes[$i]->getCod_cliente_partner())->getNombre_sub_mod_sap();}?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
-                    <td style="font-size: small;"> <?php echo '';?> </td>
+                    <td style="font-size: small;"><?php echo $codSap;?> </td>
+                    <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>
+                    <td style="font-size: small;"><?php echo ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner();?></td>
+                    <td style="font-size: small;"><?php echo ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap();?></td>
+                    <td style="font-size: small;"><?php echo ManejoNo_ticket::consultarNo_ticket($reportes[$i]->getCod_no_ticket())->getReferencia_no_ticket();?></td>
+                    <td style="font-size: small;"><?php echo ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
                 </tr>
                 <?php }?>
             </tbody>
