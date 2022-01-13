@@ -72,9 +72,9 @@ if($cod_cliente_partner == 1){
     ManejoNo_ticket::createNo_ticket($numeroTicket);
     //return $numeroTicket;
     //echo $numeroTicket;
-    $cod_generado = ManejoNo_ticket::consultarNo_ticket($numeroTicket->getCod_no_ticket());
+    //$cod_generado = ManejoNo_ticket::consultarNo_ticket($numeroTicket->getCod_no_ticket());
     $reporte->setCod_sub_cliente_partner($sub_cliente_partnerA);
-    $reporte->setCod_no_ticket($cod_generado);
+    $reporte->setCod_no_ticket(7);
     $reporte->setCod_pep_cliente(47);// cod 47 pertenece AXITY RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap($sub_mod_sap);
     ManejoReporte::createReporte($reporte);
