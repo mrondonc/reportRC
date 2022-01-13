@@ -44,7 +44,7 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
     <div class="card-body">
         <div class="table-responsive">
         <table class="table" style="text-align: center;">
-            <thead class=" text-primary">
+            <thead class="text-warning">
                 <th style="font-size: small;">Fecha de Reporte</th>
                 <th style="font-size: small;">Módulo SAP</th>
                 <th style="font-size: small;">Cliente</th>
@@ -58,8 +58,7 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
                 <th style="font-size: small;">Hora de Registro</th>
             </thead>
             <tbody style="text-align: center;">
-            <?php for ($i=0; $i <count($reportes) ; $i++) { 
-                    
+            <?php for ($i=0; $i <count($reportes) ; $i++) {    
                     ?>
                 <tr>
                     <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
@@ -73,6 +72,14 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
+                    <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>

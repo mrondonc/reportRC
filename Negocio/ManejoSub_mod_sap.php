@@ -71,6 +71,16 @@
             return $sub_mod_sap;
         }
 
+         /**
+         * List of sub modulo sap
+         * @return Sub_mod_sap[] List of all the sub modulo sap in the Data Base
+         */
+        public static function getListAxity(){
+            $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
+            $sub_mod_sap = $sub_mod_sapDAO->getListAxity();
+            return $sub_mod_sap;
+        }
+
 	    /**
 	    * Change the conexion
 	    */

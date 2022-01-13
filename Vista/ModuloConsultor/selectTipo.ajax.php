@@ -35,13 +35,13 @@
 	//$mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
 	$listMod_sap = ManejoMod_sap::getList();
 
-	$listSub_mod_sap = ManejoSub_mod_sap::getList();
+	$listSub_mod_sap = ManejoSub_mod_sap::getListAxity();
 
 	$listCliente_partner = ManejoCliente_partner::getList();
 	$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxity();
 	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
-	$listPepCliente = ManejoPep_cliente::getList();
+	$listPepCliente = ManejoPep_cliente::getListSeidor();
 	$listNoTicket = ManejoNo_ticket::getListAxity();
 
 	$cliente_partner=$_POST["cliente_partner"];

@@ -65,6 +65,16 @@
             return $pep_cliente;
         }
 
+        /**
+         * List of Pep del cliente
+         * @return Pep_cliente[] List of all the pep del cliente in the Data Base
+         */
+        public static function getListSeidor(){
+            $pep_clienteDAO = Pep_clienteDAO::getPep_clienteDAO(self::$conexionBD);
+            $pep_cliente = $pep_clienteDAO->getListSeidor();
+            return $pep_cliente;
+        }
+
 	    /**
 	    * Change the conexion
 	    */
