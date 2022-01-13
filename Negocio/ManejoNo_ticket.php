@@ -62,6 +62,17 @@
         public static function getList(){
             $no_ticketDAO = No_ticketDAO::getNo_ticketDAO(self::$conexionBD);
             $no_ticket = $no_ticketDAO->getList();
+            return $no_ticket;
+        }
+
+         /**
+         * List of numero de ticket
+         * @return No_ticket[] List of all the numero de ticket in the Data Base
+         */
+        public static function getListAxity(){
+            $no_ticketDAO = No_ticketDAO::getNo_ticketDAO(self::$conexionBD);
+            $no_ticket = $no_ticketDAO->getListAxity();
+            return $no_ticket;
         }
 
 	    /**

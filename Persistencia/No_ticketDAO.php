@@ -120,17 +120,40 @@ class No_ticketDAO implements DAO
     {
 
         $sql = "SELECT * FROM NO_TICKET";
+        $no_tickets = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $no_ticket = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $no_ticket = new No_ticket();
             $no_ticket->setCod_no_ticket($row[0]);
             $no_ticket->setReferencia_no_ticket($row[1]);
             $no_ticket->setCod_cliente_partner($row[2]);
+            array_push($no_tickets, $no_ticket);
+        }
+        return $no_tickets;
+    }
 
-            $no_tickets[] = $no_ticket;
+     /**
+     * Method to get an No_ticketDAO object
+     *
+     * @param Object $conexion
+     * @return No_ticketDAO
+     */
+    public function getListAxity()
+    {
+
+        $sql = "SELECT * FROM NO_TICKET WHERE cod_cliente_partner = 1";
+        $no_tickets = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $no_ticket = new No_ticket();
+            $no_ticket->setCod_no_ticket($row[0]);
+            $no_ticket->setReferencia_no_ticket($row[1]);
+            $no_ticket->setCod_cliente_partner($row[2]);
+            array_push($no_tickets, $no_ticket);
         }
         return $no_tickets;
     }

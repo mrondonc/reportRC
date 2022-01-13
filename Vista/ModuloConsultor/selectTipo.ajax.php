@@ -42,6 +42,7 @@
 	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
 	$listPepCliente = ManejoPep_cliente::getList();
+	$listNoTicket = ManejoNo_ticket::getListAxity();
 
 	$cliente_partner=$_POST["cliente_partner"];
 
@@ -95,16 +96,26 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-10">
 					<div class="form-group">
 					<label>7. Indicar No de Ticket / No Aplica Ticket</label>
 					<div class="form-group">
 					<label>Colocar Numero del Ticket en caso que aplique / Si no tiene Numero colocar (No Aplica Ticket)</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="noTicket" id="noTicket" value="" required>
+					<select name="noTicket" id="noTicket" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>';
+                                foreach ($listNoTicket as $o) {
+                                
+                                    echo '<option value='.$o->getCod_no_ticket().'>'.$o->getReferencia_no_ticket() .'</option>';
+                                
+								}
+					echo ' </select>
 					</div>
 					</div>
 					</div>
+				</div>
+				<div class="col-md-2">
+				<a href="?menu=agregarNoTicketAxity&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar No. Ticket</a>
 				</div>
 			</div>
 			<div class="row">

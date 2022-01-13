@@ -30,6 +30,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'historialReporte') {
         include_once("../Vista/ModuloConsultor/historialReporte.php");
     }
+    if ($_GET['menu'] == 'agregarNoTicketAxity') {
+        include_once("../Vista/ModuloConsultor/agregarNoTicketAxity.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }
