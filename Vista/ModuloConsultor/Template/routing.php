@@ -33,6 +33,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarNoTicketAxity') {
         include_once("../Vista/ModuloConsultor/agregarNoTicketAxity.php");
     }
+    if ($_GET['menu'] == 'editReporte') {
+        include_once("../Vista/ModuloConsultor/editReporte.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }
