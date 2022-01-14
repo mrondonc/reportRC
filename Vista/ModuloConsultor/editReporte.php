@@ -64,7 +64,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                 <p class="card-category">Codigo Reporte: <?php echo $cod_reporte;?> </p>
             </div>
             <div class="card-body">
-                <form method="post" action="ModuloConsultor/editsReporte.php">
+                <form method="post" action="ModuloConsultor/editsReporte.php" name="editReporte" id="editReporte">
+                <input id="cod_reporte" name="cod_reporte" type="hidden" value="<?php echo $reporte->getCod_reporte();?>">
                     <?php if($reporte->getCod_cliente_partner()==1){?>
                         <div class="row">
                             <div class="col-md-10">
@@ -772,7 +773,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                         <div class="form-group">
                                         <label>Seleccionar el PEP del cliente que atendieron (si no esta el PEP relacionado, antes de cargar, por favor notificar a la Coordinadora y colocar el PEP que falta en el campo otros).</label>				
                                         <div class="form-group">
-                                        <select name="cliente_partner" id="cliente_partner" class="form-control" >
+                                        <select name="pepCliente" id="pepCliente" class="form-control" >
                                                 <option value='<?php echo $pepCliente->getCod_pep_cliente(); ?>'><?php echo $pepCliente->getReferencia_pep_cliente(); ?></option>
                                                 <?php
                                                 foreach ($listPepCliente as $t) {

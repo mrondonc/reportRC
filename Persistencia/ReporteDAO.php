@@ -140,7 +140,7 @@ class ReporteDAO implements DAO
     {
 
         $sql = "UPDATE REPORTE SET cod_reporte = " . $reporte->getCod_reporte() . ",
-                                   fecha_de_reporte = " . $reporte->getFecha_de_reporte() . ",
+                                   fecha_de_reporte = '" . $reporte->getFecha_de_reporte() . "',
                                    cod_usuario = " . $reporte->getCod_usuario() . ",
                                    cod_cliente_partner = " . $reporte->getCod_cliente_partner() . ",
                                    descripcion_actividad = '" . $reporte->getDescripcion_actividad() . "',
@@ -150,7 +150,7 @@ class ReporteDAO implements DAO
                                    cod_sub_cliente_partner = " . $reporte->getCod_sub_cliente_partner() . ",
                                    cod_no_ticket = " . $reporte->getCod_no_ticket() . ",
                                    cod_pep_cliente = " . $reporte->getCod_pep_cliente() . ",
-                                   cod_sub_mod_sap = " . $reporte->getCod_sub_mod_sap() . ",
+                                   cod_sub_mod_sap = " . $reporte->getCod_sub_mod_sap() . "
                                    where cod_reporte = " . $reporte->getCod_reporte() . "
                                 ;";
         pg_query($this->conexion, $sql);
