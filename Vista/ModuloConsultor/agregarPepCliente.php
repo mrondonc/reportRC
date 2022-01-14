@@ -14,7 +14,7 @@ ManejoPep_cliente::setConexionBD($conexion);
 
 $cod_usuario  =  $_GET['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$listPep = ManejoPep_cliente::getList();
+$listPep = ManejoPep_cliente::getListSeidor();
 
 ?>
 <!-- FORMULARIO AGREGAR PEP SEIDOR -->
