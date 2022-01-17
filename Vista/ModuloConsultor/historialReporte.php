@@ -56,6 +56,7 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th> </th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
