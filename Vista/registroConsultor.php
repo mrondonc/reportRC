@@ -21,6 +21,11 @@ if (isset($_POST['addRegistroUsuario']) == true) {
 	$usuario_login = isset($_POST['usuario_login']) ? $_POST['usuario_login'] : null;	
 	$contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : null;
 	$confirmaContraseña = isset($_POST['confirmaContraseña']) ? $_POST['confirmaContraseña'] : null;
+    $cumpleaños = isset($_POST['cumpleaños']) ? $_POST['cumpleaños'] : null;
+    $cuenta_skype = isset($_POST['cuenta_skype']) ? $_POST['cuenta_skype'] : null;
+    $nombre_contacto = isset($_POST['nombre_contacto']) ? $_POST['nombre_contacto'] : null;
+    $telefono_contacto = isset($_POST['telefono_contacto']) ? $_POST['telefono_contacto'] : null;
+    
     if($contraseña == $confirmaContraseña){
         $usuario = new Usuario();
 	
@@ -36,6 +41,10 @@ if (isset($_POST['addRegistroUsuario']) == true) {
         $usuario->setContraseña($contraseña);
         $usuario->setPais($pais);
         $usuario->setUsuario_login($usuario_login);
+        $usuario->setCumpleaños($cumpleaños);
+        $usuario->setCuenta_skype($cuenta_skype);
+        $usuario->setNombre_contacto_emergencia($nombre_contacto);
+        $usuario->setNumero_contacto_emergencia($telefono_contacto);
 
         ManejoUsuario::createUsuario($usuario);
     }else{
@@ -48,7 +57,6 @@ if (isset($_POST['addRegistroUsuario']) == true) {
     }
 }
 echo '<script>
-    alert("Su cuenta ha sido creada!");
-    window.location="login.php";        
-    
+    alert("Su cuenta ha sido creada!"); 
+    window.location="login.php";          
     </script>';

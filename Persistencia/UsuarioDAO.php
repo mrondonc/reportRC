@@ -67,6 +67,10 @@ class UsuarioDAO implements DAO
         $usuario->setContraseña($row[9]);
         $usuario->setPais($row[10]);
         $usuario->setUsuario_login($row[11]);
+        $usuario->setCumpleaños($row[12]);
+        $usuario->setCuenta_skype($row[13]);
+        $usuario->setNombre_contacto_emergencia($row[14]);
+        $usuario->setNumero_contacto_emergencia($row[15]);
 
         return $usuario;
     }
@@ -80,7 +84,7 @@ class UsuarioDAO implements DAO
      */
     public function create($usuario)
     {
-        $sql = "insert into USUARIO (nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, cod_mod_sap, cod_tipo_usuario, cod_estado_usuario, contraseña, pais, usuario_login) 
+        $sql = "insert into USUARIO (nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, cod_mod_sap, cod_tipo_usuario, cod_estado_usuario, contraseña, pais, usuario_login, cumpleaños, cuenta_skype, nombre_contacto_emergencia, numero_contacto_emergencia) 
                                         values (
                                             '" . $usuario->getNombre_usuario() . "',
                                             '" . $usuario->getApellido_usuario() . "',
@@ -92,7 +96,11 @@ class UsuarioDAO implements DAO
                                             " . $usuario->getCod_estado_usuario() . ",
                                             '" . $usuario->getContraseña() . "',
                                             '" . $usuario->getPais() . "',
-                                            '" . $usuario->getUsuario_login() . "'
+                                            '" . $usuario->getUsuario_login() . "',
+                                            '" . $usuario->getCumpleaños() . "',
+                                            '" . $usuario->getCuenta_skype() . "',
+                                            '" . $usuario->getNombre_contacto_emergencia() . "',
+                                            " . $usuario->getNumero_contacto_emergencia() . "
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -118,7 +126,11 @@ class UsuarioDAO implements DAO
                                     cod_estado_usuario = ". $usuario->getCod_estado_usuario() .",
                                     contraseña = '". $usuario->getContraseña() ."',
                                     pais = '". $usuario->getPais() ."',
-                                    usuario_login = '". $usuario->getUsuario_login() ."'
+                                    usuario_login = '". $usuario->getUsuario_login() ."',
+                                    cumpleaños = '". $usuario->getCumpleaños() ."',
+                                    cuenta_skype = '". $usuario->getCuenta_skype() ."',
+                                    nombre_contacto_emergencia = '". $usuario->getNombre_contacto_emergencia() ."',
+                                    numero_contacto_emergencia = ". $usuario->getNumero_contacto_emergencia() ."
                                    where cod_usuario = " . $usuario->getCod_usuario() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -148,12 +160,11 @@ class UsuarioDAO implements DAO
     {
 
         $sql = "SELECT * FROM USUARIO";
-
+        $usuarios = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $usuario = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $usuario = new Usuario();
             $usuario->setCod_usuario($row[0]);
             $usuario->setNombre_usuario($row[1]);
             $usuario->setApellido_usuario($row[2]);
@@ -166,8 +177,12 @@ class UsuarioDAO implements DAO
             $usuario->setContraseña($row[9]);
             $usuario->setPais($row[10]);
             $usuario->setUsuario_login($row[11]);
-
-            $usuarios[] = $usuario;
+            $usuario->setCumpleaños($row[12]);
+            $usuario->setCuenta_skype($row[13]);
+            $usuario->setNombre_contacto_emergencia($row[14]);
+            $usuario->setNumero_contacto_emergencia($row[15]);
+            array_push($usuarios, $usuario);
+            
         }
         return $usuarios;
     }
@@ -199,7 +214,11 @@ class UsuarioDAO implements DAO
         $usuario->setContraseña($row[9]);
         $usuario->setPais($row[10]);
         $usuario->setUsuario_login($row[11]);
-
+        $usuario->setCumpleaños($row[12]);
+        $usuario->setCuenta_skype($row[13]);
+        $usuario->setNombre_contacto_emergencia($row[14]);
+        $usuario->setNumero_contacto_emergencia($row[15]);
+        
         return $usuario;
     }
 

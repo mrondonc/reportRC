@@ -49,7 +49,9 @@ $listMod_sap = ManejoMod_sap::getList();
 
 
 .box input[type="text"],
-.box input[type="password"] {
+.box input[type="password"],
+.box input[type="date"],
+.box input[type="number"] {
     border: 0;
     background: none;
     display: block;
@@ -71,7 +73,9 @@ $listMod_sap = ManejoMod_sap::getList();
 }
 
 .box input[type="text"]:focus,
-.box input[type="password"]:focus{
+.box input[type="password"]:focus,
+.box input[type="date"]:focus,
+.box input[type="number"]:focus{
     width: 300px;
     border-color: #62de67
 }
@@ -230,7 +234,7 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
                                 <div class="form-group">
                                  <div class="content-select">
                                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required> 
-                                    <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
+                                    <input type="number" id="telefono" name="telefono" placeholder="Teléfono" required>
                                     <input type="text" id="direccion" name="direccion" placeholder="Dirección de recidencia" required> 
                                     <!--<input type="text" id="mod_sap" name="mod_sap" placeholder="Módulo SAP" required> -->                                    
                                     <select  name="mod_sap" id="mod_sap"  required>
@@ -240,17 +244,22 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
                                             echo '<option value=' . $t->getCod_mod_sap() . '   >' . $t->getNombre_mod_sap() . '</option>';
                                         }
                                         ?>
-                                    </select>                                  
+                                    </select>
+                                    <input type="text" id="nombre_contacto" name="nombre_contacto" placeholder="Nombre contacto de emergencia" required>                                  
                                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                                    <p class="text-muted">Fecha de cumpleaños</p>
+                                    <input type="date" id="cumpleaños" name="cumpleaños" required>
                                  </div>  
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required> 
+                                    <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required> 
                                     <input type="text" id="correo" name="correo" placeholder="Correo Electrónico" required>
                                     <input type="text" id="pais" name="pais" placeholder="País de recidencia" required>
-                                    <input type="text" id="usuario_login" name="usuario_login" placeholder="Usuario Login" required> 
+                                    <!-- <input type="text" id="usuario_login" name="usuario_login" placeholder="Usuario Login" required> -->
+                                    <input type="text" id="cuenta_skype" name="cuenta_skype" placeholder="Cuenta de skype" required>
+                                    <input type="number" id="telefono_contacto" name="telefono_contacto" placeholder="Teléfono contacto de emergencia" required>                                  
                                     <input type="password" id="confirmaContraseña" name="confirmaContraseña" placeholder="Confirmar Contraseña" required>
                                 </div>
                             </div>

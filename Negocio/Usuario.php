@@ -95,6 +95,34 @@ class Usuario{
     private $usuario_login;
 
     /**
+     * cumpleaños del usuario
+     *
+     * @return Date
+     */ 
+    private $cumpleaños;
+
+    /**
+     * cuenta skype del usuario
+     *
+     * @return String
+     */ 
+    private $cuenta_skype;
+
+    /**
+     * contacto de emergencia del usuario
+     *
+     * @return String
+     */ 
+    private $nombre_contacto_emergencia;
+
+    /**
+     * contacto de emergencia del usuario
+     *
+     * @return Bigint
+     */ 
+    private $numero_contacto_emergencia;
+
+    /**
      * Get the value of cod_usuario
      */ 
     public function getCod_usuario()
@@ -330,6 +358,86 @@ class Usuario{
     public function setUsuario_login($usuario_login)
     {
         $this->usuario_login  = $usuario_login;
+
+        return $this;
+    }
+
+      /**
+     * Get the value of cumpleaños
+     */ 
+    public function getCumpleaños()
+    {
+        return $this->cumpleaños;
+    }
+
+    /**
+     * Set the value of cumpleaños
+     *
+     * @return  self
+     */ 
+    public function setCumpleaños($cumpleaños)
+    {
+        $this->cumpleaños  = $cumpleaños;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of cuenta skype
+     */ 
+    public function getCuenta_skype()
+    {
+        return $this->cuenta_skype;
+    }
+
+    /**
+     * Set the value of cuenta skype
+     *
+     * @return  self
+     */ 
+    public function setCuenta_skype($cuenta_skype)
+    {
+        $this->cuenta_skype  = $cuenta_skype;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of nombre contacto emergencia
+     */ 
+    public function getNombre_contacto_emergencia()
+    {
+        return $this->nombre_contacto_emergencia;
+    }
+
+    /**
+     * Set the value of nombre contacto emergencia
+     *
+     * @return  self
+     */ 
+    public function setNombre_contacto_emergencia($nombre_contacto_emergencia)
+    {
+        $this->nombre_contacto_emergencia  = $nombre_contacto_emergencia;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of numero contacto emergencia
+     */ 
+    public function getNumero_contacto_emergencia()
+    {
+        return $this->numero_contacto_emergencia;
+    }
+
+    /**
+     * Set the value of numero contacto emergencia
+     *
+     * @return  self
+     */ 
+    public function setNumero_contacto_emergencia($numero_contacto_emergencia)
+    {
+        $this->numero_contacto_emergencia  = $numero_contacto_emergencia;
 
         return $this;
     }
