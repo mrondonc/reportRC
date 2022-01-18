@@ -36,6 +36,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'editReporte') {
         include_once("../Vista/ModuloConsultor/editReporte.php");
     }
+    if ($_GET['menu'] == 'organigrama') {
+        include_once("../Vista/ModuloConsultor/organigrama.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }

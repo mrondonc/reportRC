@@ -123,6 +123,34 @@
             </li>';
         }     
         ?>
+        <?php 
+        if(isset($_GET['menu'])){
+          if($_GET['menu'] == 'organigrama'){
+            echo '<li class="nav-item active">
+            <a class="nav-link" href="?menu=organigrama">
+            <i class="material-icons">bubble_chart</i>
+              <p>Organigrama</p>
+              </a>
+            </li>';
+        }else{
+          echo '<li class="nav-item">
+          <a class="nav-link" href="?menu=organigrama">
+          <i class="material-icons">bubble_chart</i>
+          <p>Organigrama</p>
+              
+              </a>
+            </li>';
+        }     
+        }else{
+          echo '<li class="nav-item">
+          <a class="nav-link" href="?menu=organigrama">
+          <i class="material-icons">bubble_chart</i>
+          <p>Organigrama</p>
+              
+              </a>
+            </li>';
+        }     
+        ?>
         </ul>
 </div>
       
