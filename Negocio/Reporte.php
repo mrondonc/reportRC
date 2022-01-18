@@ -76,7 +76,7 @@ class Reporte{
     /**
      * Code of the user to which it belongs
      *
-     * @return int
+     * @return String
      */ 
     private $cod_no_ticket;
 
@@ -93,6 +93,13 @@ class Reporte{
      * @return int
      */ 
     private $cod_sub_mod_sap;
+
+     /**
+     * Code of the user to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_mod_sap;
 
     /**
      * Get the value of cod_reporte
@@ -330,6 +337,26 @@ class Reporte{
     public function setCod_sub_mod_sap($cod_sub_mod_sap)
     {
         $this->cod_sub_mod_sap = $cod_sub_mod_sap;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_mod_sap
+     */ 
+    public function getCod_mod_sap()
+    {
+        return $this->cod_mod_sap;
+    }
+
+    /**
+     * Set the value of cod_mod_sap
+     *
+     * @return  self
+     */ 
+    public function setCod_mod_sap($cod_mod_sap)
+    {
+        $this->cod_mod_sap = $cod_mod_sap;
 
         return $this;
     }

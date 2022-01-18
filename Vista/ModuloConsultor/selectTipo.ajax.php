@@ -8,8 +8,8 @@
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoCliente_partner.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
-	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
-	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
+	//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
+	//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Reporte.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoReporte.php';
 	require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
@@ -23,7 +23,7 @@
 	ManejoUsuario::setConexionBD($conexion);
 	ManejoReporte::setConexionBD($conexion);
 	ManejoSub_cliente_partner::setConexionBD($conexion);
-	ManejoNo_ticket::setConexionBD($conexion);
+	//ManejoNo_ticket::setConexionBD($conexion);
 	ManejoPep_cliente::setConexionBD($conexion);
 	ManejoMod_sap::setConexionBD($conexion);
 	ManejoSub_mod_sap::setConexionBD($conexion);
@@ -42,7 +42,7 @@
 	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
 	$listPepCliente = ManejoPep_cliente::getListSeidor();
-	$listNoTicket = ManejoNo_ticket::getListAxity();
+	//$listNoTicket = ManejoNo_ticket::getListAxity();
 
 	$cliente_partner=$_POST["cliente_partner"];
 
@@ -96,26 +96,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-10">
+				<div class="col-md-12">
 					<div class="form-group">
 					<label>7. Indicar No de Ticket / No Aplica Ticket</label>
 					<div class="form-group">
 					<label>Colocar Numero del Ticket en caso que aplique / Si no tiene Numero colocar (No Aplica Ticket)</label>
 					<div class="form-group">
-					<select name="noTicket" id="noTicket" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>';
-                                foreach ($listNoTicket as $o) {
-                                
-                                    echo '<option value='.$o->getCod_no_ticket().'>'.$o->getReferencia_no_ticket() .'</option>';
-                                
-								}
-					echo ' </select>
+					<input type="text" class="form-control" name="noTicket" id="noTicket" value="" required>
 					</div>
 					</div>
 					</div>
-				</div>
-				<div class="col-md-2">
-				<a href="?menu=agregarNoTicketAxity&cod_usuario='. $usuario->getCod_usuario() .'" class="btn btn-primary btn-round">Agregar No. Ticket</a>
 				</div>
 			</div>
 			<div class="row">
@@ -127,7 +117,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -141,7 +131,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -199,7 +189,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -213,7 +203,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -250,7 +240,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -264,7 +254,8 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
 					</div>
 					</div>
 					</div>
@@ -320,7 +311,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -334,7 +325,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -371,7 +362,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -385,7 +376,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>
@@ -437,35 +428,35 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-				<label>6. Descripción de las actividades</label>
-				<div class="form-group">
-				<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
-				<div class="form-group">
-				<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
-				<div class="form-group">
-				<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
-				</div>
-				</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-				<label>7. Horas Trabajadas</label>
-				<div class="form-group">
-				<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
-				<div class="form-group">
-				<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
-				
-				</div>
-				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					</div>
+					</div>
+					</div>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group">
@@ -496,7 +487,7 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
 					</div>
 					</div>
 					</div>
@@ -510,7 +501,7 @@
 					<div class="form-group">
 					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
 					<div class="form-group">
-					<input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
 					
 					</div>
 					</div>

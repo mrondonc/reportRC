@@ -8,8 +8,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.ph
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoCliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Reporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoReporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
@@ -23,7 +23,7 @@ $conexion = $obj->conectarDB();
 ManejoUsuario::setConexionBD($conexion);
 ManejoReporte::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
-ManejoNo_ticket::setConexionBD($conexion);
+//ManejoNo_ticket::setConexionBD($conexion);
 ManejoPep_cliente::setConexionBD($conexion);
 ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
@@ -33,8 +33,8 @@ $cod_usuario  =  $_SESSION['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 //$reportes = ManejoReporte::consultarReporteUsuario($usuario->getCod_usuario());
 $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
-$codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre_mod_sap();
-//$nombreSap = ManejoMod_sap::consultarMod_sap($codSap->getNombre_mod_sap());
+//$codSap = ManejoMod_sap::consultarMod_sap($reportes->getCod_mod_sap())->getNombre_mod_sap();
+
 ?>
 <div class="card">
     <div class="card-header card-header-primary">
@@ -63,11 +63,11 @@ $codSap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap())->getNombre
                     ?>
                 <tr>
                     <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
-                    <td style="font-size: small;"><?php echo $codSap;?> </td>
+                    <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?> </td>
                     <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>
                     <td style="font-size: small;"><?php echo ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner();?></td>
                     <td style="font-size: small;"><?php echo ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap();?></td>
-                    <td style="font-size: small;"><?php echo ManejoNo_ticket::consultarNo_ticket($reportes[$i]->getCod_no_ticket())->getReferencia_no_ticket();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getCod_no_ticket();?></td>
                     <td style="font-size: small;"><?php echo ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>

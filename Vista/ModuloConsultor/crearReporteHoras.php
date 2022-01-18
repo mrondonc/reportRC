@@ -10,8 +10,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.ph
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoCliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Reporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoReporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
@@ -25,7 +25,7 @@ $conexion = $obj->conectarDB();
 ManejoUsuario::setConexionBD($conexion);
 ManejoReporte::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
-ManejoNo_ticket::setConexionBD($conexion);
+//ManejoNo_ticket::setConexionBD($conexion);
 ManejoPep_cliente::setConexionBD($conexion);
 ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
@@ -46,7 +46,8 @@ $cod_cliente_partner = $_POST['cliente_partner'];
 $descripcion_actividad = $_POST['descripcionActividades'];
 $horas_trabajadas = $_POST['horasTrabajadas'];
 $lugar_de_trabajo = $_POST['lugarTrabajo'];
-$hora_de_registro = date('d-m-y h:i:s');
+$hora_de_registro = date('d/m/y h:i:s');
+$cod_mod_sap = $_POST['mod_sap'];
 
 //$reporte->setCod_reporte($cod_reporte);
 
@@ -67,6 +68,7 @@ if($cod_cliente_partner == 1){
     $reporte->setCod_no_ticket($noTicket);
     $reporte->setCod_pep_cliente(47);// cod 47 pertenece AXITY RESULTADO 'NADA' 
     $reporte->setCod_sub_mod_sap($sub_mod_sap);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 
 }if($cod_cliente_partner == 2){//EVERIS
@@ -80,9 +82,10 @@ if($cod_cliente_partner == 1){
     $reporte->setHora_de_registro($hora_de_registro);
     
     $reporte->setCod_sub_cliente_partner($sub_cliente_partnerE);
-    $reporte->setCod_no_ticket(9); // cod 9 pertenece EVERIS RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(48); // cod 48 pertenece EVERIS RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap(9); // cod 9 pertenece EVERIS RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }if($cod_cliente_partner == 3){//LUCTA
     $reporte->setFecha_de_reporte($fecha_de_reporte);
@@ -94,9 +97,10 @@ if($cod_cliente_partner == 1){
     $reporte->setHora_de_registro($hora_de_registro);
     
     $reporte->setCod_sub_cliente_partner(0); // cod 0 pertenece LUCTA RESULTADO 'NADA'
-    $reporte->setCod_no_ticket(10); // cod 10 pertenece LUCTA RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" "); 
     $reporte->setCod_pep_cliente(49);// cod 49 pertenece LUCTA RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap(10); // cod 10 pertenece LUCTA RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }if($cod_cliente_partner == 4){//MILLO
     $reporte->setFecha_de_reporte($fecha_de_reporte);
@@ -109,9 +113,10 @@ if($cod_cliente_partner == 1){
     
     $sub_cliente_partnerM= $_POST['clienteMillo'];
     $reporte->setCod_sub_cliente_partner($sub_cliente_partnerM);
-    $reporte->setCod_no_ticket(11);// cod 11 pertenece MILLO RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(50);// cod 50 pertenece MILLO RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap(11); // cod 11 pertenece MILLO RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }if($cod_cliente_partner == 5){//PRAXIS
     $reporte->setFecha_de_reporte($fecha_de_reporte);
@@ -123,9 +128,10 @@ if($cod_cliente_partner == 1){
     $reporte->setHora_de_registro($hora_de_registro);
     
     $reporte->setCod_sub_cliente_partner(26); // cod 26 pertenece PRAXIS RESULTADO 'NADA'
-    $reporte->setCod_no_ticket(12); // cod 12 pertenece PRAXIS RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(51); // cod 51 pertenece PRAXIS RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap(12); // cod 12 pertenece PRAXIS RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }if($cod_cliente_partner == 6){//SEIDOR
     $reporte->setFecha_de_reporte($fecha_de_reporte);
@@ -138,9 +144,10 @@ if($cod_cliente_partner == 1){
     
     $pep_cliente = $_POST['pepCliente'];
     $reporte->setCod_sub_cliente_partner(27); // cod 27 pertenece SEIDOR RESULTADO 'NADA'
-    $reporte->setCod_no_ticket(13);  // cod 13 pertenece SEIDOR RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente($pep_cliente);
     $reporte->setCod_sub_mod_sap(13);  // cod 13 pertenece SEIDOR RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }if($cod_cliente_partner == 7){//INTERNO RC
     $reporte->setFecha_de_reporte($fecha_de_reporte);
@@ -152,9 +159,10 @@ if($cod_cliente_partner == 1){
     $reporte->setHora_de_registro($hora_de_registro);
     
     $reporte->setCod_sub_cliente_partner(28); // cod 28 pertenece INTERNO RC RESULTADO 'NADA'
-    $reporte->setCod_no_ticket(14); // cod 14 pertenece INTERNO RC RESULTADO 'NADA'
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(52); // cod 52 pertenece INTERNO RC RESULTADO 'NADA'
     $reporte->setCod_sub_mod_sap(14); // cod 14 pertenece INTERNO RC RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }
 

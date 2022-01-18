@@ -60,25 +60,22 @@ $listMod_sap = ManejoMod_sap::getList();
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Dirección</label>
                           <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $usuario->getDireccion_usuario() ?>" >
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Modulo SAP</label>
-                            <!-- <input type="text" class="form-control" name="mod_sap" id="mod_sap" value="<?php echo $mod_sap->getNombre_mod_sap() ?>"> -->
-                            <select name="mod_sap" id="mod_sap" class="form-control">
-                                <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
-                                <?php
-                                foreach ($listMod_sap as $t) {
-                                    echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
-                                }
-                                ?>
-                            </select>
-                            
+                            <label class="bmd-label-floating">Fecha de cumpleaños</label>
+                            <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $usuario->getCumpleaños() ?>" >
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Cuenta de skype</label>
+                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $usuario->getCuenta_skype() ?>" >
                           </div>
                       </div>
                     </div>
@@ -105,6 +102,20 @@ $listMod_sap = ManejoMod_sap::getList();
                     <div class="row">   
                       <div class="col-md-6">
                           <div class="form-group">
+                            <label class="bmd-label-floating">Contacto de emergencia</label>
+                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $usuario->getNombre_contacto_emergencia() ?>" >
+                          </div>
+                      </div> 
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Número contacto de emergencia</label>
+                            <input type="number" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $usuario->getNumero_contacto_emergencia() ?>" >
+                          </div>
+                      </div> 
+                    </div>  
+                    <div class="row">   
+                      <div class="col-md-6">
+                          <div class="form-group">
                             <label class="bmd-label-floating">Usuario LOGIN</label>
                             <input type="text" class="form-control" name="login" id="login" value="<?php echo $usuario->getUsuario_login() ?>" >
                           </div>
@@ -115,7 +126,23 @@ $listMod_sap = ManejoMod_sap::getList();
                             <input type="text" class="form-control" name="password" id="password" value="<?php echo $usuario->getContraseña() ?>" >
                           </div>
                       </div> 
-                    </div>              
+                    </div> 
+                    <div class="row"> 
+                      <div class="col-md-4">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Modulo SAP</label>
+                              <!-- <input type="text" class="form-control" name="mod_sap" id="mod_sap" value="<?php echo $mod_sap->getNombre_mod_sap() ?>"> -->
+                              <select name="mod_sap" id="mod_sap" class="form-control">
+                                  <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                  <?php
+                                  foreach ($listMod_sap as $t) {
+                                      echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                  }
+                                  ?>
+                              </select>
+                            </div>
+                        </div>  
+                    </div>            
                             <button class="btn btn-primary pull-right" type='submit'>Guardar Cambios</button> 
                     <div class="clearfix"></div>
                 </div>

@@ -36,6 +36,10 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
 $listMod_sap = ManejoMod_sap::getList();
 
 $listCliente_partner = ManejoCliente_partner::getList();
+
+// Set the new timezone
+date_default_timezone_set('America/Bogota');
+$hora_de_registro = date('d/m/Y');
 ?>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -71,7 +75,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                             <div class="form-group">
                             <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
                             <div class="form-group">
-                            <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="" required>
+                            <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $hora_de_registro?>" required>
                             </div>
                             </div>
                             </div>
@@ -83,7 +87,7 @@ $listCliente_partner = ManejoCliente_partner::getList();
                             <label>2. Consultor </label>
                             <div class="form-group">
                             <label class="bmd-label-floating"></label>
-                            <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                            <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor" value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
                             </div>
                             </div>
                         </div>

@@ -67,6 +67,7 @@ class ReporteDAO implements DAO
         $reporte->setCod_no_ticket($row[9]);
         $reporte->setCod_pep_cliente($row[10]);
         $reporte->setCod_sub_mod_sap($row[11]);
+        $reporte->setCod_mod_sap($row[12]);
 
         return $reporte;
     }
@@ -100,6 +101,7 @@ class ReporteDAO implements DAO
         $reporte->setCod_no_ticket($row[9]);
         $reporte->setCod_pep_cliente($row[10]);
         $reporte->setCod_sub_mod_sap($row[11]);
+        $reporte->setCod_mod_sap($row[12]);
 
         return $reporte;
     }
@@ -113,7 +115,7 @@ class ReporteDAO implements DAO
      */
     public function create($reporte)
     {
-        $sql = "insert into REPORTE(fecha_de_reporte, cod_usuario, cod_cliente_partner, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, hora_de_registro, cod_sub_cliente_partner, cod_no_ticket, cod_pep_cliente, cod_sub_mod_sap) 
+        $sql = "insert into REPORTE(fecha_de_reporte, cod_usuario, cod_cliente_partner, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, hora_de_registro, cod_sub_cliente_partner, cod_no_ticket, cod_pep_cliente, cod_sub_mod_sap, cod_mod_sap) 
                                         values ('" . $reporte->getFecha_de_reporte() . "',
                                             " . $reporte->getCod_usuario() . ",
                                             " . $reporte->getCod_cliente_partner() . ",
@@ -122,9 +124,10 @@ class ReporteDAO implements DAO
                                             '" . $reporte->getLugar_de_trabajo() . "',
                                             '" . $reporte->getHora_de_registro() . "',
                                             " . $reporte->getCod_sub_cliente_partner() . ",
-                                            " . $reporte->getCod_no_ticket() . ",
+                                            '" . $reporte->getCod_no_ticket() . "',
                                             " . $reporte->getCod_pep_cliente() . ",
-                                            " . $reporte->getCod_sub_mod_sap() . "
+                                            " . $reporte->getCod_sub_mod_sap() . ",
+                                            " . $reporte->getCod_mod_sap() . "
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -148,9 +151,10 @@ class ReporteDAO implements DAO
                                    lugar_de_trabajo = '" . $reporte->getLugar_de_trabajo() . "',
                                    hora_de_registro = '" . $reporte->getHora_de_registro() . "',
                                    cod_sub_cliente_partner = " . $reporte->getCod_sub_cliente_partner() . ",
-                                   cod_no_ticket = " . $reporte->getCod_no_ticket() . ",
+                                   cod_no_ticket = '" . $reporte->getCod_no_ticket() . "',
                                    cod_pep_cliente = " . $reporte->getCod_pep_cliente() . ",
-                                   cod_sub_mod_sap = " . $reporte->getCod_sub_mod_sap() . "
+                                   cod_sub_mod_sap = " . $reporte->getCod_sub_mod_sap() . ",
+                                   cod_mod_sap = " . $reporte->getCod_mod_sap() . "
                                    where cod_reporte = " . $reporte->getCod_reporte() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -198,6 +202,7 @@ class ReporteDAO implements DAO
             $reporte->setCod_no_ticket($row[9]);
             $reporte->setCod_pep_cliente($row[10]);
             $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
             array_push($reportes, $reporte);
             
         }
@@ -213,7 +218,7 @@ class ReporteDAO implements DAO
     public function getListByUser($cod_usuario)
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. ";";
+        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " order by fecha_de_reporte desc;";
         $reportes = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
@@ -231,6 +236,7 @@ class ReporteDAO implements DAO
             $reporte->setCod_no_ticket($row[9]);
             $reporte->setCod_pep_cliente($row[10]);
             $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
             $reportes[] = $reporte;
         }
         return $reportes;

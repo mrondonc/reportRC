@@ -21,6 +21,10 @@ $cod_mod_sap = $_POST['mod_sap'];
 $contraseña = $_POST['password'];
 $pais = $_POST['pais'];
 $usuario_login = $_POST['login'];
+$cumpleaños = $_POST['cumpleaños'];
+$cuenta_skype = $_POST['cuentaSkype'];
+$nombre_contacto_emergencia = $_POST['nombreContacto'];
+$numero_contacto_emergencia = $_POST['numeroContacto'];
 
 $usuario->setCod_usuario($usuario->getCod_usuario());
 $usuario->setNombre_usuario($nombre);
@@ -34,6 +38,10 @@ $usuario->setCod_estado_usuario($usuario->getCod_estado_usuario());
 $usuario->setContraseña($contraseña);
 $usuario->setPais($pais);
 $usuario->setUsuario_login($usuario_login);
+$usuario->setCumpleaños($cumpleaños);
+$usuario->setCuenta_skype($cuenta_skype);
+$usuario->setNombre_contacto_emergencia($nombre_contacto_emergencia);
+$usuario->setNumero_contacto_emergencia($numero_contacto_emergencia);
 
 
 ManejoUsuario::modifyUsuario($usuario);
