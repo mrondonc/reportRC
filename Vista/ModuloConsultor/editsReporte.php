@@ -38,7 +38,8 @@ ManejoCliente_partner::setConexionBD($conexion);
     $descripcion_actividad = $_POST['descripcionActividades'];
     $horas_trabajadas = $_POST['horasTrabajadas'];
     $lugar_de_trabajo= $_POST['lugarTrabajo'];
-    $hora_de_registro = date('d-m-y h:i:s');
+    $hora_de_registro = date('d-m-y h:i:s A');
+    $cod_mod_sap = $_POST['mod_sap'];
     //$hora_de_registro = $_POST[''];
     //$cod_sub_cliente_partner = $_POST[''];
     //$cod_no_ticket = $_POST[''];
@@ -64,6 +65,7 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setCod_no_ticket($cod_no_ticket);
     $reporte->setCod_pep_cliente(47);
     $reporte->setCod_sub_mod_sap($cod_sub_mod_sap);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==2){ //EVERIS
@@ -81,9 +83,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner($cod_sub_cliente_partner);
-    $reporte->setCod_no_ticket(9);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(48);
     $reporte->setCod_sub_mod_sap(9);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==3){ //LUCTA
@@ -101,9 +104,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner(0);
-    $reporte->setCod_no_ticket(10);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(49);
     $reporte->setCod_sub_mod_sap(10);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==4){//MILLO
@@ -121,9 +125,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner($cod_sub_cliente_partner);
-    $reporte->setCod_no_ticket(11);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(50);
     $reporte->setCod_sub_mod_sap(11);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==5){ //PRAXIS
@@ -141,9 +146,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner(26);
-    $reporte->setCod_no_ticket(12);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(51);
     $reporte->setCod_sub_mod_sap(12);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==6){ //SEIDOR
@@ -161,9 +167,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner(27);
-    $reporte->setCod_no_ticket(13);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente($cod_sub_cliente_partner);
     $reporte->setCod_sub_mod_sap(13);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 
 }if($cod_cliente_partner==7){ //INTERNO DE RC
@@ -181,9 +188,10 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setLugar_de_trabajo($lugar_de_trabajo);
     $reporte->setHora_de_registro($hora_de_registro);
     $reporte->setCod_sub_cliente_partner(28);
-    $reporte->setCod_no_ticket(14);
+    $reporte->setCod_no_ticket(" ");
     $reporte->setCod_pep_cliente(52);
     $reporte->setCod_sub_mod_sap(14);
+    $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 }
 echo '<script>

@@ -100,14 +100,14 @@
           if($_GET['menu'] == 'historialReporte'){
             echo '<li class="nav-item active">
             <a class="nav-link" href="?menu=historialReporte">
-            <i class="material-icons">content_paste</i>
+            <i class="material-icons">library_books</i>
               <p>Historial Reporte Horas</p>
               </a>
             </li>';
         }else{
           echo '<li class="nav-item">
           <a class="nav-link" href="?menu=historialReporte">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">library_books</i>
           <p>Historial Reporte Horas</p>
               
               </a>
@@ -116,7 +116,7 @@
         }else{
           echo '<li class="nav-item">
           <a class="nav-link" href="?menu=historialReporte">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">library_books</i>
           <p>Historial Reporte Horas</p>
               
               </a>

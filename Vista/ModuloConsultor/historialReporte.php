@@ -72,7 +72,7 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
                     <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 8%;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
                     <td class="td-actions text-right">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i class="material-icons">edit</i></a>
                         <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i class="material-icons">close</i></a>

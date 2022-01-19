@@ -8,8 +8,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.ph
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoCliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/No_ticket.php';
+//require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoNo_ticket.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Reporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoReporte.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
@@ -23,7 +23,7 @@ $conexion = $obj->conectarDB();
 ManejoUsuario::setConexionBD($conexion);
 ManejoReporte::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
-ManejoNo_ticket::setConexionBD($conexion);
+//ManejoNo_ticket::setConexionBD($conexion);
 ManejoPep_cliente::setConexionBD($conexion);
 ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
@@ -33,7 +33,7 @@ $cod_usuario  =  $_SESSION['cod_usuario'];
 $cod_reporte = $_GET['cod_reporte'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $reporte = ManejoReporte::consultarReporte($cod_reporte);
-$mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
+$mod_sap = ManejoMod_sap::consultarMod_sap($reporte->getCod_mod_sap());
 $listMod_sap = ManejoMod_sap::getList();
 
 $cliente_partner = ManejoCliente_partner::consultarCliente_partner($reporte->getCod_cliente_partner());
@@ -45,8 +45,8 @@ $sub_cliente_partnerAxity = ManejoSub_cliente_partner::consultarSub_cliente_part
 $listSub_mod_sap = ManejoSub_mod_sap::getListAxity();
 $sub_mod_sap = ManejoSub_mod_sap::consultarSub_mod_sap($reporte->getCod_sub_mod_sap());
 
-$listNoTicket = ManejoNo_ticket::getListAxity();
-$noTicket = ManejoNo_ticket::consultarNo_ticket($reporte->getCod_no_ticket());
+//$listNoTicket = ManejoNo_ticket::getListAxity();
+//$noTicket = ManejoNo_ticket::consultarNo_ticket($reporte->getCod_no_ticket());
 
 $listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 $listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
@@ -98,7 +98,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                        <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                        <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                         <?php
                                         foreach ($listMod_sap as $t) {
                                             echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -169,14 +169,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Colocar Numero del Ticket en caso que aplique / Si no tiene Numero colocar (No Aplica Ticket)</label>
                                 <div class="form-group">
-                                <select name="noTicket" id="noTicket" class="form-control" required>
-                                    <option value='<?php echo $noTicket->getCod_no_ticket(); ?>'><?php echo $noTicket->getReferencia_no_ticket(); ?></option>
-                                    <?php
-                                    foreach ($listNoTicket as $o) {
-                                        echo '<option value=' . $o->getCod_no_ticket() . '>' . $o->getReferencia_no_ticket() . '</option>';
-                                    }
-                                    ?>
-                                </select>
+                                <input type="text" class="form-control" name="noTicket" id="noTicket" value="<?php echo $reporte->getCod_no_ticket(); ?>" required>
                                 </div>
                                 </div>
                                 </div>
@@ -191,7 +184,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -205,7 +198,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                 <div class="form-group">
-                                <input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                <input type="number" placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                 
                                 </div>
                                 </div>
@@ -227,7 +220,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 </div>
                             </div>
                             <div class="col-md-10">
-                            <button class="btn btn-primary" type='submit'>Enviar</button>
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div>
                             
@@ -264,7 +257,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                        <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                        <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                         <?php
                                         foreach ($listMod_sap as $t) {
                                             echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -296,7 +289,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
-                                    <label>5. Cliente Everis</label>				
+                                    <label>5. Cliente NTT DATA</label>				
                                     <div class="form-group">
                                         <select name="clienteEveris" id="clienteEveris" class="form-control" required>
                                             <option value='<?php echo $sub_cliente_partnerAxity->getCod_sub_cliente_partner(); ?>'><?php echo $sub_cliente_partnerAxity->getNombre_sub_cliente_partner(); ?></option>
@@ -319,7 +312,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -333,7 +326,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                 <div class="form-group">
-                                <input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                 </div>
                                 </div>
                                 </div>
@@ -354,7 +347,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 </div>
                             </div>
                             <div class="col-md-10">
-                            <button class="btn btn-primary" type='submit'>Enviar</button>
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div> 
                         
@@ -391,7 +384,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                            <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                             <?php
                                             foreach ($listMod_sap as $t) {
                                                 echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -429,7 +422,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -443,7 +436,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                 <div class="form-group">
-                                <input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                 </div>
                                 </div>
                                 </div>
@@ -464,7 +457,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 </div>
                             </div>
                             <div class="col-md-10">
-                            <button class="btn btn-primary" type='submit'>Enviar</button>
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div> 
 
@@ -501,7 +494,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                        <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                        <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                         <?php
                                         foreach ($listMod_sap as $t) {
                                             echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -556,7 +549,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -570,7 +563,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                 <div class="form-group">
-                                <input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                 </div>
                                 </div>
                                 </div>
@@ -591,7 +584,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 </div>
                             </div>
                             <div class="col-md-10">
-                            <button class="btn btn-primary" type='submit'>Enviar</button>
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div> 
 
@@ -628,7 +621,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                            <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                             <?php
                                             foreach ($listMod_sap as $t) {
                                                 echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -666,7 +659,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -680,7 +673,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                     <div class="form-group">
-                                    <input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                    <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                     </div>
                                     </div>
                                     </div>
@@ -701,7 +694,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     </div>
                                 </div>
                                 <div class="col-md-10">
-                                <button class="btn btn-primary" type='submit'>Enviar</button>
+                                <button class="btn btn-primary" type='submit'>Guardar</button>
                                 </div>
                             </div> 
                         <!-- SEIDOR  --> 
@@ -737,7 +730,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                            <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                             <?php
                                             foreach ($listMod_sap as $t) {
                                                 echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -795,7 +788,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                         <div class="form-group">
                                         <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                         <div class="form-group">
-                                        <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                        <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                         </div>
                                         </div>
                                         </div>
@@ -809,7 +802,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                         <div class="form-group">
                                         <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                         <div class="form-group">
-                                        <input type="number" placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                        <input type="number" placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                         
                                         </div>
                                         </div>
@@ -831,7 +824,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                         </div>
                                     </div>
                                     <div class="col-md-10">
-                                <button class="btn btn-primary" type='submit'>Enviar</button>
+                                <button class="btn btn-primary" type='submit'>Guardar</button>
                                 </div>
                                 </div>	 
                         <!-- INTERNO RC  --> 
@@ -867,7 +860,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                            <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
                                             <?php
                                             foreach ($listMod_sap as $t) {
                                                 echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -905,7 +898,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="descripcionActividades" id="descripcionActividades" value="<?php echo $reporte->getDescripcion_actividad(); ?>" required>
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
                                 </div>
                                 </div>
                                 </div>
@@ -919,7 +912,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
                                 <div class="form-group">
-                                <input type="number"  placeholder="0.0" step="0.01" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
                                 </div>
                                 </div>
                                 </div>
@@ -940,7 +933,7 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 </div>
                             </div>
                             <div class="col-md-10">
-                            <button class="btn btn-primary" type='submit'>Enviar</button>
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div> 
                         <?php } ?>
