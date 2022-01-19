@@ -46,7 +46,7 @@ $cod_cliente_partner = $_POST['cliente_partner'];
 $descripcion_actividad = $_POST['descripcionActividades'];
 $horas_trabajadas = $_POST['horasTrabajadas'];
 $lugar_de_trabajo = $_POST['lugarTrabajo'];
-$hora_de_registro = date('d/m/y h:i:s');
+$hora_de_registro = date('d/m/y h:i:s A');
 $cod_mod_sap = $_POST['mod_sap'];
 
 //$reporte->setCod_reporte($cod_reporte);

@@ -37,13 +37,37 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
 
 ?>
 <div class="card">
-    <div class="card-header card-header-primary">
-        <h4 class="card-title ">Historial Reporte de Horas</h4>
-        <p class="card-category"> Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas.</p>
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h4 class="card-title ">Historial Reporte de Horas</h4>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas: </span>
+                <!--<ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#profile" data-toggle="tab">
+                        <i class="material-icons">bug_report</i> Total
+                        <div class="ripple-container"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#messages" data-toggle="tab">
+                        <i class="material-icons">code</i> Website
+                        <div class="ripple-container"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings" data-toggle="tab">
+                        <i class="material-icons">cloud</i> Server
+                        <div class="ripple-container"></div>
+                        </a>
+                    </li>
+                </ul>  -->
+            </div>
+        </div>             
     </div>
     <div class="card-body">
-        <div class="table-responsive">
-        <table class="table" style="text-align: center;">
+        <div class="table-responsive" >
+        <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Fecha de Reporte</th>
                 <th style="font-size: small;">Módulo SAP</th>
@@ -72,7 +96,7 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
                     <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
-                    <td style="font-size: small; width: 8%;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
                     <td class="td-actions text-right">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i class="material-icons">edit</i></a>
                         <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i class="material-icons">close</i></a>
@@ -83,4 +107,5 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
         </table>
         </div>
     </div>
+    
 </div>
