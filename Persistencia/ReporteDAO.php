@@ -242,6 +242,28 @@ class ReporteDAO implements DAO
         return $reportes;
     }
 
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListReporteMensual($cod_usuario)
+    {
+
+        $sql = "SELECT EXTRACT(MONTH from FECHA_DE_REPORTE), sum(HORAS_TRABAJADAS) FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " group by EXTRACT(MONTH from FECHA_DE_REPORTE);";
+        $reportes = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setFecha_de_reporte($row[0]);
+            $reporte->setHoras_trabajadas($row[1]);
+            $reportes[] = $reporte;
+        }
+        return $reportes;
+    }
+
 
     /**
      * Gets the object of this class. In case it is null, create it

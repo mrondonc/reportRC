@@ -82,6 +82,16 @@
             return $reporte;
         }
 
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListReporteMensual($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListReporteMensual($cod_usuario);
+            return $reporte;
+        }
+
 	    /**
 	    * Change the conexion
 	    */
