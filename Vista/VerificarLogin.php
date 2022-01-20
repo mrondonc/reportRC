@@ -36,6 +36,10 @@ if (is_null($admin)) {
         $_SESSION['contraseña'] = $usuario->getContraseña();
         $_SESSION['pais'] = $usuario->getPais();
         $_SESSION['usuario_login'] = $usuario->getUsuario_login();
+        $_SESSION['cumpleaños'] = $usuario->getCumpleaños();
+        $_SESSION['cuenta_skype'] = $usuario->getCuenta_skype();
+        $_SESSION['nombre_contacto_emergencia'] = $usuario->getNombre_contacto_emergencia();
+        $_SESSION['numero_contacto_emergencia'] = $usuario->getNumero_contacto_emergencia();
         header("Location: Consultor.php");
     }
 } else {

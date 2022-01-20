@@ -68,7 +68,8 @@
          */
         public static function getList(){
             $usuarioDAO = UsuarioDAO::getUsuarioDAO(self::$conexionBD);
-            $usuarioDAO = $usuarioDAO->getList();
+            $usuario = $usuarioDAO->getList();
+            return $usuario;
         }
 
         public static function cambiarEstadoActivado($usuario){
