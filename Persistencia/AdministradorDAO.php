@@ -61,6 +61,14 @@ class AdministradorDAO implements DAO
         $administrador->setCod_tipo_usuario($row[3]);
         $administrador->setContraseña($row[4]);
         $administrador->setUsuario_login($row[5]);
+        $administrador->setTelefono($row[6]);
+        $administrador->setCorreo($row[7]);
+        $administrador->setDireccion($row[8]);
+        $administrador->setPais($row[9]);
+        $administrador->setCumpleaños($row[10]);
+        $administrador->setCuenta_skype($row[11]);
+        $administrador->setNombre_contacto_emergencia($row[12]);
+        $administrador->setNumero_contacto_emergencia($row[13]);
 
         return $administrador;
     }
@@ -74,12 +82,21 @@ class AdministradorDAO implements DAO
      */
     public function create($administrador)
     {
-        $sql = "insert into ADMINISTRADOR values (" . $administrador->getCod_administrador() . ",
+        $sql = "insert into ADMINISTRADOR (nombre_administrador, cod_estado_usuario, cod_tipo_usuario, contraseña, usuario_login, telefono, correo, direccion, pais, cumpleaños, cuenta_skype, nombre_contacto_emergencia, numero_contacto_emergencia)
+                                        values (" . $administrador->getCod_administrador() . ",
                                             '" . $administrador->getNombre_administrador() . "',
                                             " . $administrador->getCod_estado_usuario() . ",
                                             " . $administrador->getCod_tipo_usuario() . ",
                                             '" . $administrador->getContraseña() . "',
-                                            '" . $administrador->getUsuario_login() . "'
+                                            '" . $administrador->getUsuario_login() . "',
+                                            " . $administrador->getTelefono() . ",
+                                            '" . $administrador->getCorreo() . "',
+                                            '" . $administrador->getDireccion() . "',
+                                            '" . $administrador->getPais() . "',
+                                            '" . $administrador->getCumpleaños() . "',
+                                            '" . $administrador->getCuenta_skype() . "',
+                                            '" . $administrador->getNombre_contacto_emergencia() . "',
+                                            " . $administrador->getNumero_contacto_emergencia() . "
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -100,6 +117,14 @@ class AdministradorDAO implements DAO
                                     cod_tipo_usuario = ". $administrador->getCod_tipo_usuario() . ",
                                     contraseña = '". $administrador->getContraseña() ."',
                                     usuario_login = '". $administrador->getUsuario_login() ."',
+                                    telefono = ". $administrador->getTelefono() .",
+                                    correo = '". $administrador->getCorreo() ."',
+                                    direccion = '". $administrador->getDireccion() ."',
+                                    pais = '". $administrador->getPais() ."',
+                                    cumpleaños = '". $administrador->getCumpleaños() ."',
+                                    cuenta_skype = '". $administrador->getCuenta_skype() ."',
+                                    nombre_contacto_emergencia = '". $administrador->getNombre_contacto_emergencia() ."',
+                                    noumero_contacto_emergencia = ". $administrador->getNumero_contacto_emergencia() ."
                                    where cod_administrador = " . $administrador->getCod_administrador() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -141,6 +166,14 @@ class AdministradorDAO implements DAO
             $administrador->setCod_tipo_usuario($row[3]);
             $administrador->setContraseña($row[4]);
             $administrador->setUsuario_login($row[5]);
+            $administrador->setTelefono($row[6]);
+            $administrador->setCorreo($row[7]);
+            $administrador->setDireccion($row[8]);
+            $administrador->setPais($row[9]);
+            $administrador->setCumpleaños($row[10]);
+            $administrador->setCuenta_skype($row[11]);
+            $administrador->setNombre_contacto_emergencia($row[12]);
+            $administrador->setNumero_contacto_emergencia($row[13]);
 
             $administradors[] = $administrador;
         }
@@ -167,6 +200,14 @@ class AdministradorDAO implements DAO
         $administrador->setCod_tipo_usuario($row[3]);
         $administrador->setContraseña($row[4]);
         $administrador->setUsuario_login($row[5]);
+        $administrador->setTelefono($row[6]);
+        $administrador->setCorreo($row[7]);
+        $administrador->setDireccion($row[8]);
+        $administrador->setPais($row[9]);
+        $administrador->setCumpleaños($row[10]);
+        $administrador->setCuenta_skype($row[11]);
+        $administrador->setNombre_contacto_emergencia($row[12]);
+        $administrador->setNumero_contacto_emergencia($row[13]);
 
         return $administrador;
     }

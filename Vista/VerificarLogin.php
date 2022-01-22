@@ -49,6 +49,13 @@ if (is_null($admin)) {
     $_SESSION['cod_tipo_usuario'] = $admin->getCod_tipo_usuario();
     $_SESSION['contraseña'] = $admin->getContraseña();
     $_SESSION['usuario_login'] = $admin->getUsuario_login();
+    $_SESSION['telefono'] = $admin->getTelefono();
+    $_SESSION['correo'] = $admin->getCorreo();
+    $_SESSION['pais'] = $admin->getPais();
+    $_SESSION['cumpleaños'] = $admin->getCumpleaños();
+    $_SESSION['cuenta_skype'] = $admin->getCuenta_skype();
+    $_SESSION['nombre_contacto_emergencia'] = $admin->getNombre_contacto_emergencia();
+    $_SESSION['numero_contacto_emergencia'] = $admin->getNumero_contacto_emergencia();
     header("Location: Administrador.php");
 }
 ?>
