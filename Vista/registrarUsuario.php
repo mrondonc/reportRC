@@ -261,6 +261,7 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
                                     <input type="text" id="cuenta_skype" name="cuenta_skype" placeholder="Cuenta de skype" required>
                                     <input type="number" id="telefono_contacto" name="telefono_contacto" placeholder="Teléfono contacto de emergencia" required>                                  
                                     <input type="password" id="confirmaContraseña" name="confirmaContraseña" placeholder="Confirmar Contraseña" required>
+                                    <input type="text" id="usuario_login" name="usuario_login" placeholder="Nombre de usuario" required>
                                 </div>
                             </div>
                             <div class="col-md-12">

@@ -15,6 +15,12 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'estadisticas') {
         include_once("../Vista/ModuloAdmin/estadisticas.php");
     }
+    if ($_GET['menu'] == 'editConsultor') {
+        include_once("../Vista/ModuloAdmin/editConsultor.php");
+    }
+    if ($_GET['menu'] == 'perfilConsultor') {
+        include_once("../Vista/ModuloAdmin/perfilConsultor.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }
