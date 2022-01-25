@@ -49,7 +49,7 @@
          * @return void
          */
         public static function modifyAdministrador($administrador){
-            $administradorDAO=UsuarioDAO::getAdministradorDAO(self::$conexionBD);
+            $administradorDAO=AdministradorDAO::getAdministradorDAO(self::$conexionBD);
             $administradorDAO->modify($administrador);
         }
         /**

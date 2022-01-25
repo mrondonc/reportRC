@@ -70,9 +70,7 @@ class Cliente_partnerDAO implements DAO
      */
     public function create($cliente_partner)
     {
-        $sql = "insert into CLIENTE_PARTNER values (" . $cliente_partner->getCod_cliente_partner() . ",
-                                            '" . $cliente_partner->getNombre_cliente_partner() . "'                                            
-                                        );";
+        $sql = "insert into CLIENTE_PARTNER (nombre_cliente_partner) values ('" . $cliente_partner->getNombre_cliente_partner() . "');";
 
         pg_query($this->conexion, $sql);
     }
@@ -87,7 +85,7 @@ class Cliente_partnerDAO implements DAO
     {
 
         $sql = "UPDATE CLIENTE_PARTNER SET cod_cliente_partner = " . $cliente_partner->getCod_cliente_partner() . ",
-                                   nombre_cliente_partner = " . $cliente_partner->getNombre_cliente_partner() . ",
+                                   nombre_cliente_partner = '" . $cliente_partner->getNombre_cliente_partner() . "'
                                    where cod_cliente_partner = " . $cliente_partner->getCod_cliente_partner() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -116,7 +114,7 @@ class Cliente_partnerDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM CLIENTE_PARTNER";
+        $sql = "SELECT * FROM CLIENTE_PARTNER order by nombre_cliente_partner asc";
         $cliente_partners = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

@@ -102,6 +102,46 @@
             return $sub_cliente_partner;
         }
 
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListLucta(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListLucta();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListPraxis(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListPraxis();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListSeidor(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListSeidor();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListInterno(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListInterno();
+            return $sub_cliente_partner;
+        }
+
 	    /**
 	    * Change the conexion
 	    */

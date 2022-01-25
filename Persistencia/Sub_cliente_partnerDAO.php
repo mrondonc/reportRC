@@ -115,7 +115,7 @@ class Sub_cliente_partnerDAO implements DAO
 
         $sql = "UPDATE SUB_CLIENTE_PARTNER SET cod_sub_cliente_partner = " . $sub_cliente_partner->getCod_sub_cliente_partner() . ",
                                    nombre_sub_cliente_partner = '" . $sub_cliente_partner->getNombre_sub_cliente_partner() . "',
-                                   cod_cliente_partner = " . $sub_cliente_partner->getCod_cliente_partner() . ",
+                                   cod_cliente_partner = " . $sub_cliente_partner->getCod_cliente_partner() . "
                                    where cod_sub_cliente_partner = " . $sub_cliente_partner->getCod_sub_cliente_partner() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -144,7 +144,7 @@ class Sub_cliente_partnerDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER";
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -170,7 +170,7 @@ class Sub_cliente_partnerDAO implements DAO
     public function getListAxity()
     {
 
-        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 1";
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 1 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -195,7 +195,7 @@ class Sub_cliente_partnerDAO implements DAO
     public function getListEveris()
     {
 
-        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 2";
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 2 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -220,7 +220,7 @@ class Sub_cliente_partnerDAO implements DAO
     public function getListMillo()
     {
 
-        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 4";
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 4 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -235,6 +235,106 @@ class Sub_cliente_partnerDAO implements DAO
         }
         return $sub_cliente_partners;
     }   
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListLucta()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 3 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListPraxis()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 5 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListSeidor()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 6 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListInterno()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 7 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
 
 
     /**

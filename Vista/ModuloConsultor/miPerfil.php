@@ -107,7 +107,7 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Número contacto de emergencia</label>
-                            <input type="text" class="form-control" name="numeroContacto" id="numeroContacto" value="+<?php echo $usuario->getNumero_contacto_emergencia() ?>" disabled>
+                            <input type="text" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $usuario->getNumero_contacto_emergencia() ?>" disabled>
                           </div>
                       </div> 
                       <div class="col-md-4">

@@ -124,7 +124,7 @@ class AdministradorDAO implements DAO
                                     cumpleaños = '". $administrador->getCumpleaños() ."',
                                     cuenta_skype = '". $administrador->getCuenta_skype() ."',
                                     nombre_contacto_emergencia = '". $administrador->getNombre_contacto_emergencia() ."',
-                                    noumero_contacto_emergencia = ". $administrador->getNumero_contacto_emergencia() ."
+                                    numero_contacto_emergencia = ". $administrador->getNumero_contacto_emergencia() ."
                                    where cod_administrador = " . $administrador->getCod_administrador() . "
                                 ;";
         pg_query($this->conexion, $sql);

@@ -42,33 +42,6 @@
         ?>
         <?php 
           if(isset($_GET['menu'])){
-            if($_GET['menu'] == 'consultores'){
-              echo '<li class="nav-item active">
-                <a class="nav-link" href="?menu=consultores">
-                  <i class="material-icons">person</i>
-                  <p>Consultores</p>
-                </a>
-              </li>';
-            
-          }else{
-            echo '<li class="nav-item">
-                <a class="nav-link" href="?menu=consultores">
-                  <i class="material-icons">person</i>
-                  <p>Consultores</p>
-                </a>
-              </li>';
-          } 
-        }else{
-          echo '<li class="nav-item">
-              <a class="nav-link" href="?menu=consultores">
-                <i class="material-icons">person</i>
-                <p>Consultores</p>
-              </a>
-            </li>';
-        } 
-        ?>
-        <?php 
-          if(isset($_GET['menu'])){
             if($_GET['menu'] == 'miPerfil'){
               echo '<li class="nav-item active">
                 <a class="nav-link" href="?menu=miPerfil">
@@ -90,6 +63,60 @@
               <a class="nav-link" href="?menu=miPerfil">
                 <i class="material-icons">person</i>
                 <p>Mi perfil</p>
+              </a>
+            </li>';
+        } 
+        ?>
+        <?php 
+          if(isset($_GET['menu'])){
+            if($_GET['menu'] == 'consultores'){
+              echo '<li class="nav-item active">
+                <a class="nav-link" href="?menu=consultores">
+                  <i style="font-size:20px;" class="fas fa-users "></i>
+                  <p>Consultores</p>
+                </a>
+              </li>';
+            
+          }else{
+            echo '<li class="nav-item">
+                <a class="nav-link" href="?menu=consultores">
+                <i style="font-size:20px;" class="fas fa-users "></i>
+                  <p>Consultores</p>
+                </a>
+              </li>';
+          } 
+        }else{
+          echo '<li class="nav-item">
+              <a class="nav-link" href="?menu=consultores">
+              <i style="font-size:20px;" class="fas fa-users "></i>
+                <p>Consultores</p>
+              </a>
+            </li>';
+        } 
+        ?>
+        <?php 
+          if(isset($_GET['menu'])){
+            if($_GET['menu'] == 'clientes'){
+              echo '<li class="nav-item active">
+                <a class="nav-link" href="?menu=clientes">
+                <i style="font-size:20px;" class="fas fa-laptop-house"></i>
+                  <p>Clientes</p>
+                </a>
+              </li>';
+            
+          }else{
+            echo '<li class="nav-item">
+                <a class="nav-link" href="?menu=clientes">
+                <i style="font-size:20px;" class="fas fa-laptop-house"></i>
+                  <p>Clientes</p>
+                </a>
+              </li>';
+          } 
+        }else{
+          echo '<li class="nav-item">
+              <a class="nav-link" href="?menu=clientes">
+              <i style="font-size:20px;" class="fas fa-laptop-house"></i>
+                <p>Clientes</p>
               </a>
             </li>';
         } 
@@ -151,3 +178,4 @@
         </ul>
       </div>
       
+      <script src="https://kit.fontawesome.com/d82eacb9bb.js" crossorigin="anonymous"></script>

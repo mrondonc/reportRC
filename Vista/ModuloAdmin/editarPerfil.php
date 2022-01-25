@@ -16,7 +16,8 @@ $admin = ManejoAdministrador::consultarAdministrador($cod_admin);
 $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_estado_usuario());
 
 ?>
-          <div class="row">
+<!-- FORMULARIO MODIFICAR PERFIL -->
+<div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
@@ -24,8 +25,8 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                   <p class="card-category">Complete su perfil</p>
                 </div>
                 <div class="card-body">
-
-                    <div class="row">
+                <form action="ModuloAdmin/editaPerfil.php?cod_administrador=<?php echo $admin->getCod_administrador() ?>" method="post">
+                <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
                           <label class="bmd-label-floating">Empresa </label>
@@ -35,7 +36,7 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-7">
                         <div class="form-group">
                           <label class="bmd-label-floating">Correo electrónico </label>
-                          <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $admin->getCorreo() ?>" disabled>
+                          <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $admin->getCorreo() ?>" required>
                         </div>
                       </div>
                     </div>
@@ -43,7 +44,7 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nombres y Apellidos</label>
-                          <input type="text" class="form-control" name="nombres" id="nombres" value="<?php echo $admin->getNombre_administrador() ?>" disabled>
+                          <input type="text" class="form-control" name="nombres" id="nombres" value="<?php echo $admin->getNombre_administrador() ?>" required>
                         </div>
                       </div>
                     </div>
@@ -51,13 +52,13 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Dirección</label>
-                          <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $admin->getDireccion() ?>" disabled>
+                          <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $admin->getDireccion() ?>" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Fecha de cumpleaños</label>
-                            <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $admin->getCumpleaños() ?>" disabled>
+                            <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $admin->getCumpleaños() ?>" >
                           </div>
                       </div>
                     </div>
@@ -65,19 +66,19 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">País de recidencia</label>
-                          <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $admin->getPais() ?>" disabled>
+                          <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $admin->getPais() ?>" required>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $admin->getTelefono() ?>" disabled>
+                          <input type="number" class="form-control" name="telefono" id="telefono" value="<?php echo $admin->getTelefono() ?>" required>
                         </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Cuenta de skype</label>
-                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $admin->getCuenta_skype() ?>" disabled>
+                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $admin->getCuenta_skype() ?>" required>
                           </div>
                       </div> 
                       
@@ -86,13 +87,13 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Contacto de emergencia</label>
-                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $admin->getNombre_contacto_emergencia() ?>" disabled>
+                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $admin->getNombre_contacto_emergencia() ?>" required>
                           </div>
                       </div> 
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Número contacto de emergencia</label>
-                            <input type="text" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $admin->getNumero_contacto_emergencia() ?>" disabled>
+                            <input type="number" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $admin->getNumero_contacto_emergencia() ?>" required>
                           </div>
                       </div> 
                       <div class="col-md-4">
@@ -106,23 +107,22 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Usuario LOGIN</label>
-                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $admin->getUsuario_login() ?>" disabled>
+                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $admin->getUsuario_login() ?>" required>
                           </div>
                       </div> 
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Contraseña</label>
-                            <input type="password" class="form-control" name="password" id="password" value="<?php echo $admin->getContraseña() ?>" disabled>
+                            <input type="text" class="form-control" name="password" id="password" value="<?php echo $admin->getContraseña() ?>" required>
                           </div>
                       </div> 
                     </div>                
                     <!--<button class="btn btn-primary pull-right" href="../Vista/ModuloConsultor/index.php">Editar Perfil</button>-->
-                    <a href="?menu=editarPerfil&cod_administrador=<?php echo $admin->getCod_administrador() ?>" class="btn btn-primary pull-right">Editar Perfil</a>
+                    <button class="btn btn-primary pull-right" type='submit'>Guardar Cambios</button> 
                     <div class="clearfix"></div>
-                  
-                </div>
+                </form>
               </div>
             </div>
-            
-          </div>
-        
+   
+</div>
+<!-- FIN FORMULARIO PERFIL -->

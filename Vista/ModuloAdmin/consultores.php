@@ -27,8 +27,8 @@ $consultoresI = ManejoUsuario::getListOrdenNombreI();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Consultores</h4>
-                
+                <h4 class="card-title ">Listado Total de Consultores    <a type="button" rel="tooltip" title="Agregar Consultor" class="btn btn-primary btn-link btn-sm"href="?menu=agregarConsultor"><i style="font-size:18px;"  class="fas fa-user-plus"></i></a></h4>
+               
             </div>
         </div>             
     </div>
