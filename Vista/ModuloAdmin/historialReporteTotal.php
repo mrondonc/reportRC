@@ -68,12 +68,12 @@ $reportes = ManejoReporte::getList();
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=1"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
-                    <td style="font-size: small; "> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
-                    <td style="font-size: small; "> <?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login();?></td>
-                    <td style="font-size: small; "> <?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getApellido_usuario();?></td>
-                    <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?> </td>
+                    <td style="font-size: small; "><?php echo $reportes[$i]->getFecha_de_reporte();?></td>
+                    <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login();?></td>
+                    <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getApellido_usuario();?></td>
+                    <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?></td>
                     <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>
                     <td style="font-size: small;"><?php echo ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner();?></td>
                     <td style="font-size: small;"><?php echo ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap();?></td>

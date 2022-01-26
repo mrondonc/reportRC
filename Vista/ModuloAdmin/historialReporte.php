@@ -12,7 +12,7 @@
             <div class="card-footer">
                 <div class="stats">
                 <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
-                <a href="#">Visualizar reporte</a>
+                <a href="?menu=historialReporteTotal">Visualizar reporte</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="card-footer">
                 <div class="stats">
                 <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
-                <a href="#">Visualizar reporte</a>
+                <a href="?menu=historialReporteMensual">Visualizar reporte</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="card-footer">
                 <div class="stats">
                 <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
-                <a href="#">Visualizar reporte</a>
+                <a href="?menu=historialReporteConsultor">Visualizar reporte</a>
                 </div>
             </div>
         </div>

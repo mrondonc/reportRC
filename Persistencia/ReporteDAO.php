@@ -215,10 +215,430 @@ class ReporteDAO implements DAO
      * @param Object $conexion
      * @return ReporteDAO
      */
-    public function getListPorMes()
+    public function getListPorMesActual()
     {
 
         $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesEnero()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=1 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesFebrero()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=2 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesMarzo()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=3 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesAbril()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=4 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesMayo()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=5 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesJunio()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=6 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesJulio()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=7 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesAgosto()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=8 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesSeptiembre()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=9 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesOctubre()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=10 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesNoviembre()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=11 order by fecha_de_reporte desc";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorMesDiciembre()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=12 order by fecha_de_reporte desc";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
