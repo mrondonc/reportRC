@@ -1,7 +1,5 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
 
@@ -9,28 +7,25 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
 
-ManejoUsuario::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$cod_usuario  =  $_GET['cod_usuario'];
-$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$listSubClientes = ManejoSub_cliente_partner::getListEveris();
+$listSubClientes = ManejoSub_cliente_partner::getListMillo();
 
 ?>
-<!-- FORMULARIO AGREGAR SUB CLIENTE EVERIS -->
+<!-- FORMULARIO AGREGAR SUB CLIENTE MILLO -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">AGREGAR CLIENTE NTT DATA</h4>
-        <p class="card-category">Verifique previamente si ya esta creado su cliente de NTT DATA </p>
+        <h4 class="card-title">AGREGAR CLIENTE MILLO</h4>
+        <p class="card-category">Verifique previamente si ya esta creado su cliente MILLO</p>
       </div>
       <div class="card-body">
-        <form method="post" action="ModuloConsultor/agregaClienteEveris.php">
+        <form method="post" action="ModuloAdmin/agregaClienteMillo.php">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Clientes NTT DATA Existentes</label>
+                  <label class="bmd-label-floating">Clientes Millo Existentes</label>
                   <select name="sub_clientes" id="sub_clientes" class="form-control">
                       <option> Observar Clientes </option>
                       <?php
@@ -45,7 +40,7 @@ $listSubClientes = ManejoSub_cliente_partner::getListEveris();
               <div class="row">
               <div class="col-md-7">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Nuevo Cliente NTT DATA</label>
+                  <label class="bmd-label-floating">Nuevo Cliente Millo</label>
                   <input type="text" class="form-control" name="nombreCliente" id="nombreCliente" value="" required>
                 </div>
               </div>

@@ -1,19 +1,13 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
-
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
 
-ManejoUsuario::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$cod_usuario  =  $_GET['cod_usuario'];
-$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $listSubClientes = ManejoSub_cliente_partner::getListEveris();
 
 ?>
@@ -23,10 +17,10 @@ $listSubClientes = ManejoSub_cliente_partner::getListEveris();
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title">AGREGAR CLIENTE NTT DATA</h4>
-        <p class="card-category">Verifique previamente si ya esta creado su cliente de NTT DATA </p>
+        <p class="card-category">Verifique previamente si ya esta creado su cliente de EVERIS </p>
       </div>
       <div class="card-body">
-        <form method="post" action="ModuloConsultor/agregaClienteEveris.php">
+        <form method="post" action="ModuloAdmin/agregaClienteEveris.php">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">

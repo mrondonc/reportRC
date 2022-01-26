@@ -76,6 +76,16 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMes(){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMes();
+            return $reporte;
+        }
+
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListByUser($cod_usuario){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListByUser($cod_usuario);

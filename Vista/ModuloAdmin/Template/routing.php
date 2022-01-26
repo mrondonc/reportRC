@@ -12,8 +12,17 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'reporte') {
         include_once("../Vista/ModuloAdmin/reporte.php");
     }
-    if ($_GET['menu'] == 'estadisticas') {
-        include_once("../Vista/ModuloAdmin/estadisticas.php");
+    if ($_GET['menu'] == 'historialReporte') {
+        include_once("../Vista/ModuloAdmin/historialReporte.php");
+    }
+    if ($_GET['menu'] == 'historialReporteTotal') {
+        include_once("../Vista/ModuloAdmin/historialReporteTotal.php");
+    }
+    if ($_GET['menu'] == 'historialReporteConsultor') {
+        include_once("../Vista/ModuloAdmin/historialReporteConsultor.php");
+    }
+    if ($_GET['menu'] == 'historialReporteMensual') {
+        include_once("../Vista/ModuloAdmin/historialReporteMensual.php");
     }
     if ($_GET['menu'] == 'editConsultor') {
         include_once("../Vista/ModuloAdmin/editConsultor.php");
@@ -44,6 +53,21 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == 'editSubCliente') {
         include_once("../Vista/ModuloAdmin/editSubCliente.php");
+    }
+    if ($_GET['menu'] == 'agregarModSap') {
+        include_once("../Vista/ModuloAdmin/agregarModSap.php");
+    }
+    if ($_GET['menu'] == 'agregarClienteAxity') {
+        include_once("../Vista/ModuloAdmin/agregarClienteAxity.php");
+    }
+    if ($_GET['menu'] == 'agregarClienteEveris') {
+        include_once("../Vista/ModuloAdmin/agregarClienteEveris.php");
+    }
+    if ($_GET['menu'] == 'agregarClienteMillo') {
+        include_once("../Vista/ModuloAdmin/agregarClienteMillo.php");
+    }
+    if ($_GET['menu'] == 'agregarPepCliente') {
+        include_once("../Vista/ModuloAdmin/agregarPepCliente.php");
     }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");

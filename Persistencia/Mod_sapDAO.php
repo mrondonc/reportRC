@@ -115,7 +115,7 @@ class Mod_sapDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM MOD_SAP";
+        $sql = "SELECT * FROM MOD_SAP order by nombre_mod_sap asc";
         $mod_saps = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

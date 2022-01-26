@@ -4,14 +4,15 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
+      
       <div class="logo">
       
-      <center><img class="img" src="../Vista/assets/css/imagenes_logo/1.png" /></center>  
+      <center><img class="img" src="../Vista/assets/css/imagenes_logo/3.png" /></center>  
         <a class="simple-text logo-normal">
           RC BUSINESS CONSULTING
         </a></div>
         
-      <div class="sidebar-wrapper">
+      <div style= "overflow-y: scroll;" class="sidebar-wrapper">
         <ul class="nav">
         <?php 
           if(isset($_GET['menu'])){
@@ -40,6 +41,7 @@
             </li>';
         } 
         ?>
+        
         <?php 
           if(isset($_GET['menu'])){
             if($_GET['menu'] == 'miPerfil'){
@@ -150,31 +152,34 @@
         ?>
         <?php 
           if(isset($_GET['menu'])){
-            if($_GET['menu'] == 'estadisticas'){
+            if($_GET['menu'] == 'historialReporte'){
               echo '<li class="nav-item active">
-                <a class="nav-link" href="?menu=estadisticas">
+                <a class="nav-link" href="?menu=historialReporte">
                   <i class="material-icons">library_books</i>
-                  <p>Estadísticas reporte</p>
+                  <p>Historial reporte</p>
                 </a>
               </li>';
             
           }else{
             echo '<li class="nav-item">
-            <a class="nav-link" href="?menu=estadisticas">
+            <a class="nav-link" href="?menu=historialReporte">
              <i class="material-icons">library_books</i>
-             <p>Estadísticas reporte</p>
+             <p>Historial reporte</p>
                 </a>
               </li>';
           } 
         }else{
           echo '<li class="nav-item">
-          <a class="nav-link" href="?menu=estadisticas">
+          <a class="nav-link" href="?menu=historialReporte">
             <i class="material-icons">library_books</i>
-            <p>Estadísticas reporte</p>
+            <p>Historial reporte</p>
               </a>
             </li>';
         } 
         ?>
+        
+        
+        
         </ul>
       </div>
       
