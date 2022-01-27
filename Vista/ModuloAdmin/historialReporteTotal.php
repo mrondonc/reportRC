@@ -67,8 +67,8 @@ $reportes = ManejoReporte::getList();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=1"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idEditar=1"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=1&cod_usuario=<?php echo $reportes[$i]->getCod_usuario()?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportes[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login();?></td>

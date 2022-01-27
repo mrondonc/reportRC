@@ -249,6 +249,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                 </div>
                                 </div>
                             </div>
@@ -376,6 +378,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -486,6 +490,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                 </div>
                                 </div>
                             </div>
@@ -613,6 +619,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -722,6 +730,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -852,6 +862,8 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>

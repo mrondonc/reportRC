@@ -2,6 +2,8 @@
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Mod_sap.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoMod_sap.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.php';
@@ -20,6 +22,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_mod_sap.
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
 
+ManejoAdministrador::setConexionBD($conexion);
 ManejoUsuario::setConexionBD($conexion);
 ManejoReporte::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
@@ -29,7 +32,9 @@ ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
 ManejoCliente_partner::setConexionBD($conexion);
 
+$cod_administrador = $_SESSION['cod_administrador'];
 $cod_usuario = $_GET['cod_usuario'];
+$administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $reportes = ManejoReporte::getListByUser($cod_usuario);
 
@@ -40,6 +45,7 @@ $reportes = ManejoReporte::getListByUser($cod_usuario);
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total por Consultor</h4>
                 <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas </span>
+                <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcel.php?cod_tipo_usuario=<?php echo $administrador->getCod_tipo_usuario();?>&cod_administrador=<?php echo $administrador->getCod_administrador();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>
             </div>
         </div>             
     </div>

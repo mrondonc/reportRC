@@ -41,27 +41,9 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas: </span>
-                <!--<ul class="nav nav-tabs" data-tabs="tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#profile" data-toggle="tab">
-                        <i class="material-icons">bug_report</i> Total
-                        <div class="ripple-container"></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#messages" data-toggle="tab">
-                        <i class="material-icons">code</i> Website
-                        <div class="ripple-container"></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#settings" data-toggle="tab">
-                        <i class="material-icons">cloud</i> Server
-                        <div class="ripple-container"></div>
-                        </a>
-                    </li>
-                </ul>  -->
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas. 
+                    <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcel.php?cod_tipo_usuario=<?php echo $usuario->getCod_tipo_usuario();?>&cod_usuario=<?php echo $usuario->getCod_usuario();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>
+                </span>
             </div>
         </div>             
     </div>
@@ -71,8 +53,8 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
             <thead class="text-warning">
                 <th style="font-size: small;">Fecha de Reporte</th>
                 <th style="font-size: small;">Módulo SAP</th>
-                <th style="font-size: small;">Cliente</th>
-                <th style="font-size: small;">Sub Cliente</th>
+                <th style="font-size: small;">Cliente Partner</th>
+                <th style="font-size: small;">Cliente Final</th>
                 <th style="font-size: small;">Sub Módulo SAP</th>
                 <th style="font-size: small;">Número de Ticket</th>
                 <th style="font-size: small;">Nombre del PEP</th>
@@ -109,3 +91,4 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
     </div>
     
 </div>
+<script src="https://kit.fontawesome.com/d82eacb9bb.js" crossorigin="anonymous"></script>

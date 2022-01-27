@@ -2,12 +2,17 @@
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoCliente_partner.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
 
 ManejoCliente_partner::setConexionBD($conexion);
+ManejoAdministrador::setConexionBD($conexion);
 
+$cod_aministrador = $_SESSION['cod_administrador'];
+$administrador = ManejoAdministrador::consultarAdministrador($cod_aministrador);
 $cliente = ManejoCliente_partner::getList();
 ?>
 
@@ -16,7 +21,7 @@ $cliente = ManejoCliente_partner::getList();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Clientes    <a type="button" rel="tooltip" title="Agregar Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarCliente"><i style="font-size:18px;" class="fas fa-plus"></i></a></h4>
+                <h4 class="card-title ">Listado Total de Clientes    <a type="button" rel="tooltip" title="Agregar Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarCliente"><i style="font-size:18px;" class="fas fa-plus"></i></a> <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcel.php?cod_tipo_usuario=<?php echo $administrador->getCod_tipo_usuario();?>&cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=2"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
                
             </div>
         </div>             

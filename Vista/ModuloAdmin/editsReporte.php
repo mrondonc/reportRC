@@ -195,8 +195,75 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 }
+if($idEditar=="1"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteTotal";
+    </script>';
+//=======VUELVE A HISTORIAL REPORTE MENSUALES DEPENDIENDO EL MES=======
+}else if($idEditar=="2"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=1";
+    </script>';
+}else if($idEditar=="3"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=2";
+    </script>';
+}else if($idEditar=="4"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=3";
+    </script>';
+}else if($idEditar=="5"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=4";
+    </script>';
+}else if($idEditar=="6"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=5";
+    </script>';
+}else if($idEditar=="7"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=6";
+    </script>';
+}else if($idEditar=="8"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=7";
+    </script>';
+}else if($idEditar=="9"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=8";
+    </script>';
+}else if($idEditar=="10"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=9";
+    </script>';
+}else if($idEditar=="11"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=10";
+    </script>';
+}else if($idEditar=="12"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=11";
+    </script>';
+}else if($idEditar=="13"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Administrador.php?menu=historialReporteMensuales&id=12";
+    </script>';
 
-if($idEditar==14){
+//=======VUELVE A HISTORIAL REPORTE POR CONSULTOR=======
+}else if($idEditar==14){
     echo '<script>
     alert("Se ha modificado el Reporte de Horas Exitosamente")
     window.location="../Administrador.php?menu=historialReporteConsultores&cod_usuario='.$cod_usuario.'";

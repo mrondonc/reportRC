@@ -80,8 +80,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button"  class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&action=delete&idEliminar=2"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesEnero[$i]->getCod_usuario();?>&idEditar=2"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button"  class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&action=delete&idEliminar=2&cod_usuario=<?php echo $reportesEnero[$i]->getCod_usuario()?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesEnero[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesEnero[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -138,8 +138,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&action=delete&idEliminar=3"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesFebrero[$i]->getCod_usuario();?>&idEditar=3"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&action=delete&idEliminar=3&cod_usuario=<?php echo $reportesFebrero[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesFebrero[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesFebrero[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -196,8 +196,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&action=delete&idEliminar=4"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesMarzo[$i]->getCod_usuario();?>&idEditar=4"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&action=delete&idEliminar=4&cod_usuario=<?php echo $reportesMarzo[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesMarzo[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesMarzo[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -255,8 +255,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&action=delete&idEliminar=5"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesAbril[$i]->getCod_usuario();?>&idEditar=5"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&action=delete&idEliminar=5&cod_usuario=<?php echo $reportesAbril[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesAbril[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesAbril[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -313,8 +313,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&action=delete&idEliminar=6"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesMayo[$i]->getCod_usuario();?>&idEditar=6"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&action=delete&idEliminar=6&cod_usuario=<?php echo $reportesMayo[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesMayo[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesMayo[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -371,8 +371,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&action=delete&idEliminar=6"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesJunio[$i]->getCod_usuario();?>&idEditar=7"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&action=delete&idEliminar=7&cod_usuario=<?php echo $reportesJunio[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesJunio[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesJunio[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -429,8 +429,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&action=delete&idEliminar=8"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesJulio[$i]->getCod_usuario();?>&idEditar=8"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&action=delete&idEliminar=8&cod_usuario=<?php echo $reportesJulio[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesJulio[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesJulio[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -487,8 +487,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&action=delete&idEliminar=9"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesAgosto[$i]->getCod_usuario();?>&idEditar=9"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&action=delete&idEliminar=9&cod_usuario=<?php echo $reportesAgosto[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesAgosto[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesAgosto[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -545,8 +545,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&action=delete&idEliminar=10"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesSeptiembre[$i]->getCod_usuario();?>&idEditar=10"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&action=delete&idEliminar=10&cod_usuario=<?php echo $reportesSeptiembre[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesSeptiembre[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesSeptiembre[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -603,8 +603,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&action=delete&idEliminar=11"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesOctubre[$i]->getCod_usuario();?>&idEditar=11"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&action=delete&idEliminar=11&cod_usuario=<?php echo $reportesOctubre[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesOctubre[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesOctubre[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -661,8 +661,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&action=delete&idEliminar=12"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesNoviembre[$i]->getCod_usuario();?>&idEditar=12"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&action=delete&idEliminar=12&cod_usuario=<?php echo $reportesNoviembre[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesNoviembre[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesNoviembre[$i]->getCod_usuario())->getUsuario_login();?></td>
@@ -719,8 +719,8 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&action=delete&idEliminar=13"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesDiciembre[$i]->getCod_usuario();?>&idEditar=13"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&action=delete&idEliminar=13&cod_usuario=<?php echo $reportesDiciembre[$i]->getCod_usuario();?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportesDiciembre[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportesDiciembre[$i]->getCod_usuario())->getUsuario_login();?></td>
