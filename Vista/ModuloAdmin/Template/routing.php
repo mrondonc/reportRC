@@ -21,6 +21,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'historialReporteConsultor') {
         include_once("../Vista/ModuloAdmin/historialReporteConsultor.php");
     }
+    if ($_GET['menu'] == 'historialReporteConsultores') {
+        include_once("../Vista/ModuloAdmin/historialReporteConsultores.php");
+    }
     if ($_GET['menu'] == 'historialReporteMensual') {
         include_once("../Vista/ModuloAdmin/historialReporteMensual.php");
     }
@@ -71,6 +74,9 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == 'agregarPepCliente') {
         include_once("../Vista/ModuloAdmin/agregarPepCliente.php");
+    }
+    if ($_GET['menu'] == 'editReporte') {
+        include_once("../Vista/ModuloAdmin/editReporte.php");
     }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");

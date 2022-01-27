@@ -33,6 +33,7 @@ ManejoCliente_partner::setConexionBD($conexion);
 $cod_reporte = $_GET['cod_reporte'];
 $action = $_GET["action"];
 $idEliminar = $_GET['idEliminar'];
+$cod_usuario = $_GET['cod_usuario'];
 
 $reporte = ManejoReporte::consultarReporte($cod_reporte);
 
@@ -107,7 +108,13 @@ if($idEliminar=="1"){
     alert("Se ha elimando el reporte")
     window.location="../Administrador.php?menu=historialReporteMensuales&id=12";
     </script>';
-}
+
 //=======VUELVE A HISTORIAL REPORTE POR CONSULTOR=======
+}else if($idEliminar=="14"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Administrador.php?menu=historialReporteConsultores&cod_usuario='.$cod_usuario.'";
+    </script>';
+}
 
 ?>

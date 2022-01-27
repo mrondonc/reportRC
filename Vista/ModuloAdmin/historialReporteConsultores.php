@@ -29,16 +29,16 @@ ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
 ManejoCliente_partner::setConexionBD($conexion);
 
-$usuario = ManejoUsuario::getList();
-$reportes = ManejoReporte::getList();
-
+$cod_usuario = $_GET['cod_usuario'];
+$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
+$reportes = ManejoReporte::getListByUser($cod_usuario);
 
 ?>
 <div class="card">
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Historial Reporte de Horas TOTAL</h4>
+                <h4 class="card-title ">Historial Reporte de Horas Total por Consultor</h4>
                 <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas </span>
             </div>
         </div>             
@@ -67,8 +67,8 @@ $reportes = ManejoReporte::getList();
                     ?>
                 <tr>
                     <td style="font-size: small; width: 7%;" class="td-actions text-left">
-                        <a type="button" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i style="font-size:20px;" class="material-icons">edit</i></a>
-                        <a type="button" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=1"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idEditar=14"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                        <a type="button"  class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=14&cod_usuario=<?php echo $reportes[$i]->getCod_usuario()?>"><i style="font-size:20px;" class="material-icons">close</i></a>
                     </td>
                     <td style="font-size: small; "><?php echo $reportes[$i]->getFecha_de_reporte();?></td>
                     <td style="font-size: small; "><?php echo ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login();?></td>
