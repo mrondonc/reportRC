@@ -81,18 +81,18 @@ $fecha = date('d/m/y h:i:s A');
             </tr>
             <?php } ?>
     
-<?php }else if($cod_tipo_usuario==2){ $id = $_GET['id']; ?>
-        <?php if($id==1){ // EXCEL PARA DESCARGAR LISTADO DE CONSULTORES
+<?php }else if($cod_tipo_usuario==2){ $id = $_GET['id']; 
             $cod_administrador = $_GET['cod_administrador'];
             $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
             $usuarioAdministrador = $administrador->getUsuario_login();
-            $consultores = ManejoUsuario::getListOrdenNombre();
             header('Content-Encoding: UTF-8');
             header('Content-Type: application/vnd.ms-excel; charset=utf-8');
             header("Content-Disposition: attachment; filename=ExcelAdministrador_$usuarioAdministrador._$fecha.xls"); //Indica el nombre del archivo resultante
             header("Pragma: no-cache");
             header("Expires: 0");
-            echo "\xEF\xBB\xBF"; // UTF-8 BOM
+            echo "\xEF\xBB\xBF"; // UTF-8 BOM ?>
+        <?php if($id==1){ // EXCEL PARA DESCARGAR LISTADO DE CONSULTORES
+            $consultores = ManejoUsuario::getListOrdenNombre();
         ?>
         <h3 align="center">LISTADO TOTAL DE CONSULTORES</h3>
         <table width="50%" border="1" align="center">
@@ -111,16 +111,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
 
         <?php } if($id==2){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES PARTNER
-            $cod_administrador = $_GET['cod_administrador'];
-            $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
-            $usuarioAdministrador = $administrador->getUsuario_login();
             $cliente = ManejoCliente_partner::getList();
-            header('Content-Encoding: UTF-8');
-            header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-            header("Content-Disposition: attachment; filename=ExcelAdministrador_$usuarioAdministrador._$fecha.xls"); //Indica el nombre del archivo resultante
-            header("Pragma: no-cache");
-            header("Expires: 0");
-            echo "\xEF\xBB\xBF"; // UTF-8 BOM
         ?>
         <h3 align="center">LISTADO TOTAL DE CLIENTES PARTNER</h3>
         <table width="50%" border="1" align="center">
@@ -130,7 +121,21 @@ $fecha = date('d/m/y h:i:s A');
             <?php for ($i=0; $i <count($cliente) ; $i++) { 
                 ?>
             <tr align="center">
-                <td ><?php echo $cliente[$i]->getNombre_cliente_partner();?></td>
+                <td><?php echo $cliente[$i]->getNombre_cliente_partner();?></td>
+            </tr>
+            <?php } ?>
+        <?php } if($id==3){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES FINALES
+            $subClienteA = ManejoSub_cliente_partner::getListAxity();
+        ?>
+        <h3 align="center">LISTADO TOTAL DE CLIENTES FINALES AXITY</h3>
+        <table width="50%" border="1" align="center">
+            <tr style="background-color: #0F344A; color:white;" align="center">
+                <th style="width: 10%;">Nombre del cliente final</th>
+            </tr>
+            <?php for ($i=0; $i <count($subClienteA) ; $i++) { 
+                ?>
+            <tr align="center">
+                <td><?php echo $subClienteA[$i]->getNombre_sub_cliente_partner();?></td>
             </tr>
             <?php } ?>
         <?php } ?>
