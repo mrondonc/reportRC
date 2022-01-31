@@ -117,7 +117,7 @@ $listMod_sap = ManejoMod_sap::getList();
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Usuario LOGIN</label>
-                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $usuario->getUsuario_login() ?>" >
+                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $usuario->getUsuario_login() ?>" disabled>
                           </div>
                       </div> 
                       <div class="col-md-6">
