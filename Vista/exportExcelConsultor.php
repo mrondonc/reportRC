@@ -37,17 +37,20 @@ date_default_timezone_set('America/Bogota');
 $fecha = date('d/m/y h:i:s A');
 ?>
 
-<?php if($cod_tipo_usuario==1){ // EXCEL REPORTE DESDE EL CONSULTOR
+<?php 
+    header('Content-Encoding: UTF-8');
+    header('Content-Type: application/vnd.ms-excel; charset=utf-8');
+    header("Pragma: no-cache");
+    header("Expires: 0");
+    echo "\xEF\xBB\xBF"; // UTF-8 BOM
+
+    if($cod_tipo_usuario==1){ // EXCEL REPORTE DESDE EL CONSULTOR
     $cod_usuario  =  $_GET['cod_usuario'];
     $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
     $nombreConsultor = $usuario->getNombre_usuario();
     $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario()); 
-    header('Content-Encoding: UTF-8');
-    header('Content-Type: application/vnd.ms-excel; charset=utf-8');
     header("Content-Disposition: attachment; filename=ExcelConsultor_$nombreConsultor._$fecha.xls"); //Indica el nombre del archivo resultante
-    header("Pragma: no-cache");
-    header("Expires: 0");
-    echo "\xEF\xBB\xBF"; // UTF-8 BOM
+    
 ?>
     <h3 align="center">HISTORIAL REPORTE DE HORAS</h3>
     <table width="50%" border="1" align="center">
@@ -80,65 +83,6 @@ $fecha = date('d/m/y h:i:s A');
                 <td ><?php echo $reportes[$i]->getHora_de_registro();?></td>
             </tr>
             <?php } ?>
-    
-<?php }else if($cod_tipo_usuario==2){ $id = $_GET['id']; 
-            $cod_administrador = $_GET['cod_administrador'];
-            $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
-            $usuarioAdministrador = $administrador->getUsuario_login();
-            header('Content-Encoding: UTF-8');
-            header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-            header("Content-Disposition: attachment; filename=ExcelAdministrador_$usuarioAdministrador._$fecha.xls"); //Indica el nombre del archivo resultante
-            header("Pragma: no-cache");
-            header("Expires: 0");
-            echo "\xEF\xBB\xBF"; // UTF-8 BOM ?>
-        <?php if($id==1){ // EXCEL PARA DESCARGAR LISTADO DE CONSULTORES
-            $consultores = ManejoUsuario::getListOrdenNombre();
-        ?>
-        <h3 align="center">LISTADO TOTAL DE CONSULTORES</h3>
-        <table width="50%" border="1" align="center">
-            <tr style="background-color: #0F344A; color:white;" align="center">
-                <th style="width: 10%;">Usuario</th>
-                <th style="width: 10%;">Nombre y Apellido</th>
-                <th style="width: 10%;">Estado del Usuario</th>
-            </tr>
-            <?php for ($i=0; $i <count($consultores) ; $i++) {    
-                ?>
-            <tr align="center">
-                <td ><?php echo $consultores[$i]->getUsuario_login();?></td>
-                <td ><?php echo $consultores[$i]->getNombre_usuario();?> <?php echo $consultores[$i]->getApellido_usuario();?></td>
-                <td ><?php echo ManejoEstado_usuario::consultarEstado_usuario($consultores[$i]->getCod_estado_usuario())->getNombre_estado_usuario();?></td>
-            </tr>
-            <?php } ?>
-
-        <?php } if($id==2){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES PARTNER
-            $cliente = ManejoCliente_partner::getList();
-        ?>
-        <h3 align="center">LISTADO TOTAL DE CLIENTES PARTNER</h3>
-        <table width="50%" border="1" align="center">
-            <tr style="background-color: #0F344A; color:white;" align="center">
-                <th style="width: 10%;">Nombre del cliente partner</th>
-            </tr>
-            <?php for ($i=0; $i <count($cliente) ; $i++) { 
-                ?>
-            <tr align="center">
-                <td><?php echo $cliente[$i]->getNombre_cliente_partner();?></td>
-            </tr>
-            <?php } ?>
-        <?php } if($id==3){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES FINALES
-            $subClienteA = ManejoSub_cliente_partner::getListAxity();
-        ?>
-        <h3 align="center">LISTADO TOTAL DE CLIENTES FINALES AXITY</h3>
-        <table width="50%" border="1" align="center">
-            <tr style="background-color: #0F344A; color:white;" align="center">
-                <th style="width: 10%;">Nombre del cliente final</th>
-            </tr>
-            <?php for ($i=0; $i <count($subClienteA) ; $i++) { 
-                ?>
-            <tr align="center">
-                <td><?php echo $subClienteA[$i]->getNombre_sub_cliente_partner();?></td>
-            </tr>
-            <?php } ?>
-        <?php } ?>
 <?php }else{
         echo 'NO SE PUEDE DESCARGAR EL EXCEL, COMUNICARSE CON EL ADMINISTRADOR';
     }?>

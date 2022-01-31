@@ -33,7 +33,7 @@ $subClienteI = ManejoSub_cliente_partner::getListInterno();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Sub Clientes Axity   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=1"><i style="font-size:20px;" class="fas fa-plus"></i></a> <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcel.php?cod_tipo_usuario=<?php echo $administrador->getCod_tipo_usuario();?>&cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=3"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
+                <h4 class="card-title ">Listado Total de Sub Clientes Axity   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=1"><i style="font-size:20px;" class="fas fa-plus"></i></a> <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=3"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
                
             </div>
         </div>             
@@ -66,7 +66,7 @@ $subClienteI = ManejoSub_cliente_partner::getListInterno();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Sub Clientes NTT DATA   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=2"><i style="font-size:18px;" class="fas fa-plus"></i></a></h4>
+                <h4 class="card-title ">Listado Total de Sub Clientes NTT DATA   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=2"><i style="font-size:18px;" class="fas fa-plus"></i></a><a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=4"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
                
             </div>
         </div>             
@@ -101,7 +101,7 @@ $subClienteI = ManejoSub_cliente_partner::getListInterno();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Sub Clientes Millo   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=4"><i style="font-size:18px;" class="fas fa-plus"></i></a></h4>
+                <h4 class="card-title ">Listado Total de Sub Clientes Millo   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=4"><i style="font-size:18px;" class="fas fa-plus"></i></a><a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=5"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
                
             </div>
         </div>             
@@ -119,7 +119,7 @@ $subClienteI = ManejoSub_cliente_partner::getListInterno();
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteM[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
-                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteM[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                     </td>
                 </tr>
                 <?php }?>

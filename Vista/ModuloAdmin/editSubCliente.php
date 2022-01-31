@@ -22,7 +22,7 @@ $cliente_partner = ManejoCliente_partner::consultarCliente_partner($subCliente->
                   <h4 class="card-title">PERFIL DEL SUB CLIENTE</h4>
                 </div>
                 <div class="card-body">
-                <form action="ModuloAdmin/editsSubCliente.php?cod_sub_cliente_partner=<?php echo $subCliente->getCod_sub_cliente_partner() ?>" method="post">
+                <form action="ModuloAdmin/editsSubCliente.php?cod_sub_cliente_partner=<?php echo $subCliente->getCod_sub_cliente_partner()?>" method="post">
                     <div class="row">
                       <div class="col-md-2">
                         <div class="form-group">

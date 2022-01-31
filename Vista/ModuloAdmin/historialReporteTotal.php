@@ -16,6 +16,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoPep_cliente.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_mod_sap.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_mod_sap.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
@@ -28,18 +30,20 @@ ManejoPep_cliente::setConexionBD($conexion);
 ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
 ManejoCliente_partner::setConexionBD($conexion);
+ManejoAdministrador::setConexionBD($conexion);
 
 $usuario = ManejoUsuario::getList();
 $reportes = ManejoReporte::getList();
 
-
+$cod_administrador = $_SESSION['cod_administrador'];
+$administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
 ?>
 <div class="card">
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas TOTAL</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas </span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -52,8 +56,8 @@ $reportes = ManejoReporte::getList();
                 <th style="font-size: small;">Usuario</th>
                 <th style="font-size: small;">Nombre y Apellido</th>
                 <th style="font-size: small;">Módulo SAP</th>
-                <th style="font-size: small;">Cliente</th>
-                <th style="font-size: small;">Sub Cliente</th>
+                <th style="font-size: small;">Cliente Partner</th>
+                <th style="font-size: small;">Cliente Final</th>
                 <th style="font-size: small;">Sub Módulo SAP</th>
                 <th style="font-size: small;">Número de Ticket</th>
                 <th style="font-size: small;">Nombre del PEP</th>

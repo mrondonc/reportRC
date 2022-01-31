@@ -20,6 +20,8 @@ $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador)
 
 $consultores = ManejoUsuario::getListOrdenNombre();
 $consultoresI = ManejoUsuario::getListOrdenNombreI();
+
+$id = 1;
 ?>
 
 <!-- USUARIOS ACTIVOS -->
@@ -27,7 +29,7 @@ $consultoresI = ManejoUsuario::getListOrdenNombreI();
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Listado Total de Consultores    <a type="button" rel="tooltip" title="Agregar Consultor" class="btn btn-primary btn-link btn-sm"href="?menu=agregarConsultor"><i style="font-size:18px;"  class="fas fa-user-plus"></i></a> <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcel.php?cod_tipo_usuario=<?php echo $administrador->getCod_tipo_usuario();?>&cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=1"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
+                <h4 class="card-title ">Listado Total de Consultores    <a type="button" rel="tooltip" title="Agregar Consultor" class="btn btn-primary btn-link btn-sm"href="?menu=agregarConsultor"><i style="font-size:18px;"  class="fas fa-user-plus"></i></a> <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=<?php echo $id?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></h4>
             </div>
         </div>             
     </div>
