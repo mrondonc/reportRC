@@ -16,10 +16,10 @@ $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 
 $reporteMensual = ManejoReporte::getListReporteMensual($usuario->getCod_usuario());
 
-$dataPoints = array();
-for ($i=0; $i < 2; $i++) {   
-  array_push($dataPoints, array("y" => $reporteMensual[$i]->getHoras_trabajadas(), "label" => $reporteMensual[$i]->getFecha_de_reporte()));
-}
+//$dataPoints = array();
+//for ($i=0; $i < 0 ; $i++) {   
+//  array_push($dataPoints, array("y" => $reporteMensual[$i]->getHoras_trabajadas(), "label" => $reporteMensual[$i]->getFecha_de_reporte()));
+//}
 ?>
 <script>
 window.onload = function() {
@@ -99,18 +99,32 @@ window.onload = function() {
 </div>
 <!-- GRAFICAS -->
 <div class="row">
-    <div class="col-md-6">
+    <!--<div class="col-md-6">
       <div class="card card-chart">
         <div class="card-header card-header-warning">
           <div class="ct-chart" id="chartContainer"></div>
         </div>
       </div>
-    </div>
+    </div>-->
    
-    <div class="col-md-6">
+      <div class="col-md-6">
+              <div class="card card-chart">
+              <div class="card-header card-header-success">
+                  <div class="ct-chart" id="dailySalesChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">REPORTE DE HORAS SEMANAL</h4>
+                </div>
+              </div>
+              
+      </div>
+      <div class="col-md-6">
               <div class="card card-chart">
                 <div class="card-header card-header-warning">
                   <div class="ct-chart" id="websiteViewsChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">REPORTE DE HORAS MENSUAL</h4>
                 </div>
               </div>
               

@@ -86,6 +86,16 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesActualMax5(){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesActualMax5();
+            return $reporte;
+        }
+
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesEnero(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesEnero();

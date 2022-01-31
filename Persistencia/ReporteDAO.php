@@ -250,6 +250,42 @@ class ReporteDAO implements DAO
      * @param Object $conexion
      * @return ReporteDAO
      */
+    public function getListPorMesActualMax5()
+    {
+
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc limit 5";
+        $reportes = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setCod_reporte($row[0]);
+            $reporte->setFecha_de_reporte($row[1]);
+            $reporte->setCod_usuario($row[2]);
+            $reporte->setCod_cliente_partner($row[3]);
+            $reporte->setDescripcion_actividad($row[4]);
+            $reporte->setHoras_trabajadas($row[5]);
+            $reporte->setLugar_de_trabajo($row[6]);
+            $reporte->setHora_de_registro($row[7]);
+            $reporte->setCod_sub_cliente_partner($row[8]);
+            $reporte->setCod_no_ticket($row[9]);
+            $reporte->setCod_pep_cliente($row[10]);
+            $reporte->setCod_sub_mod_sap($row[11]);
+            $reporte->setCod_mod_sap($row[12]);
+            array_push($reportes, $reporte);
+            
+        }
+        return $reportes;
+    }
+
+
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
     public function getListPorMesEnero()
     {
 

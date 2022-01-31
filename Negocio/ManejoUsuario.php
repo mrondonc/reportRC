@@ -76,6 +76,16 @@
          * List of usuario
          * @return Usuario[] List of all the usuario in the Data Base
          */
+        public static function getListOrdenNombreEnEspera(){
+            $usuarioDAO = UsuarioDAO::getUsuarioDAO(self::$conexionBD);
+            $usuario = $usuarioDAO->getListOrdenNombreEnEspera();
+            return $usuario;
+        }
+
+        /**
+         * List of usuario
+         * @return Usuario[] List of all the usuario in the Data Base
+         */
         public static function getListOrdenNombreI(){
             $usuarioDAO = UsuarioDAO::getUsuarioDAO(self::$conexionBD);
             $usuario = $usuarioDAO->getListOrdenNombreI();

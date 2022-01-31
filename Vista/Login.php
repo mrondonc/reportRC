@@ -163,7 +163,7 @@ a.socialIcon:hover,
                         <p class="text-muted"> Por favor ingrese su correo y contraseña!</p> 
                         <input type="text" name="correo" placeholder="Correo Electrónico"> 
                         <input type="password" name="contraseña" placeholder="Contraseña"> 
-                        <a class="forgot text-muted" href="#">Olvido su contraseña?</a> 
+                        <!--<a class="forgot text-muted" href="#">Olvido su contraseña?</a> -->
                         <input type="submit" value="Login">
                         <a class="forgot text-muted" href="registrarUsuario.php">¡Registrarse!</a> 
                     </form>
