@@ -68,7 +68,8 @@
          */
         public static function getList(){
             $administradorDAO = AdministradorDAO::getAdministradorDAO(self::$conexionBD);
-            $administradorDAO = $administradorDAO->getList();
+            $administrador = $administradorDAO->getList();
+            return $administrador;
         }
 
 	    /**

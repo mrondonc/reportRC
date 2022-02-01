@@ -154,12 +154,11 @@ class AdministradorDAO implements DAO
     {
 
         $sql = "SELECT * FROM ADMINISTRADOR";
-
+        $administradors = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
-        $administrador = array();
-
         while ($row = pg_fetch_array($resultado)) {
+            $administrador = new Administrador();
             $administrador->setCod_administrador($row[0]);
             $administrador->setNombre_administrador($row[1]);
             $administrador->setCod_estado_usuario($row[2]);
@@ -174,8 +173,8 @@ class AdministradorDAO implements DAO
             $administrador->setCuenta_skype($row[11]);
             $administrador->setNombre_contacto_emergencia($row[12]);
             $administrador->setNumero_contacto_emergencia($row[13]);
-
-            $administradors[] = $administrador;
+            array_push($administradors, $administrador);
+         
         }
         return $administradors;
     }

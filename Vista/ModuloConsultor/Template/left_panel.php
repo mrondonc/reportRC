@@ -123,7 +123,7 @@
             </li>';
         }     
         ?>
-        <?php 
+        <!-- <?php 
         if(isset($_GET['menu'])){
           if($_GET['menu'] == 'organigrama'){
             echo '<li class="nav-item active">
@@ -150,7 +150,7 @@
               </a>
             </li>';
         }     
-        ?>
+        ?>-->
         </ul>
 </div>
       

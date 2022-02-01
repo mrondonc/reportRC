@@ -78,6 +78,12 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'editReporte') {
         include_once("../Vista/ModuloAdmin/editReporte.php");
     }
+    if ($_GET['menu'] == 'administradores') {
+        include_once("../Vista/ModuloAdmin/administradores.php");
+    }
+    if ($_GET['menu'] == 'perfilAdministrador') {
+        include_once("../Vista/ModuloAdmin/perfilAdministrador.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }

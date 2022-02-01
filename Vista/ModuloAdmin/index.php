@@ -129,7 +129,7 @@ window.onload = function() {
                   <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">REPORTE DE HORAS POR SEMANAL POR CLIENTE</h4>
+                  <h4 class="card-title">REPORTE DE HORAS SEMANAL</h4>
                 </div>
               </div>
               
@@ -198,7 +198,7 @@ window.onload = function() {
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Últimos 5 Reportes del mes Enero</h4>
+                  <h4 class="card-title">Últimos 5 Reportes del mes Febrero</h4>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover" style="text-align: center;">

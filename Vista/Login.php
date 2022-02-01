@@ -160,8 +160,8 @@ a.socialIcon:hover,
                     <form method="post" action="VerificarLogin.php" class="box">
                     <img class="img" src="../Vista/assets/css/imagenes_logo/1.png">
                         <h1>Login</h1>
-                        <p class="text-muted"> Por favor ingrese su correo y contraseña!</p> 
-                        <input type="text" name="correo" placeholder="Correo Electrónico"> 
+                        <p class="text-muted"> Por favor ingrese su usuario y contraseña!</p> 
+                        <input type="text" name="correo" placeholder="Usuario"> 
                         <input type="password" name="contraseña" placeholder="Contraseña"> 
                         <!--<a class="forgot text-muted" href="#">Olvido su contraseña?</a> -->
                         <input type="submit" value="Login">

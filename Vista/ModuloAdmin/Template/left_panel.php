@@ -69,6 +69,35 @@
             </li>';
         } 
         ?>
+
+        <?php 
+          if(isset($_GET['menu'])){
+            if($_GET['menu'] == 'administradores'){
+              echo '<li class="nav-item active">
+                <a class="nav-link" href="?menu=administradores">
+                  <i style="font-size:20px;" class="fas fa-user-friends"></i>
+                  <p>Administradores</p>
+                </a>
+              </li>';
+            
+          }else{
+            echo '<li class="nav-item">
+                <a class="nav-link" href="?menu=administradores">
+                  <i style="font-size:20px;" class="fas fa-user-friends"></i>
+                  <p>Administradores</p>
+                </a>
+              </li>';
+          } 
+        }else{
+          echo '<li class="nav-item">
+              <a class="nav-link" href="?menu=administradores">
+                <i style="font-size:20px;" class="fas fa-user-friends"></i>
+                <p>Administradores</p>
+              </a>
+            </li>';
+        } 
+        ?>
+
         <?php 
           if(isset($_GET['menu'])){
             if($_GET['menu'] == 'consultores'){
