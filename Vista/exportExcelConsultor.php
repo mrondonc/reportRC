@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
@@ -35,21 +35,21 @@ ManejoEstado_usuario::setConexionBD($conexion);
 $cod_tipo_usuario  =  $_GET['cod_tipo_usuario'];
 date_default_timezone_set('America/Bogota');
 $fecha = date('d/m/y h:i:s A');
-?>
+$cod_usuario  =  $_GET['cod_usuario'];
+$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
+$nombreConsultor = $usuario->getNombre_usuario();
 
-<?php 
-    header('Content-Encoding: UTF-8');
     header('Content-Type: application/vnd.ms-excel; charset=utf-8');
+    header("Content-Disposition: attachment; filename=ExcelConsultor_$nombreConsultor._$fecha.xls"); //Indica el nombre del archivo resultante
+    header('Content-Encoding: UTF-8');
     header("Pragma: no-cache");
     header("Expires: 0");
     echo "\xEF\xBB\xBF"; // UTF-8 BOM
 
     if($cod_tipo_usuario==1){ // EXCEL REPORTE DESDE EL CONSULTOR
-    $cod_usuario  =  $_GET['cod_usuario'];
-    $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-    $nombreConsultor = $usuario->getNombre_usuario();
+    
     $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario()); 
-    header("Content-Disposition: attachment; filename=ExcelConsultor_$nombreConsultor._$fecha.xls"); //Indica el nombre del archivo resultante
+   
     
 ?>
     <h3 align="center">HISTORIAL REPORTE DE HORAS</h3>

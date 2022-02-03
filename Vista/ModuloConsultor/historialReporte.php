@@ -42,7 +42,7 @@ $reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas</h4>
                 <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas. 
-                    <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelConsultor.php?cod_tipo_usuario=<?php echo $usuario->getCod_tipo_usuario();?>&cod_usuario=<?php echo $usuario->getCod_usuario();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>
+                   <!-- <a style="text-align: right;" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelConsultor.php?cod_tipo_usuario=<?php echo $usuario->getCod_tipo_usuario();?>&cod_usuario=<?php echo $usuario->getCod_usuario();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>-->
                 </span>
             </div>
         </div>             
