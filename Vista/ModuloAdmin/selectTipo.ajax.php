@@ -39,6 +39,8 @@
 	$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxity();
 	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
+	$listCliente_partnerItges = ManejoSub_cliente_partner::getListItges();
+	$listCliente_partnerAva = ManejoSub_cliente_partner::getListAVA();
 	$listPepCliente = ManejoPep_cliente::getListSeidor();
 	//$listNoTicket = ManejoNo_ticket::getListAxity();
 
@@ -510,6 +512,150 @@
 				<div class="col-md-12">
 					<div class="form-group">
 					<label>7. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="0">Seleccione alguna opcion</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
+							</select>
+					
+					</div>
+					</div>
+				</div>
+			</div>	 
+		';
+		//CLIENTE ITGES
+	}else if ($cliente_partner == 10) {
+	   echo 
+	   '
+	   	<div class="row">
+				<div class="col-md-10">
+				<div class="form-group">
+				<label>5. Cliente ITGES</label>				
+				<div class="form-group">
+				<select name="clienteItges" id="clienteItges" class="form-control" required>
+						<option value="0">Seleccione alguna opcion</option>';
+						foreach ($listCliente_partnerItges as $t) {
+							echo'
+						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+						'; }
+						echo '
+				</select>					
+				</div>
+				</div>
+				</div>
+				<div class="col-md-2">
+				<a href="?menu=agregarClienteItges" class="btn btn-primary btn-round">Agregar CLIENTE</a>
+				</div>
+			</div>
+   		</div>
+		   <div class="row">
+
+			   <div class="col-md-12">
+				   <div class="form-group">
+				   <label>6. Descripción de las actividades</label>
+				   <div class="form-group">
+				   <label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+				   <div class="form-group">
+				   <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+				   <div class="form-group">
+				   <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+				   </div>
+				   </div>
+				   </div>
+				   </div>
+			   </div>
+		   </div>
+		   <div class="row">
+			   <div class="col-md-12">
+				   <div class="form-group">
+				   <label>7. Horas Trabajadas</label>
+				   <div class="form-group">
+				   <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+				   <div class="form-group">
+				   <input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+				   
+				   </div>
+				   </div>
+				   </div>
+			   </div>
+		   </div>
+		   <div class="row">
+			   <div class="col-md-12">
+				   <div class="form-group">
+				   <label>8. Lugar de trabajo</label>
+				   <div class="form-group">
+				   <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+							   <option value="0">Seleccione alguna opcion</option>
+							   <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+							   <option value="Oficina (Presencial)">Oficina (Presencial)</option>
+						   </select>
+				   
+				   </div>
+				   </div>
+			   </div>
+		   </div>	 
+	   ';
+		//CLIENTE AVA CONSULTING
+	}else if ($cliente_partner == 11) {
+		echo 
+		'
+			<div class="row">
+				 <div class="col-md-10">
+				 <div class="form-group">
+				 <label>5. Cliente AVA CONSULTING</label>				
+				 <div class="form-group">
+				 <select name="clienteAva" id="clienteAva" class="form-control" required>
+						 <option value="0">Seleccione alguna opcion</option>';
+						 foreach ($listCliente_partnerAva as $t) {
+							 echo'
+						 <option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+						 '; }
+						 echo '
+				 </select>					
+				 </div>
+				 </div>
+				 </div>
+				 <div class="col-md-2">
+				 <a href="?menu=agregarClienteAva" class="btn btn-primary btn-round">Agregar CLIENTE</a>
+				 </div>
+			 </div>
+			</div>
+			<div class="row">
+ 
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>8. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
 								<option value="0">Seleccione alguna opcion</option>

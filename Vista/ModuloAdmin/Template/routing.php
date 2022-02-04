@@ -84,6 +84,12 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'perfilAdministrador') {
         include_once("../Vista/ModuloAdmin/perfilAdministrador.php");
     }
+    if ($_GET['menu'] == 'agregarClienteAva') {
+        include_once("../Vista/ModuloAdmin/agregarClienteAva.php");
+    }
+    if ($_GET['menu'] == 'agregarClienteItges') {
+        include_once("../Vista/ModuloAdmin/agregarClienteItges.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }

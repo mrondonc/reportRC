@@ -164,6 +164,38 @@ if($cod_cliente_partner == 1){
     $reporte->setCod_sub_mod_sap(14); // cod 14 pertenece INTERNO RC RESULTADO 'NADA'
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
+}($cod_cliente_partner == 10){//ITGES
+    $sub_cliente_partnerItges = $_POST['clienteItges'];
+    $reporte->setFecha_de_reporte($fecha_de_reporte);
+    $reporte->setCod_usuario($usuario->getCod_usuario());
+    $reporte->setCod_cliente_partner($cod_cliente_partner);
+    $reporte->setDescripcion_actividad($descripcion_actividad);
+    $reporte->setHoras_trabajadas($horas_trabajadas);
+    $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+    $reporte->setHora_de_registro($hora_de_registro);
+    
+    $reporte->setCod_sub_cliente_partner($sub_cliente_partnerItges); 
+    $reporte->setCod_no_ticket(" ");
+    $reporte->setCod_pep_cliente(55); // cod 55 pertenece ITGES RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap(15); // cod 15 pertenece ITGES RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
+    ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner == 11){//AVA
+    $sub_cliente_partnerAva = $_POST['clienteAva'];
+    $reporte->setFecha_de_reporte($fecha_de_reporte);
+    $reporte->setCod_usuario($usuario->getCod_usuario());
+    $reporte->setCod_cliente_partner($cod_cliente_partner);
+    $reporte->setDescripcion_actividad($descripcion_actividad);
+    $reporte->setHoras_trabajadas($horas_trabajadas);
+    $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+    $reporte->setHora_de_registro($hora_de_registro);
+    
+    $reporte->setCod_sub_cliente_partner($sub_cliente_partnerAva); 
+    $reporte->setCod_no_ticket(" ");
+    $reporte->setCod_pep_cliente(56); // cod 56 pertenece AVA RESULTADO 'NADA'
+    $reporte->setCod_sub_mod_sap(16); // cod 16 pertenece AVA RESULTADO 'NADA'
+    $reporte->setCod_mod_sap($cod_mod_sap);
+    ManejoReporte::createReporte($reporte);
 }
 
 echo '<script>

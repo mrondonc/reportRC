@@ -39,6 +39,12 @@ if (isset($_GET['menu'])) {
     //if ($_GET['menu'] == 'organigrama') {
       //  include_once("../Vista/ModuloConsultor/organigrama.php");
     //}
+    if ($_GET['menu'] == 'agregarClienteAva') {
+        include_once("../Vista/ModuloConsultor/agregarClienteAva.php");
+    }
+    if ($_GET['menu'] == 'agregarClienteItges') {
+        include_once("../Vista/ModuloConsultor/agregarClienteItges.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }

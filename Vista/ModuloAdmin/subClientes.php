@@ -25,6 +25,8 @@ $subClienteL = ManejoSub_cliente_partner::getListLucta();
 $subClienteP = ManejoSub_cliente_partner::getListPraxis();
 $subClienteS = ManejoSub_cliente_partner::getListSeidor();
 $subClienteI = ManejoSub_cliente_partner::getListInterno();
+$subClienteITGES = ManejoSub_cliente_partner::getListItges();
+$subClienteAVA = ManejoSub_cliente_partner::getListAVA();
 ?>
 
 <!-- SUB CLIENTES AXITY -->
@@ -136,7 +138,75 @@ $subClienteI = ManejoSub_cliente_partner::getListInterno();
     
 <!-- SUB CLIENTES INTERNO DE RC -->
 
-    
+<!-- SUB CLIENTES ITGES -->
+<?php } else if($cod_cliente_partner==10) { ?>
+    <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h4 class="card-title ">Listado Total de Clientes Finales ITGES   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=10"><i style="font-size:18px;" class="fas fa-plus"></i></a><!--<a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=5"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>--></h4>
+               
+            </div>
+        </div>             
+    </div>
+    <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table" style="text-align: center;" >
+            <thead class="text-warning">
+                <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Acciones</th>
+            </thead>
+            <tbody style="text-align: center;">
+            <?php for ($i=0; $i <count($subClienteITGES) ; $i++) {    
+                    ?>
+                <tr>
+                    <td style="font-size: small;"><?php echo $subClienteITGES[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td class="td-actions text-center">
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteITGES[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                    </td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+
+    <!-- SUB CLIENTES AVA CONSULTING -->
+<?php } else if($cod_cliente_partner==11) { ?>
+    <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h4 class="card-title ">Listado Total de Clientes Finales AVA CONSULTING   <a type="button" rel="tooltip" title="Agregar Sub Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarSubCliente&cod_cliente_partner=11"><i style="font-size:18px;" class="fas fa-plus"></i></a><!--<a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=5"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>--></h4>
+               
+            </div>
+        </div>             
+    </div>
+    <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table" style="text-align: center;" >
+            <thead class="text-warning">
+                <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Acciones</th>
+            </thead>
+            <tbody style="text-align: center;">
+            <?php for ($i=0; $i <count($subClienteAVA) ; $i++) {    
+                    ?>
+                <tr>
+                    <td style="font-size: small;"><?php echo $subClienteAVA[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td class="td-actions text-center">
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteAVA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                    </td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+
+<!-- SUB CLIENTES PRAXIS -->
 <?php } ?>
 
 
