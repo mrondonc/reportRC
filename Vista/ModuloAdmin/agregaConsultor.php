@@ -17,9 +17,9 @@ $pais = $_POST['pais'];
 $usuario_login = $_POST['login'];
 $contraseña = $_POST['password'];
 $cumpleaños = $_POST['cumpleaños'];
-$cuenta_skype = $_POST['cuentaSkype'];
-$nombre_contacto = $_POST['nombreContacto'];
-$telefono_contacto = $_POST['numeroContacto'];
+//$cuenta_skype = $_POST['cuentaSkype'];
+//$nombre_contacto = $_POST['nombreContacto'];
+//$telefono_contacto = $_POST['numeroContacto'];
 
 
 $usuario = new Usuario();
@@ -37,11 +37,11 @@ $usuario->setContraseña($contraseña);
 $usuario->setPais($pais);
 $usuario->setUsuario_login($usuario_login);
 $usuario->setCumpleaños($cumpleaños);
-$usuario->setCuenta_skype($cuenta_skype);
-$usuario->setNombre_contacto_emergencia($nombre_contacto);
-$usuario->setNumero_contacto_emergencia($telefono_contacto);
+//$usuario->setCuenta_skype(null);
+//$usuario->setNombre_contacto_emergencia(null);
+//$usuario->setNumero_contacto_emergencia(null);
 
-ManejoUsuario::createUsuario($usuario);
+ManejoUsuario::createUsuarioXAdmin($usuario);
     
 echo '<script>
     alert("Se ha registrado el consultor!"); 

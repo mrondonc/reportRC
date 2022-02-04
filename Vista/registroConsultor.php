@@ -58,5 +58,5 @@ if (isset($_POST['addRegistroUsuario']) == true) {
 }
 echo '<script>
     alert("Su cuenta ha sido creada!"); 
-    window.location="login.php";          
+    window.location="/reportRC/Vista/Login.php";          
     </script>';

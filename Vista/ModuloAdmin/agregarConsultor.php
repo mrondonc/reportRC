@@ -55,22 +55,17 @@ $listMod_sap = ManejoMod_sap::getList();
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-8">
                         <div class="form-group">
                           <label class="bmd-label-floating">Dirección</label>
-                          <input type="text" class="form-control" name="direccion" id="direccion" value="" required>
+                          <!--<input type="text" class="form-control" name="direccion" id="direccion" value="" required>-->
+                          <textarea class="form-control" name="direccion" id="direccion" value="" required></textarea>
                         </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Fecha de cumpleaños</label>
                             <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="" required>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Cuenta de skype</label>
-                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="" required>
                           </div>
                       </div>
                     </div>
@@ -88,20 +83,6 @@ $listMod_sap = ManejoMod_sap::getList();
                         </div>
                       </div>
                     </div> 
-                    <div class="row">   
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Contacto de emergencia</label>
-                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="" required>
-                          </div>
-                      </div> 
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Número contacto de emergencia</label>
-                            <input type="number" class="form-control" name="numeroContacto" id="numeroContacto" value="" required>
-                          </div>
-                      </div> 
-                    </div>  
                     <div class="row">   
                       <div class="col-md-6">
                           <div class="form-group">

@@ -107,6 +107,33 @@ class UsuarioDAO implements DAO
     }
 
     /**
+     * Method to create a new usuario
+     *
+     * @param Usuario $usuario
+     * @return void
+     */
+    public function createXAdmin($usuario)
+    {
+        $sql = "insert into USUARIO (nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, cod_mod_sap, cod_tipo_usuario, cod_estado_usuario, contraseña, pais, usuario_login, cumpleaños) 
+                                        values (
+                                            '" . $usuario->getNombre_usuario() . "',
+                                            '" . $usuario->getApellido_usuario() . "',
+                                            " . $usuario->getTelefono_usuario() . ",
+                                            '" . $usuario->getCorreo_usuario() . "',
+                                            '" . $usuario->getDireccion_usuario() . "',                                           
+                                            " . $usuario->getCod_mod_sap() . ",
+                                            " . $usuario->getCod_tipo_usuario() . ",
+                                            " . $usuario->getCod_estado_usuario() . ",
+                                            '" . $usuario->getContraseña() . "',
+                                            '" . $usuario->getPais() . "',
+                                            '" . $usuario->getUsuario_login() . "',
+                                            '" . $usuario->getCumpleaños() . "'
+                                        );";
+
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
      * Method that modifies an usuario entered by parameter
      *
      * @param Usuario $usuario

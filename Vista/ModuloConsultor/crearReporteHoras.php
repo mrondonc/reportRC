@@ -164,7 +164,7 @@ if($cod_cliente_partner == 1){
     $reporte->setCod_sub_mod_sap(14); // cod 14 pertenece INTERNO RC RESULTADO 'NADA'
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
-}($cod_cliente_partner == 10){//ITGES
+}if($cod_cliente_partner == 10){//ITGES
     $sub_cliente_partnerItges = $_POST['clienteItges'];
     $reporte->setFecha_de_reporte($fecha_de_reporte);
     $reporte->setCod_usuario($usuario->getCod_usuario());
