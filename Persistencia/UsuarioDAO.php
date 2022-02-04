@@ -164,6 +164,49 @@ class UsuarioDAO implements DAO
     }
 
     /**
+     * Method that modifies an usuario entered by parameter
+     *
+     * @param Usuario $usuario
+     * @return void
+     */
+    public function modifyXAdmin($usuario)
+    {
+
+        $sql = "UPDATE USUARIO SET cod_usuario = " . $usuario->getCod_usuario() . ",
+                                    nombre_usuario = '" . $usuario->getNombre_usuario() . "',
+                                    apellido_usuario = '". $usuario->getApellido_usuario() . "',
+                                    telefono_usuario = ". $usuario->getTelefono_usuario() . ",
+                                    correo_usuario = '" . $usuario->getCorreo_usuario() . "',
+                                    direccion_usuario = '". $usuario->getDireccion_usuario() . "',                                          
+                                    cod_mod_sap = " . $usuario->getCod_mod_sap() . ",
+                                    cod_tipo_usuario = ". $usuario->getCod_tipo_usuario() . ",
+                                    cod_estado_usuario = ". $usuario->getCod_estado_usuario() .",
+                                    contraseña = '". $usuario->getContraseña() ."',
+                                    pais = '". $usuario->getPais() ."',
+                                    usuario_login = '". $usuario->getUsuario_login() ."',
+                                    cumpleaños = '". $usuario->getCumpleaños() ."'
+                                   where cod_usuario = " . $usuario->getCod_usuario() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
+     * Method that modifies an usuario entered by parameter
+     *
+     * @param Usuario $usuario
+     * @return void
+     */
+    public function modifyEstado($usuario)
+    {
+
+        $sql = "UPDATE USUARIO SET cod_estado_usuario = ". $usuario->getCod_estado_usuario() ."
+                                   where cod_usuario = " . $usuario->getCod_usuario() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+
+    /**
      * Method to delete a usuario
      *
      * @param Usuario $usuario

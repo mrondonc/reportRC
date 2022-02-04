@@ -39,12 +39,12 @@ $usuario->setContraseña($contraseña);
 $usuario->setPais($pais);
 $usuario->setUsuario_login($usuario_login);
 $usuario->setCumpleaños($cumpleaños);
-$usuario->setCuenta_skype($cuenta_skype);
-$usuario->setNombre_contacto_emergencia($nombre_contacto_emergencia);
-$usuario->setNumero_contacto_emergencia($numero_contacto_emergencia);
+//$usuario->setCuenta_skype($cuenta_skype);
+//$usuario->setNombre_contacto_emergencia($nombre_contacto_emergencia);
+//$usuario->setNumero_contacto_emergencia($numero_contacto_emergencia);
 
 
-ManejoUsuario::modifyUsuario($usuario);
+ManejoUsuario::modifyUsuarioXAdmin($usuario);
 
 echo '<script>
 alert("Los datos personales del consultor se han modificado")

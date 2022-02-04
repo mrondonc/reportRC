@@ -62,6 +62,27 @@
             $usuarioDAO=UsuarioDAO::getUsuarioDAO(self::$conexionBD);
             $usuarioDAO->modify($usuario);
         }
+
+        /**
+         * Modify an Usuario
+         * @param Usuario usuario to modify
+         * @return void
+         */
+        public static function modifyUsuarioEstado($usuario){
+            $usuarioDAO=UsuarioDAO::getUsuarioDAO(self::$conexionBD);
+            $usuarioDAO->modifyEstado($usuario);
+        }
+
+        /**
+         * Modify an Usuario
+         * @param Usuario usuario to modify
+         * @return void
+         */
+        public static function modifyUsuarioXAdmin($usuario){
+            $usuarioDAO=UsuarioDAO::getUsuarioDAO(self::$conexionBD);
+            $usuarioDAO->modifyXAdmin($usuario);
+        }
+
         /**
          * Delete an usuario
          * @param Usuario usuario to modify

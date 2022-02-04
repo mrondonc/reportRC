@@ -18,7 +18,7 @@ $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 
 if ($action=="delete"){    
     $usuario->setCod_estado_usuario(3); //QUEDA INACTIVO
-    ManejoUsuario::modifyUsuario($usuario);
+    ManejoUsuario::modifyUsuarioEstado($usuario);
     
     echo '<script>
     alert("Se ha cambiado el estado a INACTIVO")
@@ -26,7 +26,7 @@ if ($action=="delete"){
     </script>';
 }if ($action=="desactivar"){  
     $usuario->setCod_estado_usuario(4); //QUEDA EN ESPERA
-    ManejoUsuario::modifyUsuario($usuario);
+    ManejoUsuario::modifyUsuarioEstado($usuario);
 
     echo '<script>
     alert("Se ha cambiado el estado a EN ESPERA")
@@ -34,7 +34,7 @@ if ($action=="delete"){
     </script>';
 }if ($action=="activar"){  
     $usuario->setCod_estado_usuario(2); //QUEDA ACTIVO
-    ManejoUsuario::modifyUsuario($usuario);
+    ManejoUsuario::modifyUsuarioEstado($usuario);
 
     echo '<script>
     alert("Se ha cambiado el estado a ACTIVO")
