@@ -131,6 +131,7 @@ $listMod_sap = ManejoMod_sap::getList();
                       <div class="col-md-4">
                             <div class="form-group">
                               <label class="bmd-label-floating">Modulo SAP</label>
+                              
                               <!-- <input type="text" class="form-control" name="mod_sap" id="mod_sap" value="<?php echo $mod_sap->getNombre_mod_sap() ?>"> -->
                               <select name="mod_sap" id="mod_sap" class="form-control">
                                   <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
@@ -182,6 +183,7 @@ $listMod_sap = ManejoMod_sap::getList();
               <div class="col-md-7">
                 <div class="form-group">
                   <label class="bmd-label-floating">Nuevo Modulo SAP</label>
+                  <input type="text" class="form-control" name="cod_usuario" id="cod_usuario" value="<?php echo $usuario->getCod_usuario() ?>" hidden>
                   <input type="text" class="form-control" name="modSapNew" id="modSapNew" value="" >
                 </div>
               </div>
