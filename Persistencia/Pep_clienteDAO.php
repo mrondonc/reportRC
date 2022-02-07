@@ -90,11 +90,12 @@ class Pep_clienteDAO implements DAO
 
         $sql = "UPDATE PEP_CLIENTE SET cod_pep_cliente = " . $pep_cliente->getCod_pep_cliente() . ",
                                    referencia_pep_cliente = '" . $pep_cliente->getReferencia_pep_cliente() . "',
-                                   cod_cliente_partner = " . $pep_cliente->getCod_cliente_partner() . ",
+                                   cod_cliente_partner = " . $pep_cliente->getCod_cliente_partner() . "
                                    where cod_pep_cliente = " . $pep_cliente->getCod_pep_cliente() . "
                                 ;";
         pg_query($this->conexion, $sql);
     }
+
 
     /**
      * Method to delete a pep_cliente

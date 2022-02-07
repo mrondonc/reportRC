@@ -6,6 +6,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partne
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoSub_cliente_partner.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoPep_cliente.php';
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
@@ -13,6 +15,7 @@ $conexion = $obj->conectarDB();
 ManejoCliente_partner::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
 ManejoAdministrador::setConexionBD($conexion);
+ManejoPep_cliente::setConexionBD($conexion);
 
 $cod_aministrador = $_SESSION['cod_administrador'];
 $administrador = ManejoAdministrador::consultarAdministrador($cod_aministrador);
@@ -27,6 +30,7 @@ $subClienteS = ManejoSub_cliente_partner::getListSeidor();
 $subClienteI = ManejoSub_cliente_partner::getListInterno();
 $subClienteITGES = ManejoSub_cliente_partner::getListItges();
 $subClienteAVA = ManejoSub_cliente_partner::getListAVA();
+$pepSeidor = ManejoPep_cliente::getListSeidor();
 ?>
 
 <!-- SUB CLIENTES AXITY -->
@@ -132,9 +136,39 @@ $subClienteAVA = ManejoSub_cliente_partner::getListAVA();
     </div>
 <!-- SUB CLIENTES PRAXIS -->
 
-    
 <!-- SUB CLIENTES SEIDOR -->
-
+<?php } else if($cod_cliente_partner==6) { ?>
+    <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h4 class="card-title ">Listado Total de PEP Seidor   <a type="button" rel="tooltip" title="Agregar PEP Cliente" class="btn btn-primary btn-link btn-sm"href="?menu=agregarPepCliente2"><i style="font-size:18px;" class="fas fa-plus"></i></a><!--<a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=5"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>--></h4>
+               
+            </div>
+        </div>             
+    </div>
+    <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table" style="text-align: center;" >
+            <thead class="text-warning">
+                <th style="font-size: small;">Nombre PEP Cliente</th>
+                <th style="font-size: small;">Acciones</th>
+            </thead>
+            <tbody style="text-align: center;">
+            <?php for ($i=0; $i <count($pepSeidor) ; $i++) {    
+                    ?>
+                <tr>
+                    <td style="font-size: small;"><?php echo $pepSeidor[$i]->getReferencia_pep_cliente();?> </td>
+                    <td class="td-actions text-center">
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editPep&cod_pep_cliente=<?php echo $pepSeidor[$i]->getCod_pep_cliente();?>"><i class="material-icons">edit</i></a>
+                    </td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
     
 <!-- SUB CLIENTES INTERNO DE RC -->
 
@@ -206,7 +240,6 @@ $subClienteAVA = ManejoSub_cliente_partner::getListAVA();
         </div>
     </div>
 
-<!-- SUB CLIENTES PRAXIS -->
 <?php } ?>
 
 

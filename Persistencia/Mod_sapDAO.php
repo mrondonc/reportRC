@@ -55,8 +55,9 @@ class Mod_sapDAO implements DAO
 
         $mod_sap = new Mod_sap();
 
-        //$mod_sap->setCod_mod_sap($row[0]);
+        $mod_sap->setCod_mod_sap($row[0]);
         $mod_sap->setNombre_mod_sap($row[1]);
+        $mod_sap->setCod_estado_actual($row[2]);
 
         return $mod_sap;
     }
@@ -70,7 +71,7 @@ class Mod_sapDAO implements DAO
      */
     public function create($mod_sap)
     {
-        $sql = "insert into MOD_SAP (nombre_mod_sap) values ('" . $mod_sap->getNombre_mod_sap() . "'                                            
+        $sql = "insert into MOD_SAP (nombre_mod_sap, cod_estado_actual) values ('" . $mod_sap->getNombre_mod_sap() . "', " . $mod_sap->getCod_estado_actual() . "
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -87,6 +88,7 @@ class Mod_sapDAO implements DAO
 
         $sql = "UPDATE MOD_SAP SET cod_mod_sap = " . $mod_sap->getCod_mod_sap() . ",
                                    nombre_mod_sap = " . $mod_sap->getNombre_mod_sap() . ",
+                                   cod_estado_actual = " . $mod_sap->getCod_estado_actual() . "
                                    where cod_mod_sap = " . $mod_sap->getCod_mod_sap() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -123,6 +125,7 @@ class Mod_sapDAO implements DAO
             $mod_sap = new Mod_sap();
             $mod_sap->setCod_mod_sap($row[0]);
             $mod_sap->setNombre_mod_sap($row[1]);
+            $mod_sap->setCod_estado_actual($row[2]);
             array_push($mod_saps, $mod_sap);
         }
         return $mod_saps;

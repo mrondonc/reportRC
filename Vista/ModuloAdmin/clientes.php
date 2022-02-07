@@ -49,6 +49,8 @@ $cliente = ManejoCliente_partner::getList();
                         <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar Sub Clientes</a></td>
                     <?php   } else if($cliente[$i]->getCod_cliente_partner()== 11){ ?>
                         <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar Sub Clientes</a></td>
+                    <?php   } else if($cliente[$i]->getCod_cliente_partner()== 6){ ?>
+                        <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar PEP Clientes</a></td>
                     <?php   } else { ?>
                         <td style="font-size: small;"><a rel="tooltip" title="No posee sub clientes">Visualizar Sub Clientes</a></td>
                     <?php }  ?>

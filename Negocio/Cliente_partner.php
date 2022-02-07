@@ -24,6 +24,13 @@ class Cliente_partner{
      */ 
     private $nombre_cliente_partner;
 
+    /**
+     * Code of the cliente partner to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_estado_cliente_partner;
+
 
     /**
      * Get the value of cod_cliente_partner
@@ -61,6 +68,26 @@ class Cliente_partner{
     public function setNombre_cliente_partner($nombre_cliente_partner)
     {
         $this->nombre_cliente_partner = $nombre_cliente_partner;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_estado_cliente_partner
+     */ 
+    public function getCod_estado_cliente_partner()
+    {
+        return $this->cod_estado_cliente_partner;
+    }
+
+    /**
+     * Set the value of cod_estado_cliente_partner
+     *
+     * @return  self
+     */ 
+    public function setCod_estado_cliente_partner($cod_estado_cliente_partner)
+    {
+        $this->cod_estado_cliente_partner = $cod_estado_cliente_partner;
 
         return $this;
     }

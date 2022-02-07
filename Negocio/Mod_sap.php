@@ -24,6 +24,14 @@ class Mod_sap{
      */ 
     private $nombre_mod_sap;
 
+    /**
+     * Code of the modulo sap to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_estado_actual;
+
+
 
     /**
      * Get the value of cod_mod_sap
@@ -61,6 +69,26 @@ class Mod_sap{
     public function setNombre_mod_sap($nombre_mod_sap)
     {
         $this->nombre_mod_sap = $nombre_mod_sap;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_mod_sap
+     */ 
+    public function getCod_estado_actual()
+    {
+        return $this->cod_estado_actual;
+    }
+
+    /**
+     * Set the value of cod_mod_sap
+     *
+     * @return  self
+     */ 
+    public function setCod_estado_actual($cod_estado_actual)
+    {
+        $this->cod_estado_actual = $cod_estado_actual;
 
         return $this;
     }

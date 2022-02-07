@@ -31,6 +31,13 @@ class Sub_cliente_partner{
      */ 
     private $cod_cliente_partner;
 
+    /**
+     * Code of the modulo sap to which it belongs
+     *
+     * @return int
+     */ 
+    private $cod_estado_actual;
+
 
     /**
      * Get the value of cod_sub_cliente_partner
@@ -88,6 +95,26 @@ class Sub_cliente_partner{
     public function setCod_cliente_partner($cod_cliente_partner)
     {
         $this->cod_cliente_partner = $cod_cliente_partner;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_mod_sap
+     */ 
+    public function getCod_estado_actual()
+    {
+        return $this->cod_estado_actual;
+    }
+
+    /**
+     * Set the value of cod_mod_sap
+     *
+     * @return  self
+     */ 
+    public function setCod_estado_actual($cod_estado_actual)
+    {
+        $this->cod_estado_actual = $cod_estado_actual;
 
         return $this;
     }

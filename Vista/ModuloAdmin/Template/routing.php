@@ -90,6 +90,21 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarClienteItges') {
         include_once("../Vista/ModuloAdmin/agregarClienteItges.php");
     }
+    if ($_GET['menu'] == 'agregarPepCliente2') {
+        include_once("../Vista/ModuloAdmin/agregarPepCliente2.php");
+    }
+    if ($_GET['menu'] == 'editPep') {
+        include_once("../Vista/ModuloAdmin/editPep.php");
+    }
+    if ($_GET['menu'] == 'agregarModSap2') {
+        include_once("../Vista/ModuloAdmin/agregarModSap2.php");
+    }
+    if ($_GET['menu'] == 'agregarSubModSap') {
+        include_once("../Vista/ModuloAdmin/agregarSubModSap.php");
+    }
+    if ($_GET['menu'] == 'mod_sap') {
+        include_once("../Vista/ModuloAdmin/mod_sap.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }
