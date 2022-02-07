@@ -70,7 +70,7 @@ window.onload = function() {
           <div class="card-icon">
             <i class="material-icons">info_outline</i>
           </div>
-          <p class="card-category">Everis</p>
+          <p class="card-category">NTT DATA - Everis</p>
           <p class="card-title">Cierre 30 y 31 de cada mes hasta las 6:00 pm</p>
         </div>
         <div class="card-footer">

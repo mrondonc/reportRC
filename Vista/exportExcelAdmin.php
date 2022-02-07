@@ -55,14 +55,32 @@ $fecha = date('d/m/y h:i:s A');
             <tr style="background-color: #0F344A; color:white;" align="center">
                 <th style="width: 10%;">Usuario</th>
                 <th style="width: 10%;">Nombre y Apellido</th>
+                <th style="width: 10%;">Telefono</th>
+                <th style="width: 10%;">Correo</th>
+                <th style="width: 10%;">Dirección</th>
+                <th style="width: 10%;">País de recidencia</th>
+                <th style="width: 10%;">Módulo SAP</th>
                 <th style="width: 10%;">Estado del Usuario</th>
+                <th style="width: 10%;">Fecha de Cumpleaños</th>
+                <th style="width: 10%;">Cuenta de skype</th>
+                <th style="width: 10%;">Nombre Contacto Emergencia</th>
+                <th style="width: 10%;">Telefono Contacto Emergencia</th>
             </tr>
             <?php for ($i=0; $i <count($consultores) ; $i++) {    
                 ?>
             <tr align="center">
                 <td ><?php echo $consultores[$i]->getUsuario_login();?></td>
                 <td ><?php echo $consultores[$i]->getNombre_usuario();?> <?php echo $consultores[$i]->getApellido_usuario();?></td>
+                <td ><?php echo $consultores[$i]->getTelefono_usuario();?></td>
+                <td ><?php echo $consultores[$i]->getCorreo_usuario();?></td>
+                <td ><?php echo $consultores[$i]->getDireccion_usuario();?></td>
+                <td ><?php echo $consultores[$i]->getPais();?></td>
+                <td ><?php echo ManejoMod_sap::consultarMod_sap($consultores[$i]->getCod_mod_sap())->getNombre_mod_sap();?></td>
                 <td ><?php echo ManejoEstado_usuario::consultarEstado_usuario($consultores[$i]->getCod_estado_usuario())->getNombre_estado_usuario();?></td>
+                <td ><?php echo $consultores[$i]->getCumpleaños();?></td>
+                <td ><?php echo $consultores[$i]->getCuenta_skype();?></td>
+                <td ><?php echo $consultores[$i]->getNombre_contacto_emergencia();?></td>
+                <td ><?php echo $consultores[$i]->getNumero_contacto_emergencia();?></td>
             </tr>
             <?php } ?>
 

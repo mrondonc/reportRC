@@ -131,9 +131,7 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                           </div>
                       </div> 
                     </div>                
-                    <!--<button class="btn btn-primary pull-right" href="../Vista/ModuloConsultor/index.php">Editar Perfil</button>-->
-                    
-                  
+                    <a href="?menu=editConsultor&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary pull-right">Editar Perfil</a>
                 </div>
               </div>
             </div>
