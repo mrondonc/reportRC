@@ -58,7 +58,7 @@ class Sub_mod_sapDAO implements DAO
         $sub_mod_sap->setCod_sub_mod_sap($row[0]);
         $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
         $sub_mod_sap->setCod_cliente_partner($row[2]);
-
+        $sub_mod_sap->setCod_estado_actual($row[3]);
         return $sub_mod_sap;
     }
     
@@ -82,6 +82,7 @@ class Sub_mod_sapDAO implements DAO
         $sub_mod_sap->setCod_sub_mod_sap($row[0]);
         $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
         $sub_mod_sap->setCod_cliente_partner($row[2]);
+        $sub_mod_sap->setCod_estado_actual($row[3]);
 
         return $sub_mod_sap;
     }
@@ -97,7 +98,8 @@ class Sub_mod_sapDAO implements DAO
     {
         $sql = "insert into SUB_MOD_SAP values (" . $sub_mod_sap->getCod_sub_mod_sap() . ",
                                             '" . $sub_mod_sap->getNombre_sub_mod_sap() . "',
-                                            " . $sub_mod_sap->getCod_cliente_partner() . "                                               
+                                            " . $sub_mod_sap->getCod_cliente_partner() . ",
+                                            " . $sub_mod_sap->getCod_estado_actual() . "                                               
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -115,6 +117,7 @@ class Sub_mod_sapDAO implements DAO
         $sql = "UPDATE SUB_MOD_SAP SET cod_sub_mod_sap = " . $sub_mod_sap->getCod_sub_mod_sap() . ",
                                    nombre_sub_mod_sap = '" . $sub_mod_sap->getNombre_sub_mod_sap() . "',
                                    cod_cliente_partner = " . $sub_mod_sap->getCod_cliente_partner() . ",
+                                   cod_estado_actual = " . $sub_mod_sap->getCod_estado_actual() . "
                                    where cod_sub_mod_sap = " . $sub_mod_sap->getCod_sub_mod_sap() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -152,6 +155,7 @@ class Sub_mod_sapDAO implements DAO
             $sub_mod_sap->setCod_sub_mod_sap($row[0]);
             $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
             $sub_mod_sap->setCod_cliente_partner($row[2]);
+            $sub_mod_sap->setCod_estado_actual($row[3]);
             array_push($sub_mod_saps, $sub_mod_sap);
         }
         return $sub_mod_saps;
@@ -175,6 +179,7 @@ class Sub_mod_sapDAO implements DAO
             $sub_mod_sap->setCod_sub_mod_sap($row[0]);
             $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
             $sub_mod_sap->setCod_cliente_partner($row[2]);
+            $sub_mod_sap->setCod_estado_actual($row[3]);
             array_push($sub_mod_saps, $sub_mod_sap);
         }
         return $sub_mod_saps;

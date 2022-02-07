@@ -57,6 +57,7 @@ class Cliente_partnerDAO implements DAO
 
         $cliente_partner->setCod_cliente_partner($row[0]);
         $cliente_partner->setNombre_cliente_partner($row[1]);
+        $cliente_partner->setCod_estado_cliente_partner($row[2]);
 
         return $cliente_partner;
     }
@@ -70,7 +71,7 @@ class Cliente_partnerDAO implements DAO
      */
     public function create($cliente_partner)
     {
-        $sql = "insert into CLIENTE_PARTNER (nombre_cliente_partner) values ('" . $cliente_partner->getNombre_cliente_partner() . "');";
+        $sql = "insert into CLIENTE_PARTNER (nombre_cliente_partner, cod_estado_cliente_partner) values ('" . $cliente_partner->getNombre_cliente_partner() . "', " . $cliente_partner->getCod_estado_cliente_partner() . ");";
 
         pg_query($this->conexion, $sql);
     }
@@ -85,7 +86,8 @@ class Cliente_partnerDAO implements DAO
     {
 
         $sql = "UPDATE CLIENTE_PARTNER SET cod_cliente_partner = " . $cliente_partner->getCod_cliente_partner() . ",
-                                   nombre_cliente_partner = '" . $cliente_partner->getNombre_cliente_partner() . "'
+                                   nombre_cliente_partner = '" . $cliente_partner->getNombre_cliente_partner() . "',
+                                   cod_estado_cliente_partner = " . $cliente_partner->getCod_estado_cliente_partner() . "
                                    where cod_cliente_partner = " . $cliente_partner->getCod_cliente_partner() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -122,6 +124,7 @@ class Cliente_partnerDAO implements DAO
             $cliente_partner = new Cliente_partner();
             $cliente_partner->setCod_cliente_partner($row[0]);
             $cliente_partner->setNombre_cliente_partner($row[1]);
+            $cliente_partner->setCod_estado_cliente_partner($row[2]);
             array_push($cliente_partners, $cliente_partner);
         }
         return $cliente_partners;

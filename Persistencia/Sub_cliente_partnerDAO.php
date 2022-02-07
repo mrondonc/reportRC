@@ -58,7 +58,7 @@ class Sub_cliente_partnerDAO implements DAO
         $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
         $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
         $sub_cliente_partner->setCod_cliente_partner($row[2]);
-
+        $sub_cliente_partner->setCod_estado_actual($row[3]);
         return $sub_cliente_partner;
     }
 
@@ -82,7 +82,7 @@ class Sub_cliente_partnerDAO implements DAO
         $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
         $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
         $sub_cliente_partner->setCod_cliente_partner($row[2]);
-
+        $sub_cliente_partner->setCod_estado_actual($row[3]);
         return $sub_cliente_partner;
     }
 
@@ -95,10 +95,11 @@ class Sub_cliente_partnerDAO implements DAO
      */
     public function create($sub_cliente_partner)
     {
-        $sql = "insert into SUB_CLIENTE_PARTNER (nombre_sub_cliente_partner, cod_cliente_partner) 
+        $sql = "insert into SUB_CLIENTE_PARTNER (nombre_sub_cliente_partner, cod_cliente_partner, cod_estado_actual) 
                                         values (
                                             '" . $sub_cliente_partner->getNombre_sub_cliente_partner() . "',
-                                            " . $sub_cliente_partner->getCod_cliente_partner() . "                                               
+                                            " . $sub_cliente_partner->getCod_cliente_partner() . ",
+                                            " . $sub_cliente_partner->getCod_estado_actual() . "                                               
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -115,7 +116,8 @@ class Sub_cliente_partnerDAO implements DAO
 
         $sql = "UPDATE SUB_CLIENTE_PARTNER SET cod_sub_cliente_partner = " . $sub_cliente_partner->getCod_sub_cliente_partner() . ",
                                    nombre_sub_cliente_partner = '" . $sub_cliente_partner->getNombre_sub_cliente_partner() . "',
-                                   cod_cliente_partner = " . $sub_cliente_partner->getCod_cliente_partner() . "
+                                   cod_cliente_partner = " . $sub_cliente_partner->getCod_cliente_partner() . ",
+                                   cod_estado_actual = " . $sub_cliente_partner->getCod_estado_actual() . "
                                    where cod_sub_cliente_partner = " . $sub_cliente_partner->getCod_sub_cliente_partner() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -154,6 +156,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -180,6 +183,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -205,6 +209,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            }$sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -230,6 +235,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -255,6 +261,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -280,6 +287,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -305,6 +313,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -330,6 +339,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -355,6 +365,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }
@@ -380,6 +391,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }

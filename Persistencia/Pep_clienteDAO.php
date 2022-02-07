@@ -58,7 +58,7 @@ class Pep_clienteDAO implements DAO
         $pep_cliente->setCod_pep_cliente($row[0]);
         $pep_cliente->setReferencia_pep_cliente($row[1]);
         $pep_cliente->setCod_cliente_partner($row[2]);
-
+        $pep_cliente->setCod_estado_actual($row[3]);
         return $pep_cliente;
     }
 
@@ -71,9 +71,10 @@ class Pep_clienteDAO implements DAO
      */
     public function create($pep_cliente)
     {
-        $sql = "insert into PEP_CLIENTE (referencia_pep_cliente, cod_cliente_partner) 
+        $sql = "insert into PEP_CLIENTE (referencia_pep_cliente, cod_cliente_partner, cod_estado_actual) 
                                         values ('" . $pep_cliente->getReferencia_pep_cliente() . "',
-                                            " . $pep_cliente->getCod_cliente_partner() . "                                               
+                                            " . $pep_cliente->getCod_cliente_partner() . ",
+                                            " . $pep_cliente->getCod_estado_actual() . "                                               
                                         );";
 
         pg_query($this->conexion, $sql);
@@ -90,7 +91,8 @@ class Pep_clienteDAO implements DAO
 
         $sql = "UPDATE PEP_CLIENTE SET cod_pep_cliente = " . $pep_cliente->getCod_pep_cliente() . ",
                                    referencia_pep_cliente = '" . $pep_cliente->getReferencia_pep_cliente() . "',
-                                   cod_cliente_partner = " . $pep_cliente->getCod_cliente_partner() . "
+                                   cod_cliente_partner = " . $pep_cliente->getCod_cliente_partner() . ",
+                                   cod_estado_actual = " . $pep_cliente->getCod_estado_actual() . "
                                    where cod_pep_cliente = " . $pep_cliente->getCod_pep_cliente() . "
                                 ;";
         pg_query($this->conexion, $sql);
@@ -129,6 +131,7 @@ class Pep_clienteDAO implements DAO
             $pep_cliente->setCod_pep_cliente($row[0]);
             $pep_cliente->setReferencia_pep_cliente($row[1]);
             $pep_cliente->setCod_cliente_partner($row[2]);
+            $pep_cliente->setCod_estado_actual($row[3]);
             array_push($pep_clientes, $pep_cliente);
            
         }
@@ -153,6 +156,7 @@ class Pep_clienteDAO implements DAO
             $pep_cliente->setCod_pep_cliente($row[0]);
             $pep_cliente->setReferencia_pep_cliente($row[1]);
             $pep_cliente->setCod_cliente_partner($row[2]);
+            $pep_cliente->setCod_estado_actual($row[3]);
             array_push($pep_clientes, $pep_cliente);
            
         }

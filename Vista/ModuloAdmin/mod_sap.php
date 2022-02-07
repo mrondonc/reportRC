@@ -44,7 +44,7 @@ $mod_sap = ManejoMod_sap::getList();
                     <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($mod_sap[$i]->getCod_estado_actual())->getNombre_estado();?></td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editModSap&cod_mod_sap=<?php echo $mod_sap[$i]->getCod_mod_sap();?>"><i class="material-icons">edit</i></a>
-                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_mod_sap=<?php echo $mod_sap[$i]->getCod_mod_sap();?>&action=delete"><i class="material-icons">close</i></a>
+                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_mod_sap=<?php echo $mod_sap[$i]->getCod_mod_sap();?>&action=delete&id=1"><i class="material-icons">close</i></a>
                     </td>
                 </tr>
                 <?php }?>
