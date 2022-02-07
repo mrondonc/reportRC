@@ -65,6 +65,26 @@
             return $mod_sap;
         }
 
+         /**
+         * List of modulo sap
+         * @return Mod_sap[] List of all the modulo sap in the Data Base
+         */
+        public static function getListActivo(){
+            $mod_sapDAO = Mod_sapDAO::getMod_sapDAO(self::$conexionBD);
+            $mod_sap = $mod_sapDAO->getListActivo();
+            return $mod_sap;
+        }
+
+         /**
+         * List of modulo sap
+         * @return Mod_sap[] List of all the modulo sap in the Data Base
+         */
+        public static function getListInactivo(){
+            $mod_sapDAO = Mod_sapDAO::getMod_sapDAO(self::$conexionBD);
+            $mod_sap = $mod_sapDAO->getListInactivo();
+            return $mod_sap;
+        }
+
 	    /**
 	    * Change the conexion
 	    */

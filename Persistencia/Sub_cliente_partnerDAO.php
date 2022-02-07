@@ -209,7 +209,7 @@ class Sub_cliente_partnerDAO implements DAO
             $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
             $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
             $sub_cliente_partner->setCod_cliente_partner($row[2]);
-            }$sub_cliente_partner->setCod_estado_actual($row[3]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
             array_push($sub_cliente_partners, $sub_cliente_partner);
             
         }

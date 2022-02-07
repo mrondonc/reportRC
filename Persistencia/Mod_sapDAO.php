@@ -131,6 +131,52 @@ class Mod_sapDAO implements DAO
         return $mod_saps;
     }
 
+    /**
+     * Method to get an Mod_sapDAO object
+     *
+     * @param Object $conexion
+     * @return Mod_sapDAO
+     */
+    public function getListActivo()
+    {
+
+        $sql = "SELECT * FROM MOD_SAP where cod_estado_actual=1 order by nombre_mod_sap asc";
+        $mod_saps = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $mod_sap = new Mod_sap();
+            $mod_sap->setCod_mod_sap($row[0]);
+            $mod_sap->setNombre_mod_sap($row[1]);
+            $mod_sap->setCod_estado_actual($row[2]);
+            array_push($mod_saps, $mod_sap);
+        }
+        return $mod_saps;
+    }
+
+    /**
+     * Method to get an Mod_sapDAO object
+     *
+     * @param Object $conexion
+     * @return Mod_sapDAO
+     */
+    public function getListInactivo()
+    {
+
+        $sql = "SELECT * FROM MOD_SAP where cod_estado_actual=2 order by nombre_mod_sap asc";
+        $mod_saps = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $mod_sap = new Mod_sap();
+            $mod_sap->setCod_mod_sap($row[0]);
+            $mod_sap->setNombre_mod_sap($row[1]);
+            $mod_sap->setCod_estado_actual($row[2]);
+            array_push($mod_saps, $mod_sap);
+        }
+        return $mod_saps;
+    }
+
 
     /**
      * Gets the object of this class. In case it is null, create it

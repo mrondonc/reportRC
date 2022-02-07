@@ -16,10 +16,11 @@ ManejoEstado_actual::setConexionBD($conexion);
 
 $cod_aministrador = $_SESSION['cod_administrador'];
 $administrador = ManejoAdministrador::consultarAdministrador($cod_aministrador);
-$mod_sap = ManejoMod_sap::getList();
+$mod_sap = ManejoMod_sap::getListActivo();
+$mod_sapI = ManejoMod_sap::getListInactivo();
 ?>
 
-<!-- USUARIOS ACTIVOS -->
+<!-- MODULOS ACTIVOS -->
 <div class="card">
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
@@ -45,6 +46,41 @@ $mod_sap = ManejoMod_sap::getList();
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editModSap&cod_mod_sap=<?php echo $mod_sap[$i]->getCod_mod_sap();?>"><i class="material-icons">edit</i></a>
                         <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_mod_sap=<?php echo $mod_sap[$i]->getCod_mod_sap();?>&action=delete&id=1"><i class="material-icons">close</i></a>
+                    </td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<!-- MODULOS INACTIVOS -->
+<div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h4 class="card-title ">Listado Total de los Módulos SAP Inactivos</h4>
+            </div>
+        </div>             
+    </div>
+    <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table" style="text-align: center;" >
+            <thead class="text-warning">
+                <th style="font-size: small;">Nombre Módulo SAP</th>
+                <th style="font-size: small;">Estado Actúal</th>
+                <th style="font-size: small;">Acciones</th>
+            </thead>
+            <tbody style="text-align: center;">
+            <?php for ($i=0; $i <count($mod_sapI) ; $i++) {    
+                    ?>
+                <tr>
+                    <td style="font-size: small;"><?php echo $mod_sapI[$i]->getNombre_mod_sap();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($mod_sapI[$i]->getCod_estado_actual())->getNombre_estado();?></td>
+                    <td class="td-actions text-center">
+                        <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editModSap&cod_mod_sap=<?php echo $mod_sapI[$i]->getCod_mod_sap();?>"><i class="material-icons">edit</i></a>
+                        <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_mod_sap=<?php echo $mod_sapI[$i]->getCod_mod_sap();?>&action=Activar&id=1"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
                     </td>
                 </tr>
                 <?php }?>
