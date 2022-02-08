@@ -18,7 +18,7 @@ $cod_usuario  =  $_GET['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($usuario->getCod_estado_usuario());
 $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
-$listMod_sap = ManejoMod_sap::getList();
+$listMod_sap = ManejoMod_sap::getListActivo();
 
 ?>
 <!-- FORMULARIO MODIFICAR PERFIL -->

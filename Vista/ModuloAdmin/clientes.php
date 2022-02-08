@@ -111,7 +111,7 @@ $clienteI = ManejoCliente_partner::getListInactivo();
                     <?php   } else { ?>
                         <td style="font-size: small;"><a rel="tooltip" title="No posee sub clientes">Visualizar Sub Clientes</a></td>
                     <?php }  ?>
-                    <td style="font-size: small;"><?php echo $clienteI[$i]->getCod_estado_cliente_partner();?></td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_cliente_partner::consultarEstado_cliente_partner($clienteI[$i]->getCod_estado_cliente_partner())->getNombre_estado();?></td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editCliente&cod_cliente_partner=<?php echo $clienteI[$i]->getCod_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_cliente_partner=<?php echo $clienteI[$i]->getCod_cliente_partner();?>&action=Activar&id=3"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>

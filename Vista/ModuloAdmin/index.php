@@ -243,21 +243,7 @@ window.onload = function() {
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-6">
-      <div class="card card-stats">
-        <div class="card-header card-header-danger card-header-icon">
-          <div class="card-icon">
-            <i style="font-size:40px;" class="far fa-plus-square"></i>
-          </div>
-          <p class="card-category">AGREGAR SUB MÓDULO SAP</p>
-        </div>
-        <div class="card-footer">
-          <div class="stats">
-          <i class="material-icons text-danger">warning</i><a href="?menu=sub_mod_sap">IR AL FORMULARIO</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <div class="col-lg-4 col-md-6 col-sm-6">
       <div class="card card-stats">
         <div class="card-header card-header-danger card-header-icon">
@@ -269,6 +255,22 @@ window.onload = function() {
         <div class="card-footer">
           <div class="stats">
           <i class="material-icons text-danger">warning</i><a href="?menu=subClientes&cod_cliente_partner=6">IR AL FORMULARIO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-danger card-header-icon">
+          <div class="card-icon">
+            <i style="font-size:40px;" class="far fa-plus-square"></i>
+          </div>
+          <p class="card-category">AGREGAR SUB MÓDULO SAP AXITY</p>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+          <i class="material-icons text-danger">warning</i><a href="?menu=sub_mod_sap">IR AL FORMULARIO</a>
           </div>
         </div>
       </div>
