@@ -1,27 +1,24 @@
 <?php
-session_start();
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Mod_sap.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoMod_sap.php';
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
-
 ManejoMod_sap::setConexionBD($conexion);
 
-$mod_sap = new Mod_sap();
-//$cod_mod_sap = [0];
-$nombre_mod_sap = $_POST['modSapNew'];
+$cod_mod_sap = $_GET['cod_mod_sap'];
+$mod_sap = ManejoMod_sap::consultarMod_sap($cod_mod_sap);
 
+$nombre = $_POST['nombreMod'];
 
-//$mod_sap->setCod_mod_sap($cod_mod_sap);
-$mod_sap->setNombre_mod_sap($nombre_mod_sap);
-$mod_sap->setCod_estado_actual(1);
+$mod_sap->setCod_mod_sap($cod_mod_sap);
+$mod_sap->setNombre_mod_sap($nombre);
+$mod_sap->setCod_estado_actual($mod_sap->getCod_estado_actual());
 
-ManejoMod_sap::createMod_sap($mod_sap);
+ManejoMod_sap::modifyMod_sap($mod_sap);
 
 echo '<script>
-alert("Se ha agregado el Módulo SAP Exitosamente")
+alert("Los datos del módulo se han modificado")
 window.location="../Administrador.php?menu=mod_sap";
 </script>';
-
 ?>

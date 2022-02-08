@@ -96,7 +96,8 @@ class Sub_mod_sapDAO implements DAO
      */
     public function create($sub_mod_sap)
     {
-        $sql = "insert into SUB_MOD_SAP values (" . $sub_mod_sap->getCod_sub_mod_sap() . ",
+        $sql = "insert into SUB_MOD_SAP (nombre_sub_mod_sap, cod_cliente_partner, cod_estado_actual) 
+                                        values (
                                             '" . $sub_mod_sap->getNombre_sub_mod_sap() . "',
                                             " . $sub_mod_sap->getCod_cliente_partner() . ",
                                             " . $sub_mod_sap->getCod_estado_actual() . "                                               
@@ -117,6 +118,22 @@ class Sub_mod_sapDAO implements DAO
         $sql = "UPDATE SUB_MOD_SAP SET cod_sub_mod_sap = " . $sub_mod_sap->getCod_sub_mod_sap() . ",
                                    nombre_sub_mod_sap = '" . $sub_mod_sap->getNombre_sub_mod_sap() . "',
                                    cod_cliente_partner = " . $sub_mod_sap->getCod_cliente_partner() . ",
+                                   cod_estado_actual = " . $sub_mod_sap->getCod_estado_actual() . "
+                                   where cod_sub_mod_sap = " . $sub_mod_sap->getCod_sub_mod_sap() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
+     * Method that modifies an sub_mod_sap entered by parameter
+     *
+     * @param Sub_mod_sap $sub_mod_sap
+     * @return void
+     */
+    public function modifyEstado($sub_mod_sap)
+    {
+
+        $sql = "UPDATE SUB_MOD_SAP SET 
                                    cod_estado_actual = " . $sub_mod_sap->getCod_estado_actual() . "
                                    where cod_sub_mod_sap = " . $sub_mod_sap->getCod_sub_mod_sap() . "
                                 ;";
@@ -146,7 +163,7 @@ class Sub_mod_sapDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM SUB_MOD_SAP";
+        $sql = "SELECT * FROM SUB_MOD_SAP order by nombre_sub_mod_sap asc";
         $sub_mod_saps = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
@@ -170,7 +187,55 @@ class Sub_mod_sapDAO implements DAO
     public function getListAxity()
     {
 
-        $sql = "SELECT * FROM SUB_MOD_SAP WHERE cod_cliente_partner = 1";
+        $sql = "SELECT * FROM SUB_MOD_SAP WHERE cod_cliente_partner = 1 order by nombre_sub_mod_sap asc";
+        $sub_mod_saps = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_mod_sap = new Sub_mod_sap();
+            $sub_mod_sap->setCod_sub_mod_sap($row[0]);
+            $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
+            $sub_mod_sap->setCod_cliente_partner($row[2]);
+            $sub_mod_sap->setCod_estado_actual($row[3]);
+            array_push($sub_mod_saps, $sub_mod_sap);
+        }
+        return $sub_mod_saps;
+    }
+
+     /**
+     * Method to get an sub_mod_sapDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_mod_sapDAO
+     */
+    public function getListActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_MOD_SAP WHERE cod_cliente_partner = 1 AND cod_estado_actual = 1 order by nombre_sub_mod_sap asc";
+        $sub_mod_saps = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_mod_sap = new Sub_mod_sap();
+            $sub_mod_sap->setCod_sub_mod_sap($row[0]);
+            $sub_mod_sap->setNombre_sub_mod_sap($row[1]);
+            $sub_mod_sap->setCod_cliente_partner($row[2]);
+            $sub_mod_sap->setCod_estado_actual($row[3]);
+            array_push($sub_mod_saps, $sub_mod_sap);
+        }
+        return $sub_mod_saps;
+    }
+
+     /**
+     * Method to get an sub_mod_sapDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_mod_sapDAO
+     */
+    public function getListInactivo()
+    {
+
+        $sql = "SELECT * FROM SUB_MOD_SAP WHERE cod_cliente_partner = 1 AND cod_estado_actual = 2 order by nombre_sub_mod_sap asc";
         $sub_mod_saps = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

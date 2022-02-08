@@ -51,6 +51,17 @@
             $sub_mod_sapDAO=Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
             $sub_mod_sapDAO->modify($sub_mod_sap);
         }
+
+        /**
+         * Modify an Sub_mod_sap
+         * @param Sub_mod_sap sub modulo sap to modify
+         * @return void
+         */
+        public static function modifyEstado($sub_mod_sap){
+            $sub_mod_sapDAO=Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
+            $sub_mod_sapDAO->modifyEstado($sub_mod_sap);
+        }
+
         /**
          * Delete an Sub Modulo sap
          * @param Sub_mod_sap sub modulo sap to modify
@@ -78,6 +89,26 @@
         public static function getListAxity(){
             $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
             $sub_mod_sap = $sub_mod_sapDAO->getListAxity();
+            return $sub_mod_sap;
+        }
+
+        /**
+         * List of sub modulo sap
+         * @return Sub_mod_sap[] List of all the sub modulo sap in the Data Base
+         */
+        public static function getListActivo(){
+            $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
+            $sub_mod_sap = $sub_mod_sapDAO->getListActivo();
+            return $sub_mod_sap;
+        }
+
+        /**
+         * List of sub modulo sap
+         * @return Sub_mod_sap[] List of all the sub modulo sap in the Data Base
+         */
+        public static function getListInactivo(){
+            $sub_mod_sapDAO = Sub_mod_sapDAO::getSub_mod_sapDAO(self::$conexionBD);
+            $sub_mod_sap = $sub_mod_sapDAO->getListInactivo();
             return $sub_mod_sap;
         }
 

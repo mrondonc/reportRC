@@ -94,6 +94,22 @@ class Cliente_partnerDAO implements DAO
     }
 
     /**
+     * Method that modifies an cliente partner entered by parameter
+     *
+     * @param Cliente_partner $cliente_partner
+     * @return void
+     */
+    public function modifyEstado($cliente_partner)
+    {
+
+        $sql = "UPDATE CLIENTE_PARTNER SET 
+                                   cod_estado_cliente_partner = " . $cliente_partner->getCod_estado_cliente_partner() . "
+                                   where cod_cliente_partner = " . $cliente_partner->getCod_cliente_partner() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
      * Method to delete a cliente partner
      *
      * @param Cliente_partner $cliente_partner
@@ -117,6 +133,52 @@ class Cliente_partnerDAO implements DAO
     {
 
         $sql = "SELECT * FROM CLIENTE_PARTNER order by nombre_cliente_partner asc";
+        $cliente_partners = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $cliente_partner = new Cliente_partner();
+            $cliente_partner->setCod_cliente_partner($row[0]);
+            $cliente_partner->setNombre_cliente_partner($row[1]);
+            $cliente_partner->setCod_estado_cliente_partner($row[2]);
+            array_push($cliente_partners, $cliente_partner);
+        }
+        return $cliente_partners;
+    }
+
+    /**
+     * Method to get an Cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Cliente_partnerDAO
+     */
+    public function getListActivo()
+    {
+
+        $sql = "SELECT * FROM CLIENTE_PARTNER where cod_estado_cliente_partner=1 order by nombre_cliente_partner asc";
+        $cliente_partners = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $cliente_partner = new Cliente_partner();
+            $cliente_partner->setCod_cliente_partner($row[0]);
+            $cliente_partner->setNombre_cliente_partner($row[1]);
+            $cliente_partner->setCod_estado_cliente_partner($row[2]);
+            array_push($cliente_partners, $cliente_partner);
+        }
+        return $cliente_partners;
+    }
+
+    /**
+     * Method to get an Cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Cliente_partnerDAO
+     */
+    public function getListInactivo()
+    {
+
+        $sql = "SELECT * FROM CLIENTE_PARTNER where cod_estado_cliente_partner=2 order by nombre_cliente_partner asc";
         $cliente_partners = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

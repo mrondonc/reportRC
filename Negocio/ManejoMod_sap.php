@@ -45,6 +45,17 @@
             $mod_sapDAO=Mod_sapDAO::getMod_sapDAO(self::$conexionBD);
             $mod_sapDAO->modify($mod_sap);
         }
+
+        /**
+         * Modify an Mod_sap
+         * @param Mod_sap modulo sap to modify
+         * @return void
+         */
+        public static function modifyEstado($mod_sap){
+            $mod_sapDAO=Mod_sapDAO::getMod_sapDAO(self::$conexionBD);
+            $mod_sapDAO->modifyEstado($mod_sap);
+        }
+
         /**
          * Delete an Modulo sap
          * @param Mod_sap modulo sap to modify

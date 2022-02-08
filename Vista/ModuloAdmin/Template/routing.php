@@ -105,6 +105,15 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'mod_sap') {
         include_once("../Vista/ModuloAdmin/mod_sap.php");
     }
+    if ($_GET['menu'] == 'editModSap') {
+        include_once("../Vista/ModuloAdmin/editModSap.php");
+    }
+    if ($_GET['menu'] == 'sub_mod_sap') {
+        include_once("../Vista/ModuloAdmin/sub_mod_sap.php");
+    }
+    if ($_GET['menu'] == 'editSubModSap') {
+        include_once("../Vista/ModuloAdmin/editSubModSap.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }

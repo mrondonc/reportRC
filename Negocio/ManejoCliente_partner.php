@@ -45,6 +45,17 @@
             $cliente_partnerDAO=Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
             $cliente_partnerDAO->modify($cliente_partner);
         }
+
+        /**
+         * Modify an Cliente_partner
+         * @param Cliente_partner cliente partner to modify
+         * @return void
+         */
+        public static function modifyEstado($cliente_partner){
+            $cliente_partnerDAO=Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
+            $cliente_partnerDAO->modifyEstado($cliente_partner);
+        }
+
         /**
          * Delete an Cliente partner
          * @param Cliente_partner cliente_partner to modify
@@ -62,6 +73,26 @@
         public static function getList(){
             $cliente_partnerDAO = Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
             $cliente_partner = $cliente_partnerDAO->getList();
+            return $cliente_partner;
+        }
+
+        /**
+         * List of cliente partner
+         * @return Cliente_partner[] List of all the auditoria reporte in the Data Base
+         */
+        public static function getListActivo(){
+            $cliente_partnerDAO = Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
+            $cliente_partner = $cliente_partnerDAO->getListActivo();
+            return $cliente_partner;
+        }
+
+        /**
+         * List of cliente partner
+         * @return Cliente_partner[] List of all the auditoria reporte in the Data Base
+         */
+        public static function getListInactivo(){
+            $cliente_partnerDAO = Cliente_partnerDAO::getCliente_partnerDAO(self::$conexionBD);
+            $cliente_partner = $cliente_partnerDAO->getListInactivo();
             return $cliente_partner;
         }
 

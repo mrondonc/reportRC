@@ -58,6 +58,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $subClienteA[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <?php if($subClienteA[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteA[$i]->getCod_sub_cliente_partner();?>&action=delete&id=4"><i class="material-icons">close</i></a>
+                        <?php }else if($subClienteA[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteA[$i]->getCod_sub_cliente_partner();?>&action=Activar&id=4"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>
@@ -91,6 +96,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $subClienteE[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteE[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <?php if($subClienteE[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteE[$i]->getCod_sub_cliente_partner();?>&action=delete&id=4"><i class="material-icons">close</i></a>
+                        <?php }else if($subClienteE[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteE[$i]->getCod_sub_cliente_partner();?>&action=Activar&id=4"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>
@@ -126,6 +136,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $subClienteM[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteM[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <?php if($subClienteM[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteM[$i]->getCod_sub_cliente_partner();?>&action=delete&id=4"><i class="material-icons">close</i></a>
+                        <?php }else if($subClienteM[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteM[$i]->getCod_sub_cliente_partner();?>&action=Activar&id=4"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>
@@ -161,6 +176,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $pepSeidor[$i]->getReferencia_pep_cliente();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editPep&cod_pep_cliente=<?php echo $pepSeidor[$i]->getCod_pep_cliente();?>"><i class="material-icons">edit</i></a>
+                        <?php if($pepSeidor[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_pep_cliente=<?php echo $pepSeidor[$i]->getCod_pep_cliente();?>&action=delete&id=5"><i class="material-icons">close</i></a>
+                        <?php }else if($pepSeidor[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_pep_cliente=<?php echo $pepSeidor[$i]->getCod_pep_cliente();?>&action=Activar&id=5"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>
@@ -197,6 +217,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $subClienteITGES[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteITGES[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <?php if($subClienteITGES[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteITGES[$i]->getCod_sub_cliente_partner();?>&action=delete&id=4"><i class="material-icons">close</i></a>
+                        <?php }else if($subClienteITGES[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteITGES[$i]->getCod_sub_cliente_partner();?>&action=Activar&id=4"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>
@@ -231,6 +256,11 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     <td style="font-size: small;"><?php echo $subClienteAVA[$i]->getNombre_sub_cliente_partner();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteAVA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
+                        <?php if($subClienteAVA[$i]->getCod_estado_actual()==1){ ?>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteAVA[$i]->getCod_sub_cliente_partner();?>&action=delete&id=4"><i class="material-icons">close</i></a>
+                        <?php }else if($subClienteAVA[$i]->getCod_estado_actual()==2){ ?>
+                            <a type="button" rel="tooltip" title="Activar" class="btn btn-primary btn-link btn-sm" href="ModuloAdmin/actionDelete.php?cod_sub_cliente_partner=<?php echo $subClienteAVA[$i]->getCod_sub_cliente_partner();?>&action=Activar&id=4"><i style="font-size:18px;" class="far fa-thumbs-up"></i></a>
+                        <?php }?>
                     </td>
                 </tr>
                 <?php }?>

@@ -45,6 +45,17 @@
             $pep_clienteDAO=Pep_clienteDAO::getPep_clienteDAO(self::$conexionBD);
             $pep_clienteDAO->modify($pep_cliente);
         }
+
+        /**
+         * Modify an Pep_cliente
+         * @param Pep_cliente pep del cliente to modify
+         * @return void
+         */
+        public static function modifyEstado($pep_cliente){
+            $pep_clienteDAO=Pep_clienteDAO::getPep_clienteDAO(self::$conexionBD);
+            $pep_clienteDAO->modifyEstado($pep_cliente);
+        }
+
         /**
          * Delete an pep del cliente
          * @param Pep_cliente pep_cliente to modify

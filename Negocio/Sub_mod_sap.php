@@ -83,7 +83,7 @@ class Sub_mod_sap{
     /**
      * Get the value of cod_cliente_partner
      */ 
-    public function getCod_cliente_partnert()
+    public function getCod_cliente_partner()
     {
         return $this->cod_cliente_partner;
     }

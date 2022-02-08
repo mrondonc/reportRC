@@ -98,6 +98,21 @@ class Pep_clienteDAO implements DAO
         pg_query($this->conexion, $sql);
     }
 
+     /**
+     * Method that modifies an pep_cliente entered by parameter
+     *
+     * @param Pep_cliente $pep_cliente
+     * @return void
+     */
+    public function modifyEstado($pep_cliente)
+    {
+
+        $sql = "UPDATE PEP_CLIENTE SET 
+                                   cod_estado_actual = " . $pep_cliente->getCod_estado_actual() . "
+                                   where cod_pep_cliente = " . $pep_cliente->getCod_pep_cliente() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
 
     /**
      * Method to delete a pep_cliente

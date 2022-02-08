@@ -87,8 +87,23 @@ class Mod_sapDAO implements DAO
     {
 
         $sql = "UPDATE MOD_SAP SET cod_mod_sap = " . $mod_sap->getCod_mod_sap() . ",
-                                   nombre_mod_sap = " . $mod_sap->getNombre_mod_sap() . ",
+                                   nombre_mod_sap = '" . $mod_sap->getNombre_mod_sap() . "',
                                    cod_estado_actual = " . $mod_sap->getCod_estado_actual() . "
+                                   where cod_mod_sap = " . $mod_sap->getCod_mod_sap() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
+     * Method that modifies an modulo sap entered by parameter
+     *
+     * @param Mod_sap $mod_sap
+     * @return void
+     */
+    public function modifyEstado($mod_sap)
+    {
+
+        $sql = "UPDATE MOD_SAP SET cod_estado_actual = " . $mod_sap->getCod_estado_actual() . "
                                    where cod_mod_sap = " . $mod_sap->getCod_mod_sap() . "
                                 ;";
         pg_query($this->conexion, $sql);

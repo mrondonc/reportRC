@@ -52,6 +52,17 @@
             $sub_cliente_partnerDAO=Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partnerDAO->modify($sub_cliente_partner);
         }
+
+        /**
+         * Modify an Sub_sliente_partner
+         * @param Sub_cliente_partner sub cliente partner to modify
+         * @return void
+         */
+        public static function modifyEstado($sub_cliente_partner){
+            $sub_cliente_partnerDAO=Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partnerDAO->modifyEstado($sub_cliente_partner);
+        }
+
         /**
          * Delete an Sub Cliente partner
          * @param Sub_cliente_partner sub_cliente_partner to modify

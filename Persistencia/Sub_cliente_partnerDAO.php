@@ -124,6 +124,22 @@ class Sub_cliente_partnerDAO implements DAO
     }
 
     /**
+     * Method that modifies an sub_cliente_partner entered by parameter
+     *
+     * @param Sub_cliente_partner $sub_cliente_partner
+     * @return void
+     */
+    public function modifyEstado($sub_cliente_partner)
+    {
+
+        $sql = "UPDATE SUB_CLIENTE_PARTNER SET 
+                                   cod_estado_actual = " . $sub_cliente_partner->getCod_estado_actual() . "
+                                   where cod_sub_cliente_partner = " . $sub_cliente_partner->getCod_sub_cliente_partner() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
      * Method to delete a sub_cliente_partner
      *
      * @param Sub_cliente_partner $Sub_cliente_partner
