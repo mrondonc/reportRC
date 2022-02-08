@@ -212,10 +212,62 @@ class Sub_cliente_partnerDAO implements DAO
      * @param Object $conexion
      * @return Sub_cliente_partnerDAO
      */
+    public function getListAxityActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 1 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
     public function getListItges()
     {
 
         $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 10 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListItgesActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 10 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -264,10 +316,62 @@ class Sub_cliente_partnerDAO implements DAO
      * @param Object $conexion
      * @return Sub_cliente_partnerDAO
      */
+    public function getListAVAActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 11 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
     public function getListEveris()
     {
 
         $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 2 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListEverisActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 2 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -310,6 +414,32 @@ class Sub_cliente_partnerDAO implements DAO
         return $sub_cliente_partners;
     }   
 
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListMilloActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 4 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }   
+
      /**
      * Method to get an sub_cliente_partnerDAO object
      *
@@ -336,6 +466,32 @@ class Sub_cliente_partnerDAO implements DAO
         return $sub_cliente_partners;
     }  
 
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListLuctaActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 3 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    } 
+
      /**
      * Method to get an sub_cliente_partnerDAO object
      *
@@ -346,6 +502,32 @@ class Sub_cliente_partnerDAO implements DAO
     {
 
         $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 5 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListPraxisActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 5 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -386,6 +568,32 @@ class Sub_cliente_partnerDAO implements DAO
             
         }
         return $sub_cliente_partners;
+    } 
+    
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListSeidorActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 6 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
     }  
 
      /**
@@ -398,6 +606,32 @@ class Sub_cliente_partnerDAO implements DAO
     {
 
         $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 7 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }  
+
+     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListInternoActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 7 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
         $sub_cliente_partners = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();

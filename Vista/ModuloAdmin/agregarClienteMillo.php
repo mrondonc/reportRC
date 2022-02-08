@@ -9,7 +9,7 @@ $conexion = $obj->conectarDB();
 
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$listSubClientes = ManejoSub_cliente_partner::getListMillo();
+$listSubClientes = ManejoSub_cliente_partner::getListMilloActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE MILLO -->

@@ -8,7 +8,7 @@ $conexion = $obj->conectarDB();
 
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$listSubClientes = ManejoSub_cliente_partner::getListEveris();
+$listSubClientes = ManejoSub_cliente_partner::getListEverisActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE EVERIS -->

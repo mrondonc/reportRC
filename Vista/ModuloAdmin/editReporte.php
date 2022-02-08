@@ -35,24 +35,24 @@ $idEditar = $_GET['idEditar'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $reporte = ManejoReporte::consultarReporte($cod_reporte);
 $mod_sap = ManejoMod_sap::consultarMod_sap($reporte->getCod_mod_sap());
-$listMod_sap = ManejoMod_sap::getList();
+$listMod_sap = ManejoMod_sap::getListActivo();
 
 $cliente_partner = ManejoCliente_partner::consultarCliente_partner($reporte->getCod_cliente_partner());
-$listCliente_partner = ManejoCliente_partner::getList();
+$listCliente_partner = ManejoCliente_partner::getListActivo();
 
-$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxity();
+$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxityActivo();
 $sub_cliente_partnerAxity = ManejoSub_cliente_partner::consultarSub_cliente_partner($reporte->getCod_sub_cliente_partner());
 
-$listSub_mod_sap = ManejoSub_mod_sap::getListAxity();
+$listSub_mod_sap = ManejoSub_mod_sap::getListActivo();
 $sub_mod_sap = ManejoSub_mod_sap::consultarSub_mod_sap($reporte->getCod_sub_mod_sap());
 
 //$listNoTicket = ManejoNo_ticket::getListAxity();
 //$noTicket = ManejoNo_ticket::consultarNo_ticket($reporte->getCod_no_ticket());
 
-$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
-$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
+$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEverisActivo();
+$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMilloActivo();
 
-$listPepCliente = ManejoPep_cliente::getListSeidor();
+$listPepCliente = ManejoPep_cliente::getListSeidorActivo();
 $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_cliente());
 
 ?>

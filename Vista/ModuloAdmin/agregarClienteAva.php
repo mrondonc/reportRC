@@ -8,7 +8,7 @@ $conexion = $obj->conectarDB();
 
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$listSubClientes = ManejoSub_cliente_partner::getListAVA();
+$listSubClientes = ManejoSub_cliente_partner::getListAVAActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE AVA -->

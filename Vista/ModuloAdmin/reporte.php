@@ -31,8 +31,8 @@ ManejoCliente_partner::setConexionBD($conexion);
 
 
 $usuario = ManejoUsuario::getListOrdenNombre();
-$listMod_sap = ManejoMod_sap::getList();
-$listCliente_partner = ManejoCliente_partner::getList();
+$listMod_sap = ManejoMod_sap::getListActivo();
+$listCliente_partner = ManejoCliente_partner::getListActivo();
 
 // Set the new timezone
 date_default_timezone_set('America/Bogota');

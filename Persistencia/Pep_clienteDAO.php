@@ -178,6 +178,30 @@ class Pep_clienteDAO implements DAO
         return $pep_clientes;
     }
 
+    /**
+     * Method to get an Pep_clienteDAO object
+     *
+     * @param Object $conexion
+     * @return Pep_clienteDAO
+     */
+    public function getListSeidorActivo()
+    {
+
+        $sql = "SELECT * FROM PEP_CLIENTE WHERE cod_cliente_partner = 6 AND cod_estado_actual=1 ORDER BY referencia_pep_cliente ASC";
+        $pep_clientes = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $pep_cliente = new Pep_cliente();
+            $pep_cliente->setCod_pep_cliente($row[0]);
+            $pep_cliente->setReferencia_pep_cliente($row[1]);
+            $pep_cliente->setCod_cliente_partner($row[2]);
+            $pep_cliente->setCod_estado_actual($row[3]);
+            array_push($pep_clientes, $pep_cliente);
+           
+        }
+        return $pep_clientes;
+    }
 
     /**
      * Gets the object of this class. In case it is null, create it

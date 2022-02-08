@@ -31,17 +31,17 @@
 
 	$usuario = ManejoUsuario::getListOrdenNombre();
 	//$mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
-	$listMod_sap = ManejoMod_sap::getList();
+	$listMod_sap = ManejoMod_sap::getListActivo();
 
-	$listSub_mod_sap = ManejoSub_mod_sap::getListAxity();
+	$listSub_mod_sap = ManejoSub_mod_sap::getListActivo();
 
-	$listCliente_partner = ManejoCliente_partner::getList();
-	$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxity();
-	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEveris();
-	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMillo();
-	$listCliente_partnerItges = ManejoSub_cliente_partner::getListItges();
-	$listCliente_partnerAva = ManejoSub_cliente_partner::getListAVA();
-	$listPepCliente = ManejoPep_cliente::getListSeidor();
+	$listCliente_partner = ManejoCliente_partner::getListActivo();
+	$listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxityActivo();
+	$listCliente_partnerEveris = ManejoSub_cliente_partner::getListEverisActivo();
+	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMilloActivo();
+	$listCliente_partnerItges = ManejoSub_cliente_partner::getListItgesActivo();
+	$listCliente_partnerAva = ManejoSub_cliente_partner::getListAVAActivo();
+	$listPepCliente = ManejoPep_cliente::getListSeidorActivo();
 	//$listNoTicket = ManejoNo_ticket::getListAxity();
 
 	$cliente_partner=$_POST["cliente_partner"];

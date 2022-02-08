@@ -8,7 +8,7 @@ $conexion = $obj->conectarDB();
 
 ManejoSub_cliente_partner::setConexionBD($conexion);
 
-$listSubClientes = ManejoSub_cliente_partner::getListAxity();
+$listSubClientes = ManejoSub_cliente_partner::getListAxityActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE AXITY -->

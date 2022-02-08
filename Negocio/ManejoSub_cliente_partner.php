@@ -97,9 +97,29 @@
          * List of sub cliente partner
          * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
          */
+        public static function getListAxityActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListAxityActivo();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
         public static function getListItges(){
             $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListItges();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListItgesActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListItgesActivo();
             return $sub_cliente_partner;
         }
 
@@ -112,6 +132,16 @@
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListAVA();
             return $sub_cliente_partner;
         }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListAVAActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListAVAActivo();
+            return $sub_cliente_partner;
+        }
 
         /**
          * List of sub cliente partner
@@ -120,6 +150,16 @@
         public static function getListEveris(){
             $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListEveris();
+            return $sub_cliente_partner;
+        }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListEverisActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListEverisActivo();
             return $sub_cliente_partner;
         }
 
@@ -132,6 +172,16 @@
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListMillo();
             return $sub_cliente_partner;
         }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListMilloActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListMilloActivo();
+            return $sub_cliente_partner;
+        }
 
         /**
          * List of sub cliente partner
@@ -140,6 +190,16 @@
         public static function getListLucta(){
             $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListLucta();
+            return $sub_cliente_partner;
+        }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListLuctaActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListLuctaActivo();
             return $sub_cliente_partner;
         }
 
@@ -152,6 +212,16 @@
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListPraxis();
             return $sub_cliente_partner;
         }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListPraxisActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListPraxisActivo();
+            return $sub_cliente_partner;
+        }
 
         /**
          * List of sub cliente partner
@@ -162,6 +232,16 @@
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListSeidor();
             return $sub_cliente_partner;
         }
+        
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListSeidorActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListSeidorActivo();
+            return $sub_cliente_partner;
+        }
 
         /**
          * List of sub cliente partner
@@ -170,6 +250,16 @@
         public static function getListInterno(){
             $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
             $sub_cliente_partner = $sub_cliente_partnerDAO->getListInterno();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListInternoActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListInternoActivo();
             return $sub_cliente_partner;
         }
 

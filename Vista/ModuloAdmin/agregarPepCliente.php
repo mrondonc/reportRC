@@ -8,7 +8,7 @@ $conexion = $obj->conectarDB();
 
 ManejoPep_cliente::setConexionBD($conexion);
 
-$listPep = ManejoPep_cliente::getListSeidor();
+$listPep = ManejoPep_cliente::getListSeidorActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR PEP SEIDOR -->
