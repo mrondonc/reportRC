@@ -42,11 +42,21 @@ $fecha = date('d/m/y h:i:s A');
     $usuarioAdministrador = $administrador->getUsuario_login();
     header('Content-Encoding: UTF-8');
     header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-    header("Content-Disposition: attachment; filename=ExcelAdministrador_$usuarioAdministrador._$fecha.xls"); //Indica el nombre del archivo resultante    
+    header("Content-Disposition: attachment; filename=ExcelAdministrador.xls"); //Indica el nombre del archivo resultante    
     header("Pragma: no-cache");
     header("Expires: 0");
     echo "\xEF\xBB\xBF"; // UTF-8 BOM
-            
+    
+    /*ob_start();
+    header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
+    header("Content-type:   application/x-msexcel; charset=utf-8");
+    header("Content-Disposition: attachment; filename=Test.xls"); 
+    header("Expires: 0");
+    header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+    header("Cache-Control: private",false); 
+    echo pack("CCC",0xef,0xbb,0xbf);
+    ob_end_flush();
+      */      
         if($id==1){ // EXCEL PARA DESCARGAR LISTADO DE CONSULTORES
             $consultores = ManejoUsuario::getListOrdenNombre();
         ?>

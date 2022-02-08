@@ -68,7 +68,8 @@ window.onload = function() {
       <div class="card card-stats">
         <div class="card-header card-header-danger card-header-icon">
           <div class="card-icon">
-            <i class="material-icons">info_outline</i>
+            <!--<i class="material-icons">info_outline</i>-->
+            <img class="img" src="../Vista/assets/css/imagenes_logo/axity2.jpeg" />
           </div>
           <h3 class="card-category">Axity</h3>
           <p class="card-title">Cierre 27 de cada mes hasta las 5:00 pm </p>
@@ -84,7 +85,8 @@ window.onload = function() {
       <div class="card card-stats">
         <div class="card-header card-header-danger card-header-icon">
           <div class="card-icon">
-            <i class="material-icons">info_outline</i>
+            <!--<i class="material-icons">info_outline</i>-->
+            <img class="img" src="../Vista/assets/css/imagenes_logo/nttData2.jpeg" />
           </div>
           <p class="card-category">NTT DATA</p>
           <p class="card-title">Cierre 30 y 31 de cada mes hasta las 6:00 pm</p>
@@ -100,7 +102,8 @@ window.onload = function() {
       <div class="card card-stats">
         <div class="card-header card-header-danger card-header-icon">
           <div class="card-icon">
-            <i class="material-icons">info_outline</i>
+            <!--<i class="material-icons">info_outline</i>-->
+            <img class="img" src="../Vista/assets/css/imagenes_logo/seidor2.jpeg" />
           </div>
           <p class="card-category">Seidor</p>
           <p class="card-title">Cierre 30 y 31 de cada mes hasta las 6:00 pm</p>
