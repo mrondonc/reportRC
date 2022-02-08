@@ -14,7 +14,7 @@ ManejoSub_cliente_partner::setConexionBD($conexion);
 
 $cod_usuario  =  $_GET['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$listSubClientes = ManejoSub_cliente_partner::getListEveris();
+$listSubClientes = ManejoSub_cliente_partner::getListEverisActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE EVERIS -->

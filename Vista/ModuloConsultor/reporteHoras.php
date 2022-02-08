@@ -33,9 +33,9 @@ $cod_usuario  =  $_SESSION['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 
 $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
-$listMod_sap = ManejoMod_sap::getList();
+$listMod_sap = ManejoMod_sap::getListActivo();
 
-$listCliente_partner = ManejoCliente_partner::getList();
+$listCliente_partner = ManejoCliente_partner::getListActivo();
 
 // Set the new timezone
 date_default_timezone_set('America/Bogota');

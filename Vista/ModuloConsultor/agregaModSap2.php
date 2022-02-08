@@ -15,6 +15,7 @@ $nombre_mod_sap = $_POST['modSapNew'];
 
 $mod_sap->setCod_mod_sap($cod_mod_sap);
 $mod_sap->setNombre_mod_sap($nombre_mod_sap);
+$mod_sap->setCod_estado_actual(2);
 
 ManejoMod_sap::createMod_sap($mod_sap);
 

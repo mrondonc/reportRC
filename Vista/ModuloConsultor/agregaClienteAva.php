@@ -16,12 +16,13 @@ $cod_cliente_partner = 11;
 
 $sub_cliente_partner->setNombre_sub_cliente_partner($nombre_sub_cliente_partner);
 $sub_cliente_partner->setCod_cliente_partner($cod_cliente_partner);
+$sub_cliente_partner->setCod_estado_actual(2);
 
 ManejoSub_cliente_partner::createSub_cliente_partner($sub_cliente_partner);
 
 echo '<script>
 alert("Se ha registrado el cliente Exitosamente")
-window.location="../Consultor.php?menu=reporte";
+window.location="../Consultor.php?menu=reporteHoras";
 </script>';
 
 ?>

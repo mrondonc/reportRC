@@ -14,7 +14,7 @@ ManejoSub_cliente_partner::setConexionBD($conexion);
 
 $cod_usuario  =  $_GET['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$listSubClientes = ManejoSub_cliente_partner::getListAxity();
+$listSubClientes = ManejoSub_cliente_partner::getListAxityActivo();
 
 ?>
 <!-- FORMULARIO AGREGAR SUB CLIENTE AXITY -->

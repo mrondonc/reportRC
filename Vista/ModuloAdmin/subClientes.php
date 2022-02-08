@@ -8,6 +8,8 @@ require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php'
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoPep_cliente.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Estado_actual.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoEstado_actual.php';
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
@@ -16,6 +18,7 @@ ManejoCliente_partner::setConexionBD($conexion);
 ManejoSub_cliente_partner::setConexionBD($conexion);
 ManejoAdministrador::setConexionBD($conexion);
 ManejoPep_cliente::setConexionBD($conexion);
+ManejoEstado_actual::setConexionBD($conexion);
 
 $cod_aministrador = $_SESSION['cod_administrador'];
 $administrador = ManejoAdministrador::consultarAdministrador($cod_aministrador);
@@ -49,6 +52,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -56,6 +60,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteA[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($subClienteA[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <?php if($subClienteA[$i]->getCod_estado_actual()==1){ ?>
@@ -87,6 +92,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -94,6 +100,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteE[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($subClienteE[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteE[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <?php if($subClienteE[$i]->getCod_estado_actual()==1){ ?>
@@ -127,6 +134,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -134,6 +142,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteM[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($subClienteM[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteM[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <?php if($subClienteM[$i]->getCod_estado_actual()==1){ ?>
@@ -167,6 +176,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre PEP Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -174,6 +184,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $pepSeidor[$i]->getReferencia_pep_cliente();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($pepSeidor[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editPep&cod_pep_cliente=<?php echo $pepSeidor[$i]->getCod_pep_cliente();?>"><i class="material-icons">edit</i></a>
                         <?php if($pepSeidor[$i]->getCod_estado_actual()==1){ ?>
@@ -208,6 +219,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -215,6 +227,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteITGES[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($subClienteITGES[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteITGES[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <?php if($subClienteITGES[$i]->getCod_estado_actual()==1){ ?>
@@ -247,6 +260,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
                 <th style="font-size: small;">Nombre Sub Cliente</th>
+                <th style="font-size: small;">Estado Actual</th>
                 <th style="font-size: small;">Acciones</th>
             </thead>
             <tbody style="text-align: center;">
@@ -254,6 +268,7 @@ $pepSeidor = ManejoPep_cliente::getListSeidor();
                     ?>
                 <tr>
                     <td style="font-size: small;"><?php echo $subClienteAVA[$i]->getNombre_sub_cliente_partner();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoEstado_actual::consultarEstado_actual($subClienteAVA[$i]->getCod_estado_actual())->getNombre_estado();?> </td>
                     <td class="td-actions text-center">
                         <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editSubCliente&cod_sub_cliente_partner=<?php echo $subClienteAVA[$i]->getCod_sub_cliente_partner();?>"><i class="material-icons">edit</i></a>
                         <?php if($subClienteAVA[$i]->getCod_estado_actual()==1){ ?>
