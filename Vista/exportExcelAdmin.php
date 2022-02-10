@@ -42,7 +42,7 @@ $fecha = date('d/m/y h:i:s A');
     $usuarioAdministrador = $administrador->getUsuario_login();
     header('Content-Encoding: UTF-8');
     header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-    header("Content-Disposition: attachment; filename=ExcelAdministrador.xls"); //Indica el nombre del archivo resultante    
+    header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
     header("Pragma: no-cache");
     header("Expires: 0");
     echo "\xEF\xBB\xBF"; // UTF-8 BOM
