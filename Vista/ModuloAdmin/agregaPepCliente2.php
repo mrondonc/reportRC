@@ -16,6 +16,7 @@ $cod_cliente_partner = 6;
 
 $pep_cliente->setReferencia_pep_cliente($referencia_pep_cliente);
 $pep_cliente->setCod_cliente_partner($cod_cliente_partner);
+$pep_cliente->setCod_estado_actual(1);
 
 ManejoPep_cliente::createPep_cliente($pep_cliente);
 

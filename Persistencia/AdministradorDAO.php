@@ -153,7 +153,7 @@ class AdministradorDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM ADMINISTRADOR";
+        $sql = "SELECT * FROM ADMINISTRADOR order by nombre_administrador";
         $administradors = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

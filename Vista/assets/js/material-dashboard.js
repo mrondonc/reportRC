@@ -188,7 +188,7 @@ md = {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       dataDailySalesChart = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+        labels: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
         series: [
           [0, 0, 0, 0, 0, 0, 0]
         ]
@@ -313,9 +313,9 @@ md = {
       /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
       dataDailySalesChart = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+        labels: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
         series: [
-          [0, 0, 0, 0, 0, 0, 0]
+          [0, 0, 0, 0, 0]
         ]
       };
 
@@ -324,7 +324,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 25, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,

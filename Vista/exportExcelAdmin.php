@@ -42,7 +42,7 @@ $fecha = date('d/m/y h:i:s A');
     $usuarioAdministrador = $administrador->getUsuario_login();
     header('Content-Encoding: UTF-8');
     header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-    header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
+    
     header("Pragma: no-cache");
     header("Expires: 0");
     echo "\xEF\xBB\xBF"; // UTF-8 BOM
@@ -59,6 +59,7 @@ $fecha = date('d/m/y h:i:s A');
       */      
         if($id==1){ // EXCEL PARA DESCARGAR LISTADO DE CONSULTORES
             $consultores = ManejoUsuario::getListOrdenNombre();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">LISTADO TOTAL DE CONSULTORES</h3>
         <table width="50%" border="1" align="center">
@@ -96,6 +97,7 @@ $fecha = date('d/m/y h:i:s A');
 
         <?php } else if($id==2){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES PARTNER
             $cliente = ManejoCliente_partner::getList();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">LISTADO TOTAL DE CLIENTES PARTNER</h3>
         <table width="50%" border="1" align="center">
@@ -141,6 +143,7 @@ $fecha = date('d/m/y h:i:s A');
         
         <?php } if($id==5){ // EXCEL PARA DESCARGAR LISTADO DE CLIENTES FINALES MILLO
             $subClienteM = ManejoSub_cliente_partner::getListMillo();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">LISTADO TOTAL DE CLIENTES FINALES MILLO</h3>
         <table width="50%" border="1" align="center">
@@ -156,6 +159,7 @@ $fecha = date('d/m/y h:i:s A');
         
         <?php } if($id==6){ // =====EXCEL PARA DESCARGAR REPORTE DE HORAS TOTAL=====
             $reportes = ManejoReporte::getList();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS TOTAL</h3>
         <table width="50%" border="1" align="center">
@@ -194,6 +198,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==7){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS ENERO =====
             $reportesEnero = ManejoReporte::getListPorMesEnero();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS ENERO</h3>
         <table width="50%" border="1" align="center">
@@ -232,6 +237,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==8){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS FEBRERO =====
             $reportesFebrero = ManejoReporte::getListPorMesFebrero();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS FEBRERO</h3>
         <table width="50%" border="1" align="center">
@@ -270,6 +276,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==9){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS MARZO =====
             $reportesMarzo = ManejoReporte::getListPorMesMarzo();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS MARZO</h3>
         <table width="50%" border="1" align="center">
@@ -308,6 +315,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==10){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS ABRIL =====
             $reportesAbril = ManejoReporte::getListPorMesAbril();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS ABRIL</h3>
         <table width="50%" border="1" align="center">
@@ -346,6 +354,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==11){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS MAYO =====
             $reportesMayo = ManejoReporte::getListPorMesMayo();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS MAYO</h3>
         <table width="50%" border="1" align="center">
@@ -384,6 +393,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==12){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS JUNIO =====
             $reportesJunio = ManejoReporte::getListPorMesJunio();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS JUNIO</h3>
         <table width="50%" border="1" align="center">
@@ -422,6 +432,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==13){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS JULIO =====
             $reportesJulio = ManejoReporte::getListPorMesJulio();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS JULIO</h3>
         <table width="50%" border="1" align="center">
@@ -460,6 +471,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==14){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS AGOSTO =====
             $reportesAgosto = ManejoReporte::getListPorMesAgosto();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS AGOSTO</h3>
         <table width="50%" border="1" align="center">
@@ -498,6 +510,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==15){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS SEPTIEMBRE =====
             $reportesSeptiembre = ManejoReporte::getListPorMesSeptiembre();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS SEPTIEMBRE</h3>
         <table width="50%" border="1" align="center">
@@ -536,6 +549,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==16){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS OCTUBRE =====
             $reportesOctubre = ManejoReporte::getListPorMesOctubre();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS OCTUBRE</h3>
         <table width="50%" border="1" align="center">
@@ -574,6 +588,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==17){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS NOVIEMBRE =====
             $reportesNoviembre = ManejoReporte::getListPorMesNoviembre();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS NOVIEMBRE</h3>
         <table width="50%" border="1" align="center">
@@ -612,6 +627,7 @@ $fecha = date('d/m/y h:i:s A');
             <?php } ?>
         <?php } if($id==18){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS DICIEMBRE =====
             $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
+            header("Content-Disposition: attachment; filename=ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS DICIEMBRE</h3>
         <table width="50%" border="1" align="center">
@@ -652,7 +668,9 @@ $fecha = date('d/m/y h:i:s A');
         <?php } if($id==19){ // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS POR CONSULTOR =====
             $cod_usuario = $_GET['cod_usuario'];
             $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
+            $nombre=$usuario->getUsuario_login();
             $reportes = ManejoReporte::getListByUser($cod_usuario);
+            header("Content-Disposition: attachment; filename=$nombre'_ExcelAdministrador_$fecha.xls"); //Indica el nombre del archivo resultante    
         ?>
         <h3 align="center">REPORTE DE HORAS POR CONSULTOR</h3>
         <table width="50%" border="1" align="center">
