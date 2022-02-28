@@ -106,7 +106,7 @@ window.onload = function() {
         </div>
       </div>
     </div>-->
-   
+   <!-- DESDE AQUI GRAFICAS
       <div class="col-md-6">
               <div class="card card-chart">
               <div class="card-header card-header-success">
@@ -128,6 +128,6 @@ window.onload = function() {
                 </div>
               </div>
               
-      </div>
+      </div>-->
 </div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
