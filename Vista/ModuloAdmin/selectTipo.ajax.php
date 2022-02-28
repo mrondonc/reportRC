@@ -60,7 +60,7 @@
 					
 					<div class="form-group">
 					<select name="clienteAxity" id="clienteAxity" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>';
+								<option value="">Seleccione alguna opcion</option>';
 								foreach ($listCliente_partnerAxity as $t) {
 								echo '
 									<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>
@@ -83,7 +83,7 @@
 					<label>6. Modulo SAP</label>
 					<div class="form-group">
 					<select name="modSapList" id="modSapList" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>';
+								<option value="">Seleccione alguna opcion</option>';
                                 foreach ($listSub_mod_sap as $e) {
                                 
                                     echo '<option value='.$e->getCod_sub_mod_sap().'>'.$e->getNombre_sub_mod_sap() .'</option>';
@@ -144,7 +144,7 @@
 					<label>10. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
                                 <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
@@ -166,7 +166,7 @@
 				<label>5. Cliente Everis</label>				
 				<div class="form-group">
 				<select name="clienteEveris" id="clienteEveris" class="form-control" required>
-						<option value="0">Seleccione alguna opcion</option>';
+						<option value="">Seleccione alguna opcion</option>';
 						foreach ($listCliente_partnerEveris as $t) {
 							echo'
 						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>
@@ -216,7 +216,7 @@
 					<label>8. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
                                 <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
@@ -267,7 +267,7 @@
 					<label>7. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
 								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
@@ -288,7 +288,7 @@
 				<label>5. Cliente Millo</label>				
 				<div class="form-group">
 				<select name="clienteMillo" id="clienteMillo" class="form-control" required>
-						<option value="0">Seleccione alguna opcion</option>';
+						<option value="">Seleccione alguna opcion</option>';
 						foreach ($listCliente_partnerMillo as $t) {
 							echo'
 						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
@@ -338,7 +338,7 @@
 					<label>8. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
                                 <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
                             </select>
@@ -389,7 +389,7 @@
 					<label>7. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
 								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
@@ -412,7 +412,7 @@
 				<label>Seleccionar el PEP del cliente que atendieron (si no esta el PEP relacionado, antes de cargar, por favor notificar a la Coordinadora y colocar el PEP que falta en el campo otros).</label>				
 				<div class="form-group">
 				<select name="pepCliente" id="pepCliente" class="form-control" required>
-						<option>Seleccione alguna opción</option>';
+						<option value="">Seleccione alguna opción</option>';
 						foreach ($listPepCliente as $t) {
 							echo '
 						<option value='. $t->getCod_pep_cliente().'>'.$t->getReferencia_pep_cliente().'</option>	
@@ -463,7 +463,7 @@
 				<label>8. Lugar de trabajo</label>
 				<div class="form-group">
 				<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-							<option value="0">Seleccione alguna opcion</option>
+							<option value="">Seleccione alguna opcion</option>
 							<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 						</select>
@@ -514,7 +514,7 @@
 					<label>7. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
 								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>
@@ -534,7 +534,7 @@
 				<label>5. Cliente ITGES</label>				
 				<div class="form-group">
 				<select name="clienteItges" id="clienteItges" class="form-control" required>
-						<option value="0">Seleccione alguna opcion</option>';
+						<option value="">Seleccione alguna opcion</option>';
 						foreach ($listCliente_partnerItges as $t) {
 							echo'
 						<option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
@@ -586,7 +586,7 @@
 				   <label>8. Lugar de trabajo</label>
 				   <div class="form-group">
 				   <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-							   <option value="0">Seleccione alguna opcion</option>
+							   <option value="">Seleccione alguna opcion</option>
 							   <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 							   <option value="Oficina (Presencial)">Oficina (Presencial)</option>
 						   </select>
@@ -606,7 +606,7 @@
 				 <label>5. Cliente AVA CONSULTING</label>				
 				 <div class="form-group">
 				 <select name="clienteAva" id="clienteAva" class="form-control" required>
-						 <option value="0">Seleccione alguna opcion</option>';
+						 <option value="">Seleccione alguna opcion</option>';
 						 foreach ($listCliente_partnerAva as $t) {
 							 echo'
 						 <option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
@@ -658,7 +658,7 @@
 					<label>8. Lugar de trabajo</label>
 					<div class="form-group">
 					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
-								<option value="0">Seleccione alguna opcion</option>
+								<option value="">Seleccione alguna opcion</option>
 								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
 								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
 							</select>

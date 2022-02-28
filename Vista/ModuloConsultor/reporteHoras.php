@@ -120,7 +120,7 @@ $hora_de_registro = date('d/m/Y');
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
-                                        <option value='0'>Seleccione alguna opcion</option>
+                                        <option value=''>Seleccione alguna opcion</option>
                                         <?php
                                         foreach ($listCliente_partner as $e) {
                                             echo '<option value=' . $e->getCod_cliente_partner() . '>' . $e->getNombre_cliente_partner() . '</option>';

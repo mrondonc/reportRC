@@ -86,7 +86,7 @@ $hora_de_registro = date('d/m/Y');
                             <label class="bmd-label-floating"></label>
                             
                             <select name="nombreConsultor" id="nombreConsultor" class="form-control" required>
-                                    <option value='0'>Seleccione algún consultor</option>
+                                    <option value=''>Seleccione algún consultor</option>
                                     <?php
                                     foreach ($usuario as $t) {
                                         echo '<option value=' . $t->getCod_usuario() . '>' . $t->getNombre_usuario()  .' ' . $t->getApellido_usuario()  .'</option>';
@@ -104,7 +104,7 @@ $hora_de_registro = date('d/m/Y');
                             <div class="form-group">
                             <label class="bmd-label-floating"></label>
                             <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                    <option value='0'>Seleccione algún módulo sap</option>
+                                    <option value=''>Seleccione algún módulo sap</option>
                                     <?php
                                     foreach ($listMod_sap as $t) {
                                         echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
@@ -125,7 +125,7 @@ $hora_de_registro = date('d/m/Y');
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
-                                        <option value='0'>Seleccione alguna opcion</option>
+                                        <option value=''>Seleccione alguna opcion</option>
                                         <?php
                                         foreach ($listCliente_partner as $e) {
                                             echo '<option value=' . $e->getCod_cliente_partner() . '>' . $e->getNombre_cliente_partner() . '</option>';
