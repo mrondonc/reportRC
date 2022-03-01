@@ -28,7 +28,8 @@ $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador)
 $consultores = ManejoUsuario::getListOrdenNombreEnEspera();
 date_default_timezone_set('America/Bogota');
 $fecha_actual = date('d/m/y');
-$fecha = date("F", strtotime($fecha_actual));
+
+$mes = date('m A');
 $reporte = ManejoReporte::getListPorMesActualMax5();
 //$reporteMensual = ManejoReporte::getListReporteMensual($usuario->getCod_usuario());
 
@@ -202,7 +203,11 @@ window.onload = function() {
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Últimos 5 Reportes del mes Febrero</h4>
+                  <?php setlocale(LC_ALL,"es_ES");
+                        $mes_array = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                        $mes2= $mes_array[date('n')-1]. " del ".date('Y') ;
+                  ?>
+                  <h4 class="card-title">Últimos 5 Reportes del mes <?php echo $mes2;?></h4>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover" style="text-align: center;">
