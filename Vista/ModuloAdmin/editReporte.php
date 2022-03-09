@@ -43,6 +43,7 @@ $listCliente_partner = ManejoCliente_partner::getListActivo();
 $listCliente_partnerAxity = ManejoSub_cliente_partner::getListAxityActivo();
 $sub_cliente_partnerAxity = ManejoSub_cliente_partner::consultarSub_cliente_partner($reporte->getCod_sub_cliente_partner());
 
+
 $listSub_mod_sap = ManejoSub_mod_sap::getListActivo();
 $sub_mod_sap = ManejoSub_mod_sap::consultarSub_mod_sap($reporte->getCod_sub_mod_sap());
 
@@ -55,6 +56,9 @@ $listCliente_partnerMillo = ManejoSub_cliente_partner::getListMilloActivo();
 $listPepCliente = ManejoPep_cliente::getListSeidorActivo();
 $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_cliente());
 
+
+$listCliente_partnerItges = ManejoSub_cliente_partner::getListItgesActivo();
+$listCliente_partnerAva = ManejoSub_cliente_partner::getListAVAActivo();
 ?>
 <!-- FORMULARIO EDITAR REGISTRO REPORTE -->
 <div class="row">
@@ -937,6 +941,268 @@ $pepCliente = ManejoPep_cliente::consultarPep_cliente($reporte->getCod_pep_clien
                             <div class="col-md-10">
                                 <div class="form-group">
                                 <label>7. Lugar de trabajo</label>
+                                <div class="form-group">
+                                <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+                                            <option value='<?php echo $reporte->getLugar_de_trabajo(); ?>'><?php echo $reporte->getLugar_de_trabajo(); ?></option>
+                                            <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+                                            <option value="Oficina (Presencial)">Oficina (Presencial)</option>
+                                        </select>
+                                
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
+                            </div>
+                        </div> 
+                        <!-- ITGES  --> 
+                        <?php }if($reporte->getCod_cliente_partner()==10){ ?>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group"> 
+                                    <label>1. Fecha de Reporte </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
+                                    <div class="form-group">
+                                    <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $reporte->getFecha_de_reporte() ?>" required>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>2. Consultor </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>3. Módulo SAP  </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <select name="mod_sap" id="mod_sap" class="form-control" required>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <?php
+                                            foreach ($listMod_sap as $t) {
+                                                echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>4. Cliente Partner </label>
+                                        <div class="form-group">
+                                        <label class="bmd-label-floating"></label>
+                                        <select name="cliente_partner" id="cliente_partner" class="form-control" required>
+                                                <option value='<?php echo $cliente_partner->getCod_cliente_partner(); ?>'><?php echo $cliente_partner->getNombre_cliente_partner(); ?></option>
+                                                <?php
+                                                foreach ($listCliente_partner as $e) {
+                                                    echo '<option value=' . $e->getCod_cliente_partner() . ' disabled >' . $e->getNombre_cliente_partner() . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>5. Cliente ITGES</label>				
+                                            <div class="form-group">
+                                                <select name="clienteItges" id="clienteItges" class="form-control" required>
+                                                        <option value='<?php echo $sub_cliente_partnerAxity->getCod_sub_cliente_partner();?>'><?php echo $sub_cliente_partnerAxity->getNombre_sub_cliente_partner(); ?></option>';
+                                                        <?php
+                                                            foreach ($listCliente_partnerItges as $t) {
+                                                                echo '<option value=' . $t->getCod_sub_cliente_partner() . '>' . $t->getNombre_sub_cliente_partner() . '</option>';
+                                                            }
+                                                        ?>
+                                                </select>					
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                <a href="?menu=agregarClienteItges" class="btn btn-primary btn-round">Agregar CLIENTE</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>6. Descripción de las actividades</label>
+                                <div class="form-group">
+                                <label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+                                <div class="form-group">
+                                <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+                                <div class="form-group">
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>7. Horas Trabajadas</label>
+                                <div class="form-group">
+                                <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+                                <div class="form-group">
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>8. Lugar de trabajo</label>
+                                <div class="form-group">
+                                <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+                                            <option value='<?php echo $reporte->getLugar_de_trabajo(); ?>'><?php echo $reporte->getLugar_de_trabajo(); ?></option>
+                                            <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+                                            <option value="Oficina (Presencial)">Oficina (Presencial)</option>
+                                        </select>
+                                
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
+                            </div>
+                        </div> 
+                        <!-- AVA CONSULTING  --> 
+                        <?php }if($reporte->getCod_cliente_partner()==11){ ?>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group"> 
+                                    <label>1. Fecha de Reporte </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
+                                    <div class="form-group">
+                                    <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $reporte->getFecha_de_reporte() ?>" required>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>2. Consultor </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="cod_usuario" id="cod_usuario"value="<?php echo $usuario->getCod_usuario() ?>" hidden>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>3. Módulo SAP  </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <select name="mod_sap" id="mod_sap" class="form-control" required>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <?php
+                                            foreach ($listMod_sap as $t) {
+                                                echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>4. Cliente Partner </label>
+                                        <div class="form-group">
+                                        <label class="bmd-label-floating"></label>
+                                        <select name="cliente_partner" id="cliente_partner" class="form-control" required>
+                                                <option value='<?php echo $cliente_partner->getCod_cliente_partner(); ?>'><?php echo $cliente_partner->getNombre_cliente_partner(); ?></option>
+                                                <?php
+                                                foreach ($listCliente_partner as $e) {
+                                                    echo '<option value=' . $e->getCod_cliente_partner() . ' disabled >' . $e->getNombre_cliente_partner() . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>5. Cliente AVA CONSULTING</label>				
+                                            <div class="form-group">
+                                                <select name="clienteAVA" id="clienteAVA" class="form-control" required>
+                                                        <option value='<?php echo $sub_cliente_partnerAxity->getCod_sub_cliente_partner();?>'><?php echo $sub_cliente_partnerAxity->getNombre_sub_cliente_partner(); ?></option>';
+                                                        <?php
+                                                            foreach ($listCliente_partnerAva as $t) {
+                                                                echo '<option value=' . $t->getCod_sub_cliente_partner() . '>' . $t->getNombre_sub_cliente_partner() . '</option>';
+                                                            }
+                                                        ?>
+                                                </select>					
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                <a href="?menu=agregarClienteAva" class="btn btn-primary btn-round">Agregar CLIENTE</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>6. Descripción de las actividades</label>
+                                <div class="form-group">
+                                <label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+                                <div class="form-group">
+                                <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+                                <div class="form-group">
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>7. Horas Trabajadas</label>
+                                <div class="form-group">
+                                <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+                                <div class="form-group">
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>8. Lugar de trabajo</label>
                                 <div class="form-group">
                                 <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
                                             <option value='<?php echo $reporte->getLugar_de_trabajo(); ?>'><?php echo $reporte->getLugar_de_trabajo(); ?></option>
