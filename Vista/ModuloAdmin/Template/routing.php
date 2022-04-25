@@ -24,6 +24,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'historialReporteConsultores') {
         include_once("../Vista/ModuloAdmin/historialReporteConsultores.php");
     }
+    if ($_GET['menu'] == 'historialReporteConsultoresNew') {
+        include_once("../Vista/ModuloAdmin/historialReporteConsultoresNew.php");
+    }
     if ($_GET['menu'] == 'historialReporteMensual') {
         include_once("../Vista/ModuloAdmin/historialReporteMensual.php");
     }

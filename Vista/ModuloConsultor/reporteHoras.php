@@ -40,6 +40,7 @@ $listCliente_partner = ManejoCliente_partner::getListActivo();
 // Set the new timezone
 date_default_timezone_set('America/Bogota');
 $hora_de_registro = date('d/m/Y');
+$fechaValidacion = date('d h:i A');
 ?>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -48,7 +49,7 @@ $hora_de_registro = date('d/m/Y');
         <div class="card">
             <div class="card-header card-header-primary">                
                 <center>
-                    <h4 class="card-title">Reportes de horas Diario RC</h4>
+                    <h4 class="card-title">Reportes de horas Diario RC <?php echo $fechaValidacion; ?></h4>
                 </center>
                 <p class="card-category">El formulario a continuación, les permitirá poder registrar las horas de trabajadas de manera
                 diaria con los clientes que atiende, quedando registrado en una base, donde el Coordinador Administrativo y 

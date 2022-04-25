@@ -54,7 +54,7 @@ $cod_mod_sap = $_POST['mod_sap'];
 
 //------CREAR REGISTRO EN LA TABLA REPORTE--------
 if($cod_cliente_partner == 1 ){
-    if($fechaValidacion >= '27 05:00 PM' && $fechaValidacion <= '27 11:59 PM'){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**$fechaValidacion >= '27 05:00 PM' && $fechaValidacion <= '27 11:59 PM'*/){
         echo '<script>
             alert("NO PUEDE REGISTRAR HORAS DE AXITY, COMUNICARSE CON EL ADMINISTRADOR.")
             window.location="../Consultor.php?menu=reporteHoras";
@@ -79,7 +79,7 @@ if($cod_cliente_partner == 1 ){
         ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 2){//EVERIS
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE NTT DATA, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -103,7 +103,7 @@ if($cod_cliente_partner == 1 ){
     }
     
 }else if($cod_cliente_partner == 3){//LUCTA
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE LUCTA, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -125,7 +125,7 @@ if($cod_cliente_partner == 1 ){
     ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 4){//MILLO
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE MILLO, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -148,7 +148,7 @@ if($cod_cliente_partner == 1 ){
         ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 5){//PRAXIS
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE PRAXIS, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -170,7 +170,7 @@ if($cod_cliente_partner == 1 ){
         ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 6){//SEIDOR
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE SEIDOR, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -193,12 +193,13 @@ if($cod_cliente_partner == 1 ){
         ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 7){//INTERNO RC
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE INTERNO RC, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
         </script>';
-    }else{
+        
+    }else {
         $reporte->setFecha_de_reporte($fecha_de_reporte);
         $reporte->setCod_usuario($usuario->getCod_usuario());
         $reporte->setCod_cliente_partner($cod_cliente_partner);
@@ -212,10 +213,10 @@ if($cod_cliente_partner == 1 ){
         $reporte->setCod_pep_cliente(52); // cod 52 pertenece INTERNO RC RESULTADO 'NADA'
         $reporte->setCod_sub_mod_sap(14); // cod 14 pertenece INTERNO RC RESULTADO 'NADA'
         $reporte->setCod_mod_sap($cod_mod_sap);
-        ManejoReporte::createReporte($reporte);
+        ManejoReporte::createReporte($reporte);   
     }
 }else if($cod_cliente_partner == 10){//ITGES
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE ITGES, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";
@@ -238,7 +239,7 @@ if($cod_cliente_partner == 1 ){
         ManejoReporte::createReporte($reporte);
     }
 }else if($cod_cliente_partner == 11){//AVA
-    if(($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )){
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
         echo '<script>
         alert("NO PUEDE REGISTRAR HORAS DE AVA CONSULTING, COMUNICARSE CON EL ADMINISTRADOR.")
         window.location="../Consultor.php?menu=reporteHoras";

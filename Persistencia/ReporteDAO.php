@@ -1,6 +1,12 @@
 <?php
 
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Reporte.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Mod_sap.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Cliente_partner.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_mod_sap.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Sub_cliente_partner.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Pep_cliente.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/DAO.php';
 
@@ -710,7 +716,7 @@ class ReporteDAO implements DAO
     public function getListByUser($cod_usuario)
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " order by fecha_de_reporte desc;";
+        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " order by fecha_de_reporte desc, hora_de_registro desc limit 100;";
         $reportes = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
@@ -756,6 +762,188 @@ class ReporteDAO implements DAO
         return $reportes;
     }
 
+     /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    /**public function getListPorUsuarioNew($cod_usuario)
+    {
+
+        $sql = "SELECT
+                fecha_de_reporte, usuario_login, nombre_usuario, apellido_usuario, nombre_mod_sap,
+                nombre_cliente_partner, nombre_sub_cliente_partner, nombre_sub_mod_sap, cod_no_ticket,
+                referencia_pep_cliente, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, 
+                hora_de_registro
+                FROM
+                    reporte, usuario, mod_sap, cliente_partner, sub_mod_sap, sub_cliente_partner, pep_cliente
+                WHERE
+                    reporte.cod_usuario=".$cod_usuario." AND reporte.cod_usuario = usuario.cod_usuario AND reporte.cod_cliente_partner = cliente_partner.cod_cliente_partner AND
+                    reporte.cod_sub_cliente_partner = sub_cliente_partner.cod_sub_cliente_partner AND
+                    reporte.cod_pep_cliente = pep_cliente.cod_pep_cliente AND reporte.cod_sub_mod_sap = sub_mod_sap.cod_sub_mod_sap AND
+                    reporte.cod_mod_sap = mod_sap.cod_mod_sap
+                order by fecha_de_reporte desc, hora_de_registro desc;";
+        $reportes = array();
+        $usuarios = array();
+        $mod_saps = array();
+        $cliente_partners = array();
+        $sub_mod_saps = array();
+        $sub_cliente_partners = array();
+        $pep_clientes = array();
+        if (!$resultado = pg_exec($this->conexion, $sql));
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $usuario = new Usuario();
+            $mod_sap = new Mod_sap();
+            $cliente_partner = new Cliente_partner();
+            $sub_mod_sap = new Sub_mod_sap();
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $pep_cliente = new Pep_cliente();
+
+            $reporte->setFecha_de_reporte($row[0]);
+            $usuario->setUsuario_login($row[1]);
+            $usuario->setNombre_usuario($row[2]);
+            $usuario->setApellido_usuario($row[3]);
+            $mod_sap->setNombre_mod_sap($row[4]);
+            $cliente_partner->setNombre_cliente_partner($row[5]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[6]);
+            $sub_mod_sap->setNombre_sub_mod_sap($row[7]);
+            $reporte->setCod_no_ticket($row[8]);
+            $pep_cliente->setReferencia_pep_cliente($row[9]);
+            $reporte->setDescripcion_actividad($row[10]);
+            $reporte->setHoras_trabajadas($row[11]);
+            $reporte->setLugar_de_trabajo($row[12]);
+            $reporte->setHora_de_registro($row[13]);
+            
+            $reportes[] = $reporte;
+            $usuarios[] = $usuario;
+            $mod_saps[] = $mod_sap;
+            $cliente_partners[] = $cliente_partner;
+            $sub_mod_saps[] = $sub_mod_sap;
+            $sub_cliente_partners[] = $sub_cliente_partner;
+            $pep_clientes[] = $pep_cliente;
+            $array = array_merge($reportes, $usuarios, $mod_saps, $cliente_partners, $sub_mod_saps, $sub_cliente_partners, $pep_clientes);
+        }
+        return $array;
+    }*/
+    
+    /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+    public function getListPorUsuarioNew($cod_usuario)
+    {
+
+        $sql = "SELECT
+                fecha_de_reporte, usuario_login, nombre_usuario, apellido_usuario, nombre_mod_sap,
+                nombre_cliente_partner, nombre_sub_cliente_partner, nombre_sub_mod_sap, cod_no_ticket,
+                referencia_pep_cliente, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, 
+                hora_de_registro
+                FROM
+                    reporte, usuario, mod_sap, cliente_partner, sub_mod_sap, sub_cliente_partner, pep_cliente
+                WHERE
+                    reporte.cod_usuario=".$cod_usuario." AND reporte.cod_usuario = usuario.cod_usuario AND reporte.cod_cliente_partner = cliente_partner.cod_cliente_partner AND
+                    reporte.cod_sub_cliente_partner = sub_cliente_partner.cod_sub_cliente_partner AND
+                    reporte.cod_pep_cliente = pep_cliente.cod_pep_cliente AND reporte.cod_sub_mod_sap = sub_mod_sap.cod_sub_mod_sap AND
+                    reporte.cod_mod_sap = mod_sap.cod_mod_sap
+                order by fecha_de_reporte desc, hora_de_registro desc;";
+        //echo $sql;        
+        $reportes = array();
+        $usuarios = array();
+        $mod_saps = array();
+        $cliente_partners = array();
+        $sub_mod_saps = array();
+        $sub_cliente_partners = array();
+        $pep_clientes = array();
+        if (!$resultado = pg_Exec($this->conexion, $sql));
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $usuario = new Usuario();
+            $mod_sap = new Mod_sap();
+            $cliente_partner = new Cliente_partner();
+            $sub_mod_sap = new Sub_mod_sap();
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $pep_cliente = new Pep_cliente();
+
+            $reporte->setFecha_de_reporte($row[0]);
+            $usuario->setUsuario_login($row[1]);
+            $usuario->setNombre_usuario($row[2]);
+            $usuario->setApellido_usuario($row[3]);
+            $mod_sap->setNombre_mod_sap($row[4]);
+            $cliente_partner->setNombre_cliente_partner($row[5]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[6]);
+            $sub_mod_sap->setNombre_sub_mod_sap($row[7]);
+            $reporte->setCod_no_ticket($row[8]);
+            $pep_cliente->setReferencia_pep_cliente($row[9]);
+            $reporte->setDescripcion_actividad($row[10]);
+            $reporte->setHoras_trabajadas($row[11]);
+            $reporte->setLugar_de_trabajo($row[12]);
+            $reporte->setHora_de_registro($row[13]);
+            
+            $reportes[] = $reporte;
+            $usuarios[] = $usuario;
+            $mod_saps[] = $mod_sap;
+            $cliente_partners[] = $cliente_partner;
+            $sub_mod_saps[] = $sub_mod_sap;
+            $sub_cliente_partners[] = $sub_cliente_partner;
+            $pep_clientes[] = $pep_cliente;
+            $array = array_push($reportes, $usuarios, $mod_saps, $cliente_partners, $sub_mod_saps, $sub_cliente_partners, $pep_clientes);
+        }
+        return $array;
+    }
+
+     /**
+     * Method to get an ReporteDAO object
+     *
+     * @param Object $conexion
+     * @return ReporteDAO
+     */
+   /**public function getListPorUsuarioNew($cod_usuario)
+    {
+
+        $sql = "SELECT
+                fecha_de_reporte, usuario_login, nombre_usuario, apellido_usuario, nombre_mod_sap,
+                nombre_cliente_partner, nombre_sub_cliente_partner, nombre_sub_mod_sap, cod_no_ticket,
+                referencia_pep_cliente, descripcion_actividad, horas_trabajadas, lugar_de_trabajo, 
+                hora_de_registro
+                FROM
+                    reporte, usuario, mod_sap, cliente_partner, sub_mod_sap, sub_cliente_partner, pep_cliente
+                WHERE
+                    reporte.cod_usuario=".$cod_usuario." AND reporte.cod_usuario = usuario.cod_usuario AND reporte.cod_cliente_partner = cliente_partner.cod_cliente_partner AND
+                    reporte.cod_sub_cliente_partner = sub_cliente_partner.cod_sub_cliente_partner AND
+                    reporte.cod_pep_cliente = pep_cliente.cod_pep_cliente AND reporte.cod_sub_mod_sap = sub_mod_sap.cod_sub_mod_sap AND
+                    reporte.cod_mod_sap = mod_sap.cod_mod_sap
+                order by fecha_de_reporte desc, hora_de_registro desc;";
+        $reportes = array();
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $reporte = new Reporte();
+            $reporte->setFecha_de_reporte($row[0]);
+            $reporte->setUsuario_login($row[1]);
+            $reporte->setNombre_usuario($row[2]);
+            $reporte->setApellido_usuario($row[3]);
+            $reporte->setNombre_mod_sap($row[4]);
+            $reporte->setNombre_cliente_partner($row[5]);
+            $reporte->setNombre_sub_cliente_partner($row[6]);
+            $reporte->setNombre_sub_mod_sap($row[7]);
+            $reporte->setCod_no_ticket($row[8]);
+            $reporte->setReferencia_pep_cliente($row[9]);
+            $reporte->setDescripcion_actividad($row[10]);
+            $reporte->setHoras_trabajadas($row[11]);
+            $reporte->setLugar_de_trabajo($row[12]);
+            $reporte->setHora_de_registro($row[13]);
+            $reportes[] = $reporte;
+        }
+        return $reportes;
+    }*/
+    
+    
 
     /**
      * Gets the object of this class. In case it is null, create it

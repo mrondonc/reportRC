@@ -54,6 +54,7 @@ $fecha = date('d h:i A');
         <div class="table-responsive" >
         <table class="table" style="text-align: center;" >
             <thead class="text-warning">
+                <th> </th>
                 <th style="font-size: small;">Fecha de Reporte</th>
                 <th style="font-size: small;">Módulo SAP</th>
                 <th style="font-size: small;">Cliente Partner</th>
@@ -65,24 +66,13 @@ $fecha = date('d h:i A');
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
-                <th> </th>
+                
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
                     ?>
                 <tr>
-                    <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
-                    <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?> </td>
-                    <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>
-                    <td style="font-size: small;"><?php echo ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner();?></td>
-                    <td style="font-size: small;"><?php echo ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getCod_no_ticket();?></td>
-                    <td style="font-size: small;"><?php echo ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
-                    <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
-                    <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
+                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
@@ -94,10 +84,21 @@ $fecha = date('d h:i A');
                         </td>
                     <?php }else{ ?>
                         <td class="td-actions text-right">
-                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i class="material-icons">edit</i></a>
-                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i class="material-icons">close</i></a>
+                            <a type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>"><i class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?> </td>
+                    <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>
+                    <td style="font-size: small;"><?php echo ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner();?></td>
+                    <td style="font-size: small;"><?php echo ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getCod_no_ticket();?></td>
+                    <td style="font-size: small;"><?php echo ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getDescripcion_actividad();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
+                    <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
                 </tr>
                 <?php }?>
             </tbody>
