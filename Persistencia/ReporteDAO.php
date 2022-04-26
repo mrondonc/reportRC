@@ -189,7 +189,7 @@ class ReporteDAO implements DAO
     public function getList()
     {
 
-        $sql = "SELECT * FROM REPORTE order by FECHA_DE_REPORTE desc";
+        $sql = "SELECT * FROM REPORTE order by FECHA_DE_REPORTE desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -224,7 +224,7 @@ class ReporteDAO implements DAO
     public function getListPorMesActual()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -259,7 +259,7 @@ class ReporteDAO implements DAO
     public function getListPorMesActualMax5()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc limit 5";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=EXTRACT(MONTH from CURRENT_DATE) order by fecha_de_reporte desc, hora_de_registro desc limit 5";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -295,7 +295,7 @@ class ReporteDAO implements DAO
     public function getListPorMesEnero()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=1 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=1 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -330,7 +330,7 @@ class ReporteDAO implements DAO
     public function getListPorMesFebrero()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=2 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=2 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -365,7 +365,7 @@ class ReporteDAO implements DAO
     public function getListPorMesMarzo()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=3 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=3 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -400,7 +400,7 @@ class ReporteDAO implements DAO
     public function getListPorMesAbril()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=4 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=4 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -435,7 +435,7 @@ class ReporteDAO implements DAO
     public function getListPorMesMayo()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=5 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=5 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -470,7 +470,7 @@ class ReporteDAO implements DAO
     public function getListPorMesJunio()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=6 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=6 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -505,7 +505,7 @@ class ReporteDAO implements DAO
     public function getListPorMesJulio()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=7 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=7 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -540,7 +540,7 @@ class ReporteDAO implements DAO
     public function getListPorMesAgosto()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=8 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=8 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -575,7 +575,7 @@ class ReporteDAO implements DAO
     public function getListPorMesSeptiembre()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=9 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=9 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -610,7 +610,7 @@ class ReporteDAO implements DAO
     public function getListPorMesOctubre()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=10 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=10 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -645,7 +645,7 @@ class ReporteDAO implements DAO
     public function getListPorMesNoviembre()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=11 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=11 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
@@ -680,7 +680,7 @@ class ReporteDAO implements DAO
     public function getListPorMesDiciembre()
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=12 order by fecha_de_reporte desc";
+        $sql = "SELECT * FROM REPORTE WHERE EXTRACT(MONTH from fecha_de_reporte)=12 order by fecha_de_reporte desc, hora_de_registro desc;";
         $reportes = array();
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
