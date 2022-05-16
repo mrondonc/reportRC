@@ -12,6 +12,7 @@ $nombre = $_POST['nombreCliente'];
 $cliente = new Cliente_partner();
 
 $cliente->setNombre_cliente_partner($nombre);
+$cliente->setCod_estado_cliente_partner(1);
 
 ManejoCliente_partner::createCliente_partner($cliente);
     

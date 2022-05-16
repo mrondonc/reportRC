@@ -716,7 +716,7 @@ class ReporteDAO implements DAO
     public function getListByUser($cod_usuario)
     {
 
-        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " order by fecha_de_reporte desc, hora_de_registro desc limit 100;";
+        $sql = "SELECT * FROM REPORTE WHERE COD_USUARIO = " .$cod_usuario. " order by fecha_de_reporte desc, hora_de_registro desc limit 60;";
         $reportes = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 

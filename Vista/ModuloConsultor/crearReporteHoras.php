@@ -261,9 +261,33 @@ if($cod_cliente_partner == 1 ){
         $reporte->setCod_mod_sap($cod_mod_sap);
         ManejoReporte::createReporte($reporte);
     }
+}else if($cod_cliente_partner == 12){//ACTIONBYTE
+    if($fechaValidacion >= '32 00:00 PM' && $fechaValidacion <= '32 00:00 PM'  /**($fechaValidacion >= '30 06:00 PM' && $fechaValidacion <= '30 11:59 PM' ) || ($fechaValidacion >= '31 06:00 PM' && $fechaValidacion <= '31 11:59 PM' )*/){
+        echo '<script>
+        alert("NO PUEDE REGISTRAR HORAS DE AVA CONSULTING, COMUNICARSE CON EL ADMINISTRADOR.")
+        window.location="../Consultor.php?menu=reporteHoras";
+        </script>';
+    }else{
+        //$sub_cliente_partnerAva = $_POST['clienteActionByte'];
+        $reporte->setFecha_de_reporte($fecha_de_reporte);
+        $reporte->setCod_usuario($usuario->getCod_usuario());
+        $reporte->setCod_cliente_partner($cod_cliente_partner);
+        $reporte->setDescripcion_actividad($descripcion_actividad);
+        $reporte->setHoras_trabajadas($horas_trabajadas);
+        $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+        $reporte->setHora_de_registro($hora_de_registro);
+        
+        $reporte->setCod_sub_cliente_partner(68); //cod 68 para ACTIONBYTE 'NADA' 
+        $reporte->setCod_no_ticket(" ");
+        $reporte->setCod_pep_cliente(82); // cod 82 pertenece ACTIONBYTE 'NADA'
+        $reporte->setCod_sub_mod_sap(18); // cod 18 pertenece ACTIONBYTE 'NADA'
+        $reporte->setCod_mod_sap($cod_mod_sap);
+        ManejoReporte::createReporte($reporte);
+    }
 }
 echo '<script>
     alert("Se ha creado el Reporte de Horas Exitosamente")
     window.location="../Consultor.php?menu=reporteHoras";
     </script>';
+    
 ?>

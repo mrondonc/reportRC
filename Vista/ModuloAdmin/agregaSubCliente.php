@@ -18,6 +18,7 @@ $subCliente = new Sub_cliente_partner();
 
 $subCliente->setNombre_sub_cliente_partner($nombre);
 $subCliente->setCod_cliente_partner($cod_cliente);
+$subCliente->setCod_estado_actual(1);
 
 ManejoSub_cliente_partner::createSub_cliente_partner($subCliente);
     

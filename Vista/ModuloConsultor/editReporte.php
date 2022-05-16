@@ -1197,6 +1197,124 @@ $listCliente_partnerAva = ManejoSub_cliente_partner::getListAVAActivo();
                             <button class="btn btn-primary" type='submit'>Guardar</button>
                             </div>
                         </div> 
+                        <!-- ACTIONBYTE  --> 
+                        <?php }if($reporte->getCod_cliente_partner()==12){ ?>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group"> 
+                                    <label>1. Fecha de Reporte </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
+                                    <div class="form-group">
+                                    <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $reporte->getFecha_de_reporte() ?>" required>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>2. Consultor </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                    <label>3. Módulo SAP  </label>
+                                    <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <select name="mod_sap" id="mod_sap" class="form-control" required>
+                                            <option value='<?php echo $reporte->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                            <?php
+                                            foreach ($listMod_sap as $t) {
+                                                echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>4. Cliente Partner </label>
+                                        <div class="form-group">
+                                        <label class="bmd-label-floating"></label>
+                                        <select name="cliente_partner" id="cliente_partner" class="form-control" required>
+                                                <option value='<?php echo $cliente_partner->getCod_cliente_partner(); ?>'><?php echo $cliente_partner->getNombre_cliente_partner(); ?></option>
+                                                <?php
+                                                foreach ($listCliente_partner as $e) {
+                                                    echo '<option value=' . $e->getCod_cliente_partner() . ' disabled >' . $e->getNombre_cliente_partner() . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>5. Descripción de las actividades</label>
+                                <div class="form-group">
+                                <label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+                                <div class="form-group">
+                                <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+                                <div class="form-group">
+					            <label>Colocar Hora de Inicio - Hora de Fin </label>
+					            <div class="form-group">
+					            <label>Ejemplo: 08:00 AM - 10:00 AM</label>
+                                <div class="form-group">
+					            <label>Colocar ID del proyecto</label>
+                                <div class="form-group">
+                                <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" required><?php echo $reporte->getDescripcion_actividad(); ?></textarea>
+                                </div>
+                                </div>
+                                </div>
+					            </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>6. Horas Trabajadas</label>
+                                <div class="form-group">
+                                <label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+                                <div class="form-group">
+                                <input type="number"  placeholder="0.0" step="0.5" min="0" max="24" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="<?php echo $reporte->getHoras_trabajadas(); ?>" required>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                <label>7. Lugar de trabajo</label>
+                                <div class="form-group">
+                                <select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+                                            <option value='<?php echo $reporte->getLugar_de_trabajo(); ?>'><?php echo $reporte->getLugar_de_trabajo(); ?></option>
+                                            <option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+                                            <option value="Oficina (Presencial)">Oficina (Presencial)</option>
+                                        </select>
+                                
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                            <button class="btn btn-primary" type='submit'>Guardar</button>
+                            </div>
+                        </div> 
                         <?php } ?>
                 </form>
             </div>
