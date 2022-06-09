@@ -20,7 +20,7 @@ if (is_null($admin)) {
     if (is_null($usuario)) {
             echo '<script>
             alert("NO HA SIDO VERIFICADO POR EL ADMINISTRADOR");
-            window.location="Login.php";          
+            window.location="./Login/index.php";          
         </script>';
             //header("Location: login.php");
     } else {
