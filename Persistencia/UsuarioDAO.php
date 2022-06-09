@@ -266,7 +266,7 @@ class UsuarioDAO implements DAO
     public function getListOrdenNombre()
     {
 
-        $sql = "SELECT * FROM USUARIO where cod_estado_usuario != 3 order by nombre_usuario asc";
+        $sql = "SELECT * FROM USUARIO where cod_estado_usuario != 3 order by usuario_login asc";
         $usuarios = array();
         if (!$resultado = pg_query($this->conexion, $sql)) die();
 
