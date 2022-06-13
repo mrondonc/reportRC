@@ -182,7 +182,7 @@ class AdministradorDAO implements DAO
     public function verificarCuenta($correo, $pass)
     {
 
-        $sql = "SELECT * from administrador WHERE usuario_login = '" . $correo . "' and contraseña = '" . $pass . "'";
+        $sql = "SELECT * from administrador WHERE usuario_login = '" . $correo . "' and contraseña = '" . $pass . "' and cod_estado_usuario=2";
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();
         $row = pg_fetch_array($resultado);
