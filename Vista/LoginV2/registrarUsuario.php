@@ -8,7 +8,7 @@ $conexion = $obj->conectarDB();
 
 ManejoMod_sap::setConexionBD($conexion);
 
-$listMod_sap = ManejoMod_sap::getList();
+$listMod_sap = ManejoMod_sap::getListActivo();
 
 ?>
 <!doctype html>

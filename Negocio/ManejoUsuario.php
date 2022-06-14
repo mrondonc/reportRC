@@ -53,6 +53,16 @@
             $UsuarioDAO->createXAdmin($usuario);
         }
 
+         /**
+         * Create an usuario
+         * @param Usuario usuario to create
+         * @return void
+         */
+        public static function createUsuarioXLogin($usuario){
+            $UsuarioDAO=UsuarioDAO::getUsuarioDAO(self::$conexionBD);
+            $UsuarioDAO->createXLogin($usuario);
+        }
+
         /**
          * Modify an Usuario
          * @param Usuario usuario to modify
