@@ -23,7 +23,8 @@
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="assets/images/logo.svg" alt="logo" class="logo">
+                <img src="assets/images/LOGOLETRA2.png" >
+               <!-- <img src="assets/images/logo.svg" >-->
               </div>
               <p class="login-card-description">Sign into your account</p>
               <form method="post" action="../VerificarLogin.php">
@@ -38,7 +39,7 @@
                   <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
                 </form>
                 <a href="#!" class="forgot-password-link">Forgot password?</a>
-                <p class="login-card-footer-text">Don't have an account? <a href="../registrarUsuario.php" class="text-reset">Register here</a></p>
+                <p class="login-card-footer-text">Don't have an account? <a href="../LoginV2/registrarUsuario.php" class="text-reset">Register here</a></p>
                 <nav class="login-card-footer-nav">
                   <a href="#!">Terms of use.</a>
                   <a href="#!">Privacy policy</a>
