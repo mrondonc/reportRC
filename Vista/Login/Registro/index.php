@@ -14,7 +14,7 @@ $listMod_sap = ManejoMod_sap::getListActivo();
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <!-- Required meta tags-->
