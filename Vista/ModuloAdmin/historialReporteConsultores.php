@@ -1,5 +1,5 @@
 <?php
-set_time_limit(300);
+set_time_limit(600);
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
@@ -68,6 +68,7 @@ $reportes = ManejoReporte::getListByUser($cod_usuario);
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
@@ -90,11 +91,13 @@ $reportes = ManejoReporte::getListByUser($cod_usuario);
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=14"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
         </table>
         </div>
     </div>
-    
 </div>

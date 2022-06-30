@@ -62,7 +62,9 @@ $clienteI = ManejoCliente_partner::getListInactivo();
                         <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar Sub Clientes</a></td>
                     <?php   } else if($cliente[$i]->getCod_cliente_partner()== 6){ ?>
                         <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar PEP Clientes</a></td>
-                    <?php   } else { ?>
+                    <?php   } else if($cliente[$i]->getCod_cliente_partner()== 13){ ?>
+                        <td style="font-size: small;"><a href="?menu=subClientes&cod_cliente_partner=<?php echo $cliente[$i]->getCod_cliente_partner();?>">Visualizar Sub Clientes</a></td>
+                    <?php   } else{ ?>
                         <td style="font-size: small;"><a rel="tooltip" title="No posee sub clientes">Visualizar Sub Clientes</a></td>
                     <?php }  ?>
                     <td style="font-size: small;"><?php echo ManejoEstado_cliente_partner::consultarEstado_cliente_partner($cliente[$i]->getCod_estado_cliente_partner())->getNombre_estado();?></td>

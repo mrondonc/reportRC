@@ -41,6 +41,7 @@
 	$listCliente_partnerMillo = ManejoSub_cliente_partner::getListMilloActivo();
 	$listCliente_partnerItges = ManejoSub_cliente_partner::getListItgesActivo();
 	$listCliente_partnerAva = ManejoSub_cliente_partner::getListAVAActivo();
+	$listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
 	$listPepCliente = ManejoPep_cliente::getListSeidorActivo();
 	//$listNoTicket = ManejoNo_ticket::getListAxity();
 
@@ -102,7 +103,7 @@
 					<div class="form-group">
 					<label>Colocar Numero del Ticket en caso que aplique / Si no tiene Numero colocar (No Aplica Ticket)</label>
 					<div class="form-group">
-					<input type="text" class="form-control" name="noTicket" id="noTicket" value="" required>
+					<input maxlength="1000" type="text" class="form-control" name="noTicket" id="noTicket" value="" required>
 					</div>
 					</div>
 					</div>
@@ -117,7 +118,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -189,7 +194,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+                                    <div class="the-count">
+                                        <span id="current">0</span>
+                                        <span id="maximum">/ 1000</span>
+                                    </div>
 					</div>
 					</div>
 					</div>
@@ -240,7 +249,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -311,7 +324,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -362,7 +379,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -436,7 +457,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -487,7 +512,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -559,7 +588,11 @@
 				   <div class="form-group">
 				   <label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 				   <div class="form-group">
-				   <textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+				   <textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 				   </div>
 				   </div>
 				   </div>
@@ -631,7 +664,11 @@
 					<div class="form-group">
 					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -668,7 +705,7 @@
 				</div>
 			</div>	 
 		';
-		//CLIENTE ACTIONBYTE
+		
 	}else if ($cliente_partner == 12) {
 		echo 
 		'
@@ -688,7 +725,11 @@
 					<div class="form-group">
 					<label>Colocar el ID del proyecto</label>
 					<div class="form-group">
-					<textarea class="form-control" name="descripcionActividades" id="descripcionActividades" value="" required>ID PROYECTO:  DESCRIPCIÓN:  HORA DE INICIO: - HORA DE FIN: </textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades"  placeholder="ID PROYECTO:  DESCRIPCIÓN:  HORA DE INICIO: - HORA DE FIN: " value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
 					</div>
 					</div>
 					</div>
@@ -727,6 +768,95 @@
 				</div>
 			</div>	 
 		';
+		//CLIENTE SUCAFINA
+	}else if ($cliente_partner == 13) {
+		echo 
+		'
+			<div class="row">
+				 <div class="col-md-10">
+				 <div class="form-group">
+				 <label>5. Cliente SUCAFINA</label>				
+				 <div class="form-group">
+				 <select name="clienteSuca" id="clienteSuca" class="form-control" required>
+						 <option value="">Seleccione alguna opcion</option>';
+						 foreach ($listCliente_partnerSuca as $t) {
+							 echo'
+						 <option value='. $t->getCod_sub_cliente_partner().'>'.$t->getNombre_sub_cliente_partner().'</option>	
+						 '; }
+						 echo '
+				 </select>					
+				 </div>
+				 </div>
+				 </div>
+				 <div class="col-md-2">
+				 <a href="?menu=agregarClienteSuca" class="btn btn-primary btn-round">Agregar CLIENTE</a>
+				 </div>
+			 </div>
+			</div>
+			<div class="row">
+ 
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Descripción de las actividades</label>
+					<div class="form-group">
+					<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+					<div class="form-group">
+					<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+					<div class="form-group">
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades"  value="" required></textarea>
+						<div class="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 1000</span>
+						</div>
+					</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Horas Trabajadas</label>
+					<div class="form-group">
+					<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+					<div class="form-group">
+					<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>8. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="">Seleccione alguna opcion</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
+							</select>
+					
+					</div>
+					</div>
+				</div>
+			</div>	 
+		';
 	 }
 
 ?>
+
+<script>
+	$('textarea').keyup(function() {
+    
+	var characterCount = $(this).val().length,
+		current = $('#current'),
+		maximum = $('#maximum'),
+		theCount = $('.the-count');
+	  
+	current.text(characterCount);
+		
+  });
+</script>

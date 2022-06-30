@@ -1,5 +1,5 @@
 <?php
-set_time_limit(300);
+set_time_limit(600);
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
@@ -79,6 +79,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesEnero) ; $i++) {    
@@ -101,6 +102,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesEnero[$i]->getCod_usuario();?>&idCopy=2"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -137,6 +141,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesFebrero) ; $i++) {    
@@ -159,6 +164,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesFebrero[$i]->getCod_usuario();?>&idCopy=3"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -195,6 +203,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesMarzo) ; $i++) {    
@@ -217,6 +226,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesMarzo[$i]->getCod_usuario();?>&idCopy=4"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -254,6 +266,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesAbril) ; $i++) {    
@@ -276,6 +289,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesAbril[$i]->getCod_usuario();?>&idCopy=5"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -312,6 +328,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesMayo) ; $i++) {    
@@ -334,6 +351,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesMayo[$i]->getCod_usuario();?>&idCopy=6"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -370,6 +390,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesJunio) ; $i++) {    
@@ -392,6 +413,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesJunio[$i]->getCod_usuario();?>&idCopy=7"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -428,6 +452,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesJulio) ; $i++) {    
@@ -450,6 +475,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesJulio[$i]->getCod_usuario();?>&idCopy=8"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -486,6 +514,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesAgosto) ; $i++) {    
@@ -508,6 +537,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesAgosto[$i]->getCod_usuario();?>&idCopy=9"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -544,6 +576,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesSeptiembre) ; $i++) {    
@@ -566,6 +599,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesSeptiembre[$i]->getCod_usuario();?>&idCopy=10"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -602,6 +638,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesOctubre) ; $i++) {    
@@ -624,6 +661,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesOctubre[$i]->getCod_usuario();?>&idCopy=11"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -660,6 +700,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesNoviembre) ; $i++) {    
@@ -682,6 +723,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesNoviembre[$i]->getCod_usuario();?>&idCopy=12"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -718,6 +762,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportesDiciembre) ; $i++) {    
@@ -740,6 +785,9 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportesDiciembre[$i]->getCod_usuario();?>&idCopy=13"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>

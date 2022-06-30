@@ -72,6 +72,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarClienteEveris') {
         include_once("../Vista/ModuloAdmin/agregarClienteEveris.php");
     }
+    if ($_GET['menu'] == 'agregarClienteSuca') {
+        include_once("../Vista/ModuloAdmin/agregarClienteSuca.php");
+    }
     if ($_GET['menu'] == 'agregarClienteMillo') {
         include_once("../Vista/ModuloAdmin/agregarClienteMillo.php");
     }
@@ -116,6 +119,9 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == 'editSubModSap') {
         include_once("../Vista/ModuloAdmin/editSubModSap.php");
+    }
+    if ($_GET['menu'] == 'copyReporte') {
+        include_once("../Vista/ModuloAdmin/copyReporte.php");
     }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");

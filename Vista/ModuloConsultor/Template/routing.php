@@ -42,8 +42,14 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarClienteAva') {
         include_once("../Vista/ModuloConsultor/agregarClienteAva.php");
     }
+    if ($_GET['menu'] == 'agregarClienteSuca') {
+        include_once("../Vista/ModuloConsultor/agregarClienteSUCAFINA.php");
+    }
     if ($_GET['menu'] == 'agregarClienteItges') {
         include_once("../Vista/ModuloConsultor/agregarClienteItges.php");
+    }
+    if ($_GET['menu'] == 'copyReporte') {
+        include_once("../Vista/ModuloConsultor/copyReporte.php");
     }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");

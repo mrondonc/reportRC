@@ -66,18 +66,18 @@ $fecha = date('d h:i A');
                 <th style="font-size: small;">Horas Trabajadas</th>
                 <th style="font-size: small;">Lugar de Trabajo</th>
                 <th style="font-size: small;">Hora de Registro</th>
-                
+                <th style="font-size: small;">Copiar Registro</th>
             </thead>
             <tbody style="text-align: center;">
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
                     ?>
                 <tr>
-                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
+                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '32 05:00 PM' && $fecha <= '32 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
                         </td>
-                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '31 06:00 PM' && $fecha <= '31 11:59 PM' )){  ?>    
+                    <?php }else if(($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' ) || ($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' )){  ?>    
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
@@ -99,6 +99,9 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>

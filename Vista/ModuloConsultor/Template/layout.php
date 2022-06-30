@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['cod_usuario']==null)
 {
-    header("Location: Login.php");
+    header("Location: ../index.php");
 }
 
 
@@ -42,9 +42,18 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
-  
+  <script src="https://kit.fontawesome.com/d82eacb9bb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-
+<style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+</style>
 <body class="">
   <div class="wrapper ">
     <!-- LEFT PANEL -->
