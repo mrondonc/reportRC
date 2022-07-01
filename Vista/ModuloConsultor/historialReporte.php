@@ -43,7 +43,7 @@ $fecha = date('d h:i A');
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Historial Reporte de Horas</h4>
+                <h4 class="card-title ">Historial Reporte de Horas <?php echo $fecha; ?> </h4>
                 <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas. 
                    <!-- <a style="text-align: right;" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelConsultor.php?cod_tipo_usuario=<?php echo $usuario->getCod_tipo_usuario();?>&cod_usuario=<?php echo $usuario->getCod_usuario();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>-->
                 </span>
@@ -72,12 +72,12 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
                     ?>
                 <tr>
-                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '32 05:00 PM' && $fecha <= '32 11:59 PM')){  ?>
+                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
                         </td>
-                    <?php }else if(($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' ) || ($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' )){  ?>    
+                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '31 06:00 PM' && $fecha <= '31 11:59 PM' )){  ?>    
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>

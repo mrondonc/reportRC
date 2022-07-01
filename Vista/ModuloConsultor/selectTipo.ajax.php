@@ -727,7 +727,7 @@
 					<div class="form-group">
 					<label>Colocar el ID del proyecto</label>
 					<div class="form-group">
-					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades" required> asdasd</textarea>
+					<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades"placeholder="ID PROYECTO:  DESCRIPCIÓN:  HORA DE INICIO: - HORA DE FIN: " value="" required></textarea>
 					<div class="the-count">
 						<span id="current">0</span>
 						<span id="maximum">/ 1000</span>
