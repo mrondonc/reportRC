@@ -179,9 +179,35 @@ class AdministradorDAO implements DAO
         return $administradors;
     }
 
+    public function verificarCuentaUser($user)
+    {
+        $sql = "SELECT * from administrador WHERE usuario_login = '" . $user . "' and cod_estado_usuario=2";
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        $row = pg_fetch_array($resultado);
+
+        $administrador = new Administrador();
+        $administrador->setCod_administrador($row[0]);
+        $administrador->setNombre_administrador($row[1]);
+        $administrador->setCod_estado_usuario($row[2]);
+        $administrador->setCod_tipo_usuario($row[3]);
+        $administrador->setContraseña($row[4]);
+        $administrador->setUsuario_login($row[5]);
+        $administrador->setTelefono($row[6]);
+        $administrador->setCorreo($row[7]);
+        $administrador->setDireccion($row[8]);
+        $administrador->setPais($row[9]);
+        $administrador->setCumpleaños($row[10]);
+        $administrador->setCuenta_skype($row[11]);
+        $administrador->setNombre_contacto_emergencia($row[12]);
+        $administrador->setNumero_contacto_emergencia($row[13]);
+
+        return $administrador;
+    }
+
     public function verificarCuenta($correo, $pass)
     {
-
         $sql = "SELECT * from administrador WHERE usuario_login = '" . $correo . "' and contraseña = '" . $pass . "' and cod_estado_usuario=2";
 
         if (!$resultado = pg_query($this->conexion, $sql)) die();

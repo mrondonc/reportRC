@@ -33,6 +33,13 @@
             return $usuario;
         }
 
+        public static function verificarCuentaUsuarioUser($user){
+
+            $usuarioDAO = UsuarioDAO::getUsuarioDAO(self::$conexionBD);
+            $usuario = $usuarioDAO->verificarCuentaUser($user);
+            return $usuario;
+        }
+
         /**
          * Create an usuario
          * @param Usuario usuario to create

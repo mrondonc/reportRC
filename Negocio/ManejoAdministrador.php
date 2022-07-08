@@ -32,6 +32,13 @@
             $administrador = $administradorDAO->verificarCuenta($correo,$pass);
             return $administrador;
         }
+        
+        public static function verificarCuentaAdministradorUser($user){
+
+            $administradorDAO = AdministradorDAO::getAdministradorDAO(self::$conexionBD);
+            $administrador = $administradorDAO->verificarCuentaUser($user);
+            return $administrador;
+        }
 
         /**
          * Create an administrador
