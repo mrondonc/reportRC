@@ -64,7 +64,7 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($admin->getCod_e
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">País de recidencia</label>
+                          <label class="bmd-label-floating">País de residencia</label>
                           <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $admin->getPais() ?>" disabled>
                         </div>
                       </div>

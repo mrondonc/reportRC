@@ -10,7 +10,7 @@ $conexion = $obj->conectarDB();
 
 ManejoAdministrador::setConexionBD($conexion);
 ManejoEstado_usuario::setConexionBD($conexion);
-
+$cod_administradors = $_SESSION['cod_administrador'];
 $cod_administrador =  $_GET['cod_administrador'];
 $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
 $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($administrador->getCod_estado_usuario());
@@ -64,7 +64,7 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($administrador->
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">País de recidencia</label>
+                          <label class="bmd-label-floating">País de residencia</label>
                           <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $administrador->getPais() ?>" disabled>
                         </div>
                       </div>
@@ -116,8 +116,10 @@ $estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($administrador->
                           </div>
                       </div> 
                     </div>                
-                    <!--<button class="btn btn-primary pull-right" href="../Vista/ModuloConsultor/index.php">Editar Perfil</button>-->
-                    
+                    <?php
+                      if($cod_administradors == 5){ //Codigo del super admin *revisar en la bd el de manuel* ?>
+                        <a class="btn btn-primary pull-right" href="?menu=modificarAdministrador&cod_administrador=<?php echo $administrador->getCod_administrador() ?>">Editar Perfil</a>
+                     <?php } ?>
                 </div>
               </div>
             </div>

@@ -82,7 +82,7 @@ $listMod_sap = ManejoMod_sap::getListActivo();
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">País de recidencia</label>
+                          <label class="bmd-label-floating">País de residencia</label>
                           <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $usuario->getPais() ?>" >
                         </div>
                       </div>

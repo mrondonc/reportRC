@@ -123,6 +123,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'copyReporte') {
         include_once("../Vista/ModuloAdmin/copyReporte.php");
     }
+    if ($_GET['menu'] == 'modificarAdministrador') {
+        include_once("../Vista/ModuloAdmin/modificarAdministrador.php");
+    }
 } else {
     include_once("../Vista/ModuloAdmin/index.php");
 }

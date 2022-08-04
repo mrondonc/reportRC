@@ -17587,13 +17587,13 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card .card-header-rose .card-icon,
 .card .card-header-rose:not(.card-header-icon):not(.card-header-text),
 .card .card-header-rose .card-text {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px #62de67;
 }
 
 .card .card-header-warning .card-icon,
 .card .card-header-warning:not(.card-header-icon):not(.card-header-text),
 .card .card-header-warning .card-text {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px #62de67;
 }
 
 .card .card-header-info .card-icon,

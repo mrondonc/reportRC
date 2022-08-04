@@ -1,33 +1,29 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Mod_sap.php';
-require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoMod_sap.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Estado_usuario.php';
 require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoEstado_usuario.php';
 
 $obj = new Conexion();
 $conexion = $obj->conectarDB();
 
-ManejoUsuario::setConexionBD($conexion);
-ManejoMod_sap::setConexionBD($conexion);
+ManejoAdministrador::setConexionBD($conexion);
 ManejoEstado_usuario::setConexionBD($conexion);
+$cod_administrador =  $_GET['cod_administrador'];
+$administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
+$estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($administrador->getCod_estado_usuario());
 
-$cod_usuario  =  $_GET['cod_usuario'];
-$usuario = ManejoUsuario::consultarUsuario($cod_usuario);
-$estado_usuario = ManejoEstado_usuario::consultarEstado_usuario($usuario->getCod_estado_usuario());
-$mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
 ?>
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">PERFIL COMPLETO</h4>
-                  <p class="card-category">Aquí podrá mirar los datos personales</p>
+                  <p class="card-category">Aquí podrá modificar los datos personales del administrador</p>
                 </div>
                 <div class="card-body">
-
+                <form action="ModuloAdmin/modificaAdministrador.php?cod_administrador=<?php echo $administrador->getCod_administrador() ?>" method="post">
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
@@ -38,41 +34,29 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       <div class="col-md-7">
                         <div class="form-group">
                           <label class="bmd-label-floating">Correo electrónico </label>
-                          <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $usuario->getCorreo_usuario() ?>" disabled>
+                          <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $administrador->getCorreo() ?>" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nombre y Apellido</label>
+                          <input type="text" class="form-control" name="nombres" id="nombres" value="<?php echo $administrador->getNombre_administrador() ?>" >
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Nombres</label>
-                          <input type="text" class="form-control" name="nombres" id="nombres" value="<?php echo $usuario->getNombre_usuario() ?>" disabled>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Apellidos</label>
-                          <input type="text" class="form-control" name="apellidos" id="apellidos" value="<?php echo $usuario->getApellido_usuario() ?>" disabled>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Dirección</label>
-                          <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $usuario->getDireccion_usuario() ?>" disabled>
+                          <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $administrador->getDireccion() ?>" >
                         </div>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Modulo SAP</label>
-                            <input type="text" class="form-control" name="mod_sap" id="mod_sap" value="<?php echo $mod_sap->getNombre_mod_sap() ?>" disabled>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Fecha de cumpleaños</label>
-                            <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $usuario->getCumpleaños() ?>" disabled>
+                            <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $administrador->getCumpleaños() ?>" >
                           </div>
                       </div>
                     </div>
@@ -80,19 +64,19 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">País de residencia</label>
-                          <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $usuario->getPais() ?>" disabled>
+                          <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $administrador->getPais() ?>" >
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $usuario->getTelefono_usuario() ?>" disabled>
+                          <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $administrador->getTelefono() ?>" >
                         </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Cuenta de skype</label>
-                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $usuario->getCuenta_skype() ?>" disabled>
+                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $administrador->getCuenta_skype() ?>" >
                           </div>
                       </div> 
                       
@@ -101,13 +85,13 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Contacto de emergencia</label>
-                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $usuario->getNombre_contacto_emergencia() ?>" disabled>
+                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $administrador->getNombre_contacto_emergencia() ?>" >
                           </div>
                       </div> 
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Número contacto de emergencia</label>
-                            <input type="text" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $usuario->getNumero_contacto_emergencia() ?>" disabled>
+                            <input type="text" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $administrador->getNumero_contacto_emergencia() ?>" >
                           </div>
                       </div> 
                       <div class="col-md-4">
@@ -121,18 +105,22 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Usuario LOGIN</label>
-                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $usuario->getUsuario_login() ?>" disabled>
+                            <input type="text" class="form-control" name="login" id="login" value="<?php echo $administrador->getUsuario_login() ?>" >
                           </div>
                       </div> 
                       <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Contraseña</label>
-                            <input type="password" class="form-control" name="password" id="password" value="<?php echo $usuario->getContraseña() ?>" disabled>
+                            <input type="text" class="form-control" name="password" id="password" value="<?php echo $administrador->getContraseña() ?>" >
                           </div>
                       </div> 
                     </div>                
-                    <a href="?menu=editConsultor&cod_usuario=<?php echo $usuario->getCod_usuario() ?>" class="btn btn-primary pull-right">Editar Perfil</a>
+                    
+                      
+                    <button class="btn btn-primary pull-right" type='submit'>Guardar Cambios</button>
+                     
                 </div>
+                </form>
               </div>
             </div>
             
