@@ -31,6 +31,7 @@ ManejoCliente_partner::setConexionBD($conexion);
 
 $cod_usuario  =  $_SESSION['cod_usuario'];
 $cod_reporte = $_GET['cod_reporte'];
+$idEditar = $_GET['idEditar'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 $reporte = ManejoReporte::consultarReporte($cod_reporte);
 $mod_sap = ManejoMod_sap::consultarMod_sap($reporte->getCod_mod_sap());
@@ -91,6 +92,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                 </div>
                                 </div>
                             </div>
@@ -254,6 +256,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                 <div class="form-group">
                                 <label class="bmd-label-floating"></label>
                                 <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                 </div>
                                 </div>
                             </div>
@@ -385,6 +388,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -487,6 +491,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                 <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
                                 <div class="form-group">
                                 <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $reporte->getFecha_de_reporte() ?>" required>
+                                <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                 </div>
                                 </div>
                                 </div>
@@ -630,6 +635,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -743,6 +749,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -877,6 +884,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -990,6 +998,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -1123,6 +1132,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -1256,6 +1266,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>
@@ -1379,6 +1390,7 @@ $listCliente_partnerSuca = ManejoSub_cliente_partner::getListSUFACINAActivo();
                                     <div class="form-group">
                                     <label class="bmd-label-floating"></label>
                                     <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor"value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                    <input type="text" class="form-control" name="idEditar" id="idEditar"value="<?php echo $idEditar ?>" hidden>
                                     </div>
                                     </div>
                                 </div>

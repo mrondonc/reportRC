@@ -32,58 +32,19 @@ ManejoCliente_partner::setConexionBD($conexion);
 $cod_usuario  =  $_SESSION['cod_usuario'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 //$reportes = ManejoReporte::consultarReporteUsuario($usuario->getCod_usuario());
-$reportes = ManejoReporte::getListByUserMax15($usuario->getCod_usuario());
+$reportes = ManejoReporte::getListByUser($usuario->getCod_usuario());
 //$codSap = ManejoMod_sap::consultarMod_sap($reportes->getCod_mod_sap())->getNombre_mod_sap();
 
 // Set the new timezone
 date_default_timezone_set('America/Bogota');
 $fecha = date('d h:i A');
 ?>
-
-<div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
-                <div class="card-icon">
-                <i style="font-size:45px;" class="far fa-folder-open"></i>
-                </div>
-                <p class="card-category">Reporte</p>
-                <h3 class="card-title">Horas Total                
-                </h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
-                <a href="?menu=historialReporteTotal">Visualizar reporte</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
-                <div class="card-icon">
-                <i style="font-size:45px;" class="far fa-folder-open"></i>
-                </div>
-                <p class="card-category">Reporte</p>
-                <h3 class="card-title">Horas Mensual               
-                </h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
-                <a  href="?menu=historialReporteMensual">Visualizar reporte</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--AQUI TERMINA LAS CARTAS Y COMIENZA LA TABLA DE LOS ULTIMOS 15 REPORTES DEL MES-->
-    <div class="card">
+<div class="card">
     <div class="card-header card-header-tabs card-header-primary">
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-                <h4 class="card-title ">Últimos 15 Reportes de Horas realizados</h4>
-                <span class="nav-tabs-title">Aquí podrá visualizar, modificar y eliminar sus registros de reporte de horas. 
+                <h4 class="card-title ">Historial Reporte de Horas </h4>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar sus registros de reporte de horas. 
                    <!-- <a style="text-align: right;" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelConsultor.php?cod_tipo_usuario=<?php echo $usuario->getCod_tipo_usuario();?>&cod_usuario=<?php echo $usuario->getCod_usuario();?>"><i style="font-size:40px;" class="fas fa-file-csv"></i></a>-->
                 </span>
             </div>
@@ -138,25 +99,14 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportes[$i]->getHora_de_registro();?></td>
-                    <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
-                        <td style="font-size: small; width: 3%;" class="td-actions text-left">
-                            <a type="button"  title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
-                        </td>
-                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '31 06:00 PM' && $fecha <= '31 11:59 PM' )){  ?>    
-                        <td style="font-size: small; width: 3%;" class="td-actions text-left">
-                            <a type="button"  title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
-                         </td>
-                    <?php }else{ ?>
-                        <td style="font-size: small; width: 3%;" class="td-actions text-left">
-                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
-                        </td>
-                    <?php } ?>
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                        <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
         </table>
         </div>
-    </div>
-    </div>
+    </div>   
 </div>
 <script src="https://kit.fontawesome.com/d82eacb9bb.js" crossorigin="anonymous"></script>

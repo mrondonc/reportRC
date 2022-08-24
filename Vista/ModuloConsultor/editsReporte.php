@@ -30,9 +30,11 @@ ManejoMod_sap::setConexionBD($conexion);
 ManejoSub_mod_sap::setConexionBD($conexion);
 ManejoCliente_partner::setConexionBD($conexion);
 
+    $idEditar = $_POST['idEditar'];
     $cod_usuario  =  $_SESSION['cod_usuario'];
     $cod_reporte = $_POST['cod_reporte'];
     $fecha_de_reporte = $_POST['fechaReporte'];
+    
     
     $cod_cliente_partner = $_POST['cliente_partner'];
     $descripcion_actividad = $_POST['descripcionActividades'];
@@ -277,8 +279,72 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::modifyReporte($reporte);
 }
-echo '<script>
-alert("Se ha modificado el Reporte de Horas Exitosamente")
-window.location="../Consultor.php?menu=historialReporte";
-</script>';
+
+if($idEditar=="2"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=1";
+    </script>';
+}else if($idEditar=="3"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=2";
+    </script>';
+}else if($idEditar=="4"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=3";
+    </script>';
+}else if($idEditar=="5"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=4";
+    </script>';
+}else if($idEditar=="6"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=5";
+    </script>';
+}else if($idEditar=="7"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=6";
+    </script>';
+}else if($idEditar=="8"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=7";
+    </script>';
+}else if($idEditar=="9"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=8";
+    </script>';
+}else if($idEditar=="10"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=9";
+    </script>';
+}else if($idEditar=="11"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=10";
+    </script>';
+}else if($idEditar=="12"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=11";
+    </script>';
+}else if($idEditar=="13"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=12";
+    </script>';
+}else{
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporte";
+    </script>';
+}
+
 ?>

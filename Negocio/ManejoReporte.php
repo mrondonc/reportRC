@@ -102,6 +102,16 @@
             return $reporte;
         }
 
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesEneroByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesEneroByUser($cod_usuario);
+            return $reporte;
+        }
+
          /**
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
@@ -109,6 +119,16 @@
         public static function getListPorMesFebrero(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesFebrero();
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesFebreroByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesFebreroByUser($cod_usuario);
             return $reporte;
         }
 
@@ -126,9 +146,29 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesMarzoByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesMarzoByUser($cod_usuario);
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesAbril(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesAbril();
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesAbrilByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesAbrilByUser($cod_usuario);
             return $reporte;
         }
 
@@ -146,9 +186,29 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesMayoByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesMayoByUser($cod_usuario);
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesJunio(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesJunio();
+            return $reporte;
+        }
+
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesJunioByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesJunioByUser($cod_usuario);
             return $reporte;
         }
 
@@ -166,9 +226,29 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesJulioByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesJulioByUser($cod_usuario);
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesAgosto(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesAgosto();
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesAgostoByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesAgostoByUser($cod_usuario);
             return $reporte;
         }
 
@@ -186,9 +266,29 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesSeptiembreByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesSeptiembreByUser($cod_usuario);
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesOctubre(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesOctubre();
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesOctubreByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesOctubreByUser($cod_usuario);
             return $reporte;
         }
 
@@ -206,9 +306,29 @@
          * List of reporte
          * @return Reporte[] List of all the reporte in the Data Base
          */
+        public static function getListPorMesNoviembreByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesNoviembreByUser($cod_usuario);
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
         public static function getListPorMesDiciembre(){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListPorMesDiciembre();
+            return $reporte;
+        }
+
+         /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListPorMesDiciembreByUser($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListPorMesDiciembreByUser($cod_usuario);
             return $reporte;
         }
 
@@ -219,6 +339,16 @@
         public static function getListByUser($cod_usuario){
             $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
             $reporte = $reporteDAO->getListByUser($cod_usuario);
+            return $reporte;
+        }
+
+        /**
+         * List of reporte
+         * @return Reporte[] List of all the reporte in the Data Base
+         */
+        public static function getListByUserMax15($cod_usuario){
+            $reporteDAO = ReporteDAO::getReporteDAO(self::$conexionBD);
+            $reporte = $reporteDAO->getListByUserMax15($cod_usuario);
             return $reporte;
         }
 

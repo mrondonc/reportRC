@@ -34,7 +34,7 @@ ManejoCliente_partner::setConexionBD($conexion);
     $cod_usuario  =  $_SESSION['cod_usuario'];
     $cod_reporte = $_POST['cod_reporte'];
     $fecha_de_reporte = $_POST['fechaReporte'];
-    
+    $idCopy = $_POST['idCopy'];
     $cod_cliente_partner = $_POST['cliente_partner'];
     $descripcion_actividad = $_POST['descripcionActividades'];
     $horas_trabajadas = $_POST['horasTrabajadas'];
@@ -279,9 +279,75 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
 }
-echo '<script>
-alert("Se ha duplicado el Reporte de Horas Exitosamente")
-window.location="../Consultor.php?menu=historialReporte";
-</script>';
+
+//=======VUELVE A HISTORIAL REPORTE MENSUALES DEPENDIENDO EL MES=======
+if($idCopy=="2"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=1";
+    </script>';
+}else if($idCopy=="3"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=2";
+    </script>';
+}else if($idCopy=="4"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=3";
+    </script>';
+}else if($idCopy=="5"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=4";
+    </script>';
+}else if($idCopy=="6"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=5";
+    </script>';
+}else if($idCopy=="7"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=6";
+    </script>';
+}else if($idCopy=="8"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=7";
+    </script>';
+}else if($idCopy=="9"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=8";
+    </script>';
+}else if($idCopy=="10"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=9";
+    </script>';
+}else if($idCopy=="11"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=10";
+    </script>';
+}else if($idCopy=="12"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=11";
+    </script>';
+}else if($idCopy=="13"){
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=12";
+    </script>';
+}else{
+    echo '<script>
+    alert("Se ha duplicado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporte";
+    </script>';
+}
+
+
 
 ?>

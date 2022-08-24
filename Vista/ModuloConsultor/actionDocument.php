@@ -33,6 +33,7 @@ ManejoCliente_partner::setConexionBD($conexion);
 $cod_usuario  =  $_SESSION['cod_usuario'];
 $cod_reporte = $_GET['cod_reporte'];
 $action = $_GET["action"];
+$idEliminar = $_GET['idEliminar'];
 $usuario = ManejoUsuario::consultarUsuario($cod_usuario);
 
 $reporte = ManejoReporte::consultarReporte($cod_reporte);
@@ -41,8 +42,73 @@ $reporte = ManejoReporte::consultarReporte($cod_reporte);
 if ($action=="delete"){    
     ManejoReporte::deleteReporte($reporte->getCod_reporte());
 }
-echo '<script>
-alert("Se ha elimando el reporte")
-window.location="../Consultor.php?menu=historialReporte";
-</script>';
+
+//=======VUELVE A HISTORIAL REPORTE MENSUALES DEPENDIENDO EL MES=======
+if($idEliminar=="2"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=1";
+    </script>';
+}else if($idEliminar=="3"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=2";
+    </script>';
+}else if($idEliminar=="4"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=3";
+    </script>';
+}else if($idEliminar=="5"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=4";
+    </script>';
+}else if($idEliminar=="6"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=5";
+    </script>';
+}else if($idEliminar=="7"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=6";
+    </script>';
+}else if($idEliminar=="8"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=7";
+    </script>';
+}else if($idEliminar=="9"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=8";
+    </script>';
+}else if($idEliminar=="10"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=9";
+    </script>';
+}else if($idEliminar=="11"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=10";
+    </script>';
+}else if($idEliminar=="12"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=11";
+    </script>';
+}else if($idEliminar=="13"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteMensuales&id=12";
+    </script>';
+}else{
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporte";
+    </script>';
+}
+
 ?>
