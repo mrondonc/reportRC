@@ -116,7 +116,7 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
                         </td>
-                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '31 06:00 PM' && $fecha <= '31 11:59 PM' )){  ?>    
+                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' )){  ?>    
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
@@ -142,7 +142,7 @@ $fecha = date('d h:i A');
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button"  title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
-                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '31 06:00 PM' && $fecha <= '31 11:59 PM' )){  ?>    
+                    <?php }else if(($fecha >= '30 06:00 PM' && $fecha <= '30 11:59 PM' ) || ($fecha >= '32 06:00 PM' && $fecha <= '32 11:59 PM' )){  ?>    
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button"  title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&cod_usuario=<?php echo $reportes[$i]->getCod_usuario();?>&idCopy=1"><span class="material-symbols-outlined">file_copy</span></a>
                          </td>
