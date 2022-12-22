@@ -278,6 +278,26 @@ if($cod_cliente_partner==1){ //AXITY
     $reporte->setCod_sub_mod_sap(18);
     $reporte->setCod_mod_sap($cod_mod_sap);
     ManejoReporte::createReporte($reporte);
+}if($cod_cliente_partner==15){ //ICE
+    $cod_sub_cliente_partner = $_POST['clienteIce'];
+   //$cod_no_ticket = $_POST[''];
+   //$cod_pep_cliente = $_POST[''];
+   //$cod_sub_mod_sap = $_POST[''];
+
+    //$reporte->setCod_reporte($cod_reporte);
+    $reporte->setFecha_de_reporte($fecha_de_reporte);
+    $reporte->setCod_usuario($cod_usuario);
+    $reporte->setCod_cliente_partner($cod_cliente_partner);
+    $reporte->setDescripcion_actividad($descripcion_actividad);
+    $reporte->setHoras_trabajadas($horas_trabajadas);
+    $reporte->setLugar_de_trabajo($lugar_de_trabajo);
+    $reporte->setHora_de_registro($hora_de_registro);
+    $reporte->setCod_sub_cliente_partner($cod_sub_cliente_partner);
+    $reporte->setCod_no_ticket(" ");
+    $reporte->setCod_pep_cliente(82);
+    $reporte->setCod_sub_mod_sap(18);
+    $reporte->setCod_mod_sap($cod_mod_sap);
+    ManejoReporte::createReporte($reporte);
 }
 
 //=======VUELVE A HISTORIAL REPORTE MENSUALES DEPENDIENDO EL MES=======

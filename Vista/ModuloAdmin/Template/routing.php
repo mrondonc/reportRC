@@ -78,6 +78,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'agregarClienteMillo') {
         include_once("../Vista/ModuloAdmin/agregarClienteMillo.php");
     }
+    if ($_GET['menu'] == 'agregarClienteIce') {
+        include_once("../Vista/ModuloAdmin/agregarClienteIce.php");
+    }
     if ($_GET['menu'] == 'agregarPepCliente') {
         include_once("../Vista/ModuloAdmin/agregarPepCliente.php");
     }
