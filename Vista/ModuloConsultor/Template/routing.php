@@ -60,6 +60,9 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == 'copyReporte') {
         include_once("../Vista/ModuloConsultor/copyReporte.php");
     }
+    if ($_GET['menu'] == 'agregarClienteIce') {
+        include_once("../Vista/ModuloConsultor/agregarClienteIce.php");
+    }
 } else {
     include_once("../Vista/ModuloConsultor/index.php");
 }

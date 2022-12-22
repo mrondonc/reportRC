@@ -701,6 +701,58 @@ class Sub_cliente_partnerDAO implements DAO
     }
 
     /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListIce()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 15 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
+     * Method to get an sub_cliente_partnerDAO object
+     *
+     * @param Object $conexion
+     * @return Sub_cliente_partnerDAO
+     */
+    public function getListIceActivo()
+    {
+
+        $sql = "SELECT * FROM SUB_CLIENTE_PARTNER WHERE cod_cliente_partner = 15 AND cod_estado_actual=1 order by nombre_sub_cliente_partner asc";
+        $sub_cliente_partners = array();
+
+        if (!$resultado = pg_query($this->conexion, $sql)) die();
+
+        while ($row = pg_fetch_array($resultado)) {
+            $sub_cliente_partner = new Sub_cliente_partner();
+            $sub_cliente_partner->setCod_sub_cliente_partner($row[0]);
+            $sub_cliente_partner->setNombre_sub_cliente_partner($row[1]);
+            $sub_cliente_partner->setCod_cliente_partner($row[2]);
+            $sub_cliente_partner->setCod_estado_actual($row[3]);
+            array_push($sub_cliente_partners, $sub_cliente_partner);
+            
+        }
+        return $sub_cliente_partners;
+    }
+
+    /**
      * Gets the object of this class. In case it is null, create it
      *
      * @param Object $conexion

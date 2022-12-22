@@ -340,6 +340,16 @@ if($idEditar=="2"){
     alert("Se ha modificado el Reporte de Horas Exitosamente")
     window.location="../Consultor.php?menu=historialReporteMensuales&id=12";
     </script>';
+}else if($idEditar=="14"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporte";
+    </script>';
+}else if($idEditar=="15"){
+    echo '<script>
+    alert("Se ha modificado el Reporte de Horas Exitosamente")
+    window.location="../Consultor.php?menu=historialReporteTotal";
+    </script>';
 }else{
     echo '<script>
     alert("Se ha modificado el Reporte de Horas Exitosamente")

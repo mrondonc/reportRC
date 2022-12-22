@@ -283,6 +283,26 @@
             return $sub_cliente_partner;
         }
 
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListIce(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListIce();
+            return $sub_cliente_partner;
+        }
+
+        /**
+         * List of sub cliente partner
+         * @return Sub_cliente_partner[] List of all the sub cliente partner in the Data Base
+         */
+        public static function getListIceActivo(){
+            $sub_cliente_partnerDAO = Sub_cliente_partnerDAO::getSub_cliente_partnerDAO(self::$conexionBD);
+            $sub_cliente_partner = $sub_cliente_partnerDAO->getListIceActivo();
+            return $sub_cliente_partner;
+        }
+
 	    /**
 	    * Change the conexion
 	    */
