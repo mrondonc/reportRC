@@ -1,3 +1,22 @@
+<?php
+set_time_limit(5400);
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Persistencia/Util/Conexion.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Usuario.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoUsuario.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/Administrador.php';
+require_once ($_SERVER["DOCUMENT_ROOT"]) . '/reportRC/Negocio/ManejoAdministrador.php';
+
+$obj = new Conexion();
+$conexion = $obj->conectarDB();
+
+ManejoUsuario::setConexionBD($conexion);
+ManejoAdministrador::setConexionBD($conexion);
+$usuario = ManejoUsuario::getList();
+
+$cod_administrador = $_SESSION['cod_administrador'];
+$administrador = ManejoAdministrador::consultarAdministrador($cod_administrador);
+?>
+
 <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
@@ -13,6 +32,9 @@
                 <div class="stats">
                 <i style="font-size:20px;" class="fas fa-expand-arrows-alt" ></i>
                 <a href="?menu=historialReporteTotal">Visualizar reporte</a>
+                </div>
+                <div class="stats">
+                <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6">Descargar Reporte</a>
                 </div>
             </div>
         </div>
