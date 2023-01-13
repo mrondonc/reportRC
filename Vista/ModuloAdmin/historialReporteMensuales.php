@@ -57,7 +57,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Enero</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=7"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=7"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -119,7 +119,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Febrero</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=8"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=8"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -181,7 +181,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Marzo</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=9"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=9"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -244,7 +244,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Abril</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=10"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=10"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -306,7 +306,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Mayo</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=11"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=11"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -368,7 +368,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Junio</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=12"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=12"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -430,7 +430,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Julio</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=13"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=13"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -492,7 +492,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Agosto</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=14"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=14"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -554,7 +554,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Septiembre</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=15"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=15"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -616,7 +616,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Octubre</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=16"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=16"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -678,7 +678,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Noviembre</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=17"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=17"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
@@ -740,7 +740,7 @@ $reportesDiciembre = ManejoReporte::getListPorMesDiciembre();
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas Total Mes Diciembre</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=18"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=18"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>

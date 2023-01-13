@@ -44,7 +44,7 @@ $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador)
         <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
                 <h4 class="card-title ">Historial Reporte de Horas TOTAL</h4>
-                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
+                <span class="nav-tabs-title">Aqui podra visualizar, modificar y eliminar los registros de reporte de horas <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6"><i style="font-size:40px;" class="fas fa-file-csv"></i></a></span>
             </div>
         </div>             
     </div>
