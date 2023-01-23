@@ -74,6 +74,8 @@ if ($id == 6) { // =====EXCEL PARA DESCARGAR REPORTE DE HORAS TOTAL=====
     $xlsx->downloadAs('ReporteTotal.xlsx'); // This will download the file to your local system
 
 } else if ($id == 7) { // ===== EXCEL PARA DESCARGAR REPORTE DE HORAS ENERO =====
+
+
     $reportesEnero = ManejoReporte::getListPorMesEnero();
     for ($i = 0; $i < count($reportesEnero); $i++) {
         $nombre = ManejoUsuario::consultarUsuario($reportesEnero[$i]->getCod_usuario())->getNombre_usuario();
@@ -94,7 +96,6 @@ if ($id == 6) { // =====EXCEL PARA DESCARGAR REPORTE DE HORAS TOTAL=====
             $reportesEnero[$i]->getHora_de_registro()
         )));
     }
-
     $xlsx = SimpleXLSXGen::fromArray($reporte)
         ->setDefaultFont('Calibri')
         ->setDefaultFontSize(11);

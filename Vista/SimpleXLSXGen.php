@@ -1,5 +1,5 @@
 <?php
-
+set_time_limit(5400);
 /**
  * Class SimpleXLSXGen
  * Export data to MS Excel. PHP XLSX generator
