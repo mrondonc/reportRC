@@ -72,7 +72,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportes) ; $i++) {    
                     ?>
                 <tr>
-                <?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
+                <!--<?php if( $reportes[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
@@ -85,9 +85,13 @@ $fecha = date('d h:i A');
                     <?php }else{ ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&idEditar=15"><i class="material-icons">edit</i></a>
-                            <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete"><i class="material-icons">close</i></a>
+                            <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=16"><i class="material-icons">close</i></a>
                         </td>
-                    <?php } ?>
+                    <?php } ?>-->
+                    <td class="td-actions text-right">
+                            <a type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&idEditar=15"><i class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportes[$i]->getCod_reporte();?>&action=delete&idEliminar=16"><i class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; width: 8%;"> <?php echo $reportes[$i]->getFecha_de_reporte();?> </td>
                     <td style="font-size: small;"><?php echo ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap();?> </td>
                     <td style="font-size: small;"><?php echo ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner();?></td>

@@ -104,6 +104,21 @@ if($idEliminar=="2"){
     alert("Se ha elimando el reporte")
     window.location="../Consultor.php?menu=historialReporteMensuales&id=12";
     </script>';
+}else if($idEliminar=="14"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=index";
+    </script>';
+}else if($idEliminar=="15"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporte";
+    </script>';
+}else if($idEliminar=="16"){
+    echo '<script>
+    alert("Se ha elimando el reporte")
+    window.location="../Consultor.php?menu=historialReporteTotal";
+    </script>';
 }else{
     echo '<script>
     alert("Se ha elimando el reporte")

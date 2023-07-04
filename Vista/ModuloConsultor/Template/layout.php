@@ -2,9 +2,8 @@
 
 session_start();
 
-if($_SESSION['cod_usuario']==null)
-{
-    header("Location: ../index.php");
+if ($_SESSION['cod_usuario'] == null) {
+  header("Location: ../index.php");
 }
 
 
@@ -30,7 +29,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  
+
   <title>
     Reporte de horas RC
   </title>
@@ -44,22 +43,29 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="assets/demo/demo.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/d82eacb9bb.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- AQUI SCRIPTS PARA SELECT AUTOCOMPLETE -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+  <!-- AQUI SCRIPTS PARA SELECT AUTOCOMPLETE -->
 </head>
 <style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+  }
 </style>
+
 <body class="">
   <div class="wrapper ">
     <!-- LEFT PANEL -->
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="assets/img/sidebar-1.jpg">
       <?php
-        require_once('left_panel.php');
+      require_once('left_panel.php');
       ?>
     </div>
     <!-- HEADER -->
@@ -67,16 +73,16 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <?php
-          require_once('header.php');
+        require_once('header.php');
         ?>
       </nav>
       <!-- End Navbar -->
-    
+
       <!-- ROUTING -->
       <div class="content">
         <div class="container-fluid">
           <?php
-            require_once('routing.php');
+          require_once('routing.php');
           ?>
         </div>
       </div>
@@ -84,14 +90,14 @@ The above copyright notice and this permission notice shall be included in all c
       <footer class="footer">
         <div class="container-fluid">
           <?php
-            require_once('footer.php');
+          require_once('footer.php');
           ?>
         </div>
       </footer>
     </div>
   </div>
-   <!--   Core JS Files   -->
-   <script src="assets/js/core/jquery.min.js"></script>
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap-material-design.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -311,7 +317,7 @@ The above copyright notice and this permission notice shall be included in all c
 
     });
   </script>
-  
+
 </body>
 
 </html>

@@ -45,7 +45,7 @@ $consultoresI = ManejoUsuario::getListOrdenNombreI();
                 <tr>
                     <td style="font-size: small;"><?php echo $consultores[$i]->getUsuario_login();?></td>
                     <td style="font-size: small;"><?php echo $consultores[$i]->getNombre_usuario();?> <?php echo $consultores[$i]->getApellido_usuario();?></td>
-                    <td style="font-size: small;"><a href="?menu=historialReporteConsultores&cod_usuario=<?php echo $consultores[$i]->getCod_usuario();?>">Visualizar Reporte</a></td>  
+                    <td style="font-size: small;"><a href="?menu=historialReporteConsultores&cod_usuario=<?php echo $consultores[$i]->getCod_usuario();?>">Visualizar Reporte </a></td>  
                 </tr>
                 <?php }?>
             </tbody>

@@ -86,7 +86,8 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesEnero) ; $i++) {    
                     ?>
                 <tr>
-                    <?php if( $reportesEnero[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
+                    <!--
+                        <?php if( $reportesEnero[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-danger btn-link btn-sm" ><i class="material-icons">close</i></a>
@@ -102,6 +103,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&action=delete&idEliminar=2"><i class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                -->
+                <td class="td-actions text-right">
+                            <a type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&idEditar=2"><i class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&action=delete&idEliminar=2"><i class="material-icons">close</i></a>
+                        </td>
                     <td style="font-size: small; "><?php echo $reportesEnero[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "> <?php/** echo ManejoUsuario::consultarUsuario($reportesEnero[$i]->getCod_usuario())->getUsuario_login(); */?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesEnero[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesEnero[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -115,6 +121,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesEnero[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesEnero[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -128,6 +135,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&idCopy=2"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesEnero[$i]->getCod_reporte();?>&idCopy=2"><span class="material-symbols-outlined">file_copy</span></a>
+                        </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -170,7 +181,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesFebrero) ; $i++) {    
                     ?>
                 <tr>
-                    
+                    <!--
                     <?php if( $reportesFebrero[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -187,6 +198,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&action=delete&idEliminar=3"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&idEditar=3"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&action=delete&idEliminar=3"><i style="font-size:20px;" class="material-icons">close</i></a>
+                        </td>
                     <td style="font-size: small; "><?php echo $reportesFebrero[$i]->getFecha_de_reporte();?></td>
                    <!-- <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesFebrero[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesFebrero[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesFebrero[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -200,6 +216,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesFebrero[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesFebrero[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -213,6 +230,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&idCopy=3"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesFebrero[$i]->getCod_reporte();?>&idCopy=3"><span class="material-symbols-outlined">file_copy</span></a>
+                        </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -255,6 +276,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesMarzo) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesMarzo[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -271,6 +293,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&action=delete&idEliminar=4"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&idEditar=4"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&action=delete&idEliminar=4"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesMarzo[$i]->getFecha_de_reporte();?></td>
                    <!-- <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesMarzo[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesMarzo[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesMarzo[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -284,6 +311,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesMarzo[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesMarzo[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -297,6 +325,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&idCopy=4"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMarzo[$i]->getCod_reporte();?>&idCopy=4"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -340,6 +372,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesAbril) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesAbril[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -356,6 +389,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&action=delete&idEliminar=5"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&idEditar=5"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloAdmin/actionDocument.php?cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&action=delete&idEliminar=5"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesAbril[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesAbril[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesAbril[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesAbril[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -369,6 +407,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesAbril[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesAbril[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -382,6 +421,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&idCopy=5"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAbril[$i]->getCod_reporte();?>&idCopy=5"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -424,7 +467,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesMayo) ; $i++) {    
                     ?>
                 <tr>
-                    
+                    <!--
                     <?php if( $reportesMayo[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -441,6 +484,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&action=delete&idEliminar=6"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&idEditar=6"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&action=delete&idEliminar=6"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesMayo[$i]->getFecha_de_reporte();?></td>
                    <!-- <td style="font-size: small; "><?php/** echo ManejoUsuario::consultarUsuario($reportesMayo[$i]->getCod_usuario())->getUsuario_login(); */?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesMayo[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesMayo[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -454,6 +502,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesMayo[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesMayo[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -467,6 +516,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&idCopy=6"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesMayo[$i]->getCod_reporte();?>&idCopy=6"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -509,6 +562,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesJunio) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesJunio[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -525,6 +579,7 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&action=delete&idEliminar=7"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
                     <td style="font-size: small; "><?php echo $reportesJunio[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesJunio[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesJunio[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesJunio[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -538,6 +593,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesJunio[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesJunio[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -551,6 +607,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&idCopy=7"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJunio[$i]->getCod_reporte();?>&idCopy=7"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -593,6 +653,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesJulio) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesJulio[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -609,6 +670,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&action=delete&idEliminar=8"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&idEditar=8"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&action=delete&idEliminar=8"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesJulio[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesJulio[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesJulio[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesJulio[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -622,6 +688,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesJulio[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesJulio[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -635,6 +702,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&idCopy=8"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesJulio[$i]->getCod_reporte();?>&idCopy=8"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -677,6 +748,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesAgosto) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesAgosto[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -693,6 +765,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&action=delete&idEliminar=9"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&idEditar=9"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&action=delete&idEliminar=9"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesAgosto[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesAgosto[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesAgosto[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesAgosto[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -706,6 +783,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesAgosto[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesAgosto[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -719,6 +797,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&idCopy=9"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesAgosto[$i]->getCod_reporte();?>&idCopy=9"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -761,6 +843,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesSeptiembre) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesSeptiembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -777,6 +860,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&action=delete&idEliminar=10"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&idEditar=10"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&action=delete&idEliminar=10"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesSeptiembre[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesSeptiembre[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesSeptiembre[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesSeptiembre[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -790,6 +878,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesSeptiembre[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesSeptiembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -803,6 +892,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&idCopy=10"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesSeptiembre[$i]->getCod_reporte();?>&idCopy=10"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -845,6 +938,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesOctubre) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesOctubre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -861,6 +955,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&action=delete&idEliminar=11"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&idEditar=11"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&action=delete&idEliminar=11"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesOctubre[$i]->getFecha_de_reporte();?></td>
                    <!-- <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesOctubre[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesOctubre[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesOctubre[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -874,6 +973,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesOctubre[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesOctubre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -887,6 +987,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&idCopy=11"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesOctubre[$i]->getCod_reporte();?>&idCopy=11"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -929,6 +1033,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesNoviembre) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesNoviembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -945,6 +1050,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&action=delete&idEliminar=12"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&idEditar=12"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&action=delete&idEliminar=12"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesNoviembre[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesNoviembre[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesNoviembre[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesNoviembre[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -958,6 +1068,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesNoviembre[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesNoviembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -971,6 +1082,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&idCopy=12"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesNoviembre[$i]->getCod_reporte();?>&idCopy=12"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -1013,6 +1128,7 @@ $fecha = date('d h:i A');
             <?php for ($i=0; $i <count($reportesDiciembre) ; $i++) {    
                     ?>
                 <tr>
+                    <!--
                     <?php if( $reportesDiciembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td class="td-actions text-right">
                             <a type="button" rel="tooltip" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><i class="material-icons">edit</i></a>
@@ -1029,6 +1145,11 @@ $fecha = date('d h:i A');
                             <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&action=delete&idEliminar=13"><i style="font-size:20px;" class="material-icons">close</i></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 7%;" class="td-actions text-left">
+                            <a type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm" href="?menu=editReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&idEditar=13"><i style="font-size:20px;" class="material-icons">edit</i></a>
+                            <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm" href="ModuloConsultor/actionDocument.php?cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&action=delete&idEliminar=13"><i style="font-size:20px;" class="material-icons">close</i></a>
+                    </td>
                     <td style="font-size: small; "><?php echo $reportesDiciembre[$i]->getFecha_de_reporte();?></td>
                     <!--<td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesDiciembre[$i]->getCod_usuario())->getUsuario_login();*/?></td>
                     <td style="font-size: small; "><?php /**echo ManejoUsuario::consultarUsuario($reportesDiciembre[$i]->getCod_usuario())->getNombre_usuario();?> <?php echo ManejoUsuario::consultarUsuario($reportesDiciembre[$i]->getCod_usuario())->getApellido_usuario();*/?></td>-->
@@ -1042,6 +1163,7 @@ $fecha = date('d h:i A');
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getHoras_trabajadas();?></td>
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getLugar_de_trabajo();?></td>
                     <td style="font-size: small;"><?php echo $reportesDiciembre[$i]->getHora_de_registro();?></td>
+                    <!--
                     <?php if( $reportesDiciembre[$i]->getCod_cliente_partner() == 1 && ($fecha >= '27 05:00 PM' && $fecha <= '27 11:59 PM')){  ?>
                         <td style="font-size: small; width: 3%;" class="td-actions text-left">
                             <a type="button" title="NO DISPONIBLE" class="btn btn-primary btn-link btn-sm" ><span class="material-symbols-outlined">file_copy</span></a>
@@ -1055,6 +1177,10 @@ $fecha = date('d h:i A');
                             <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&idCopy=13"><span class="material-symbols-outlined">file_copy</span></a>
                         </td>
                     <?php } ?>
+                    -->
+                    <td style="font-size: small; width: 3%;" class="td-actions text-left">
+                            <a type="button"  class="btn btn-primary btn-link btn-sm" href="?menu=copyReporte&cod_reporte=<?php echo $reportesDiciembre[$i]->getCod_reporte();?>&idCopy=13"><span class="material-symbols-outlined">file_copy</span></a>
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>

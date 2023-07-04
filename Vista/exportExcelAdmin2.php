@@ -47,26 +47,71 @@ $reporte = [
 ];
 
 if ($id == 6) { // =====EXCEL PARA DESCARGAR REPORTE DE HORAS TOTAL=====
+    set_time_limit(5400);
     $reportes = ManejoReporte::getList();
     for ($i = 0; $i < count($reportes); $i++) {
         $nombre = ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getNombre_usuario();
         $apellido = ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getApellido_usuario();
-        $reporte = array_merge($reporte, array(array(
-            $reportes[$i]->getFecha_de_reporte(),
-            ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login(),
-            $nombre . " " . $apellido,
-            ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap(),
-            ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner(),
-            ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner(),
-            ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap(),
-            $reportes[$i]->getCod_no_ticket(),
-            ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente(),
-            $reportes[$i]->getDescripcion_actividad(),
-            $reportes[$i]->getHoras_trabajadas(),
-            $reportes[$i]->getLugar_de_trabajo(),
-            $reportes[$i]->getHora_de_registro()
-        )));
+
+        $reporte2 = [
+            [
+                $reportes[$i]->getFecha_de_reporte(),
+                ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login(),
+                $nombre . " " . $apellido,
+                ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap(),
+                ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner(),
+                ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner(),
+                ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap(),
+                $reportes[$i]->getCod_no_ticket(),
+                ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente(),
+                $reportes[$i]->getDescripcion_actividad(),
+                $reportes[$i]->getHoras_trabajadas(),
+                $reportes[$i]->getLugar_de_trabajo(),
+                $reportes[$i]->getHora_de_registro()
+            ]
+        ];
+
+        // $reporte = array_merge($reporte, array(array(
+        //     $reportes[$i]->getFecha_de_reporte(),
+        //     ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login(),
+        //     $nombre . " " . $apellido,
+        //     ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap(),
+        //     ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner(),
+        //     ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner(),
+        //     ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap(),
+        //     $reportes[$i]->getCod_no_ticket(),
+        //     ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente(),
+        //     $reportes[$i]->getDescripcion_actividad(),
+        //     $reportes[$i]->getHoras_trabajadas(),
+        //     $reportes[$i]->getLugar_de_trabajo(),
+        //     $reportes[$i]->getHora_de_registro()
+        $reporte = array_merge($reporte, $reporte2);
     }
+
+    // foreach ($item as $reportes) {
+    //     $nombre = ManejoUsuario::consultarUsuario($item->getCod_usuario())->getNombre_usuario();
+    //     $apellido = ManejoUsuario::consultarUsuario($item->getCod_usuario())->getApellido_usuario();
+
+    //     $reporte2 = [
+    //         [
+    //             'asd',
+    //             // $reportes[$i]->getFecha_de_reporte(),
+    //             // ManejoUsuario::consultarUsuario($reportes[$i]->getCod_usuario())->getUsuario_login(),
+    //             $nombre . " " . $apellido
+    //             // ManejoMod_sap::consultarMod_sap($reportes[$i]->getCod_mod_sap())->getNombre_mod_sap(),
+    //             // ManejoCliente_partner::consultarCliente_partner($reportes[$i]->getCod_cliente_partner())->getNombre_cliente_partner(),
+    //             // ManejoSub_cliente_partner::consultarSub_cliente_partner($reportes[$i]->getCod_sub_cliente_partner())->getNombre_sub_cliente_partner(),
+    //             // ManejoSub_mod_sap::consultarSub_mod_sap($reportes[$i]->getCod_sub_mod_sap())->getNombre_sub_mod_sap(),
+    //             // $reportes[$i]->getCod_no_ticket(),
+    //             // ManejoPep_cliente::consultarPep_cliente($reportes[$i]->getCod_pep_cliente())->getReferencia_pep_cliente(),
+    //             // $reportes[$i]->getDescripcion_actividad(),
+    //             // $reportes[$i]->getHoras_trabajadas(),
+    //             // $reportes[$i]->getLugar_de_trabajo(),
+    //             // $reportes[$i]->getHora_de_registro()
+    //         ]
+    //     ];
+    //     $reporte = array_merge($reporte, $reporte2);
+    // }
 
     $xlsx = SimpleXLSXGen::fromArray($reporte)
         ->setDefaultFont('Calibri')

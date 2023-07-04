@@ -47,16 +47,16 @@ $fechaValidacion = date('d h:i A');
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header card-header-primary">                
+            <div class="card-header card-header-primary">
                 <center>
                     <h4 class="card-title">Reportes de horas Diario RC <?php echo $fechaValidacion; ?></h4>
                 </center>
                 <p class="card-category">El formulario a continuación, les permitirá poder registrar las horas de trabajadas de manera
-                diaria con los clientes que atiende, quedando registrado en una base, donde el Coordinador Administrativo y 
-                de RRHH tendrá acceso.
+                    diaria con los clientes que atiende, quedando registrado en una base, donde el Coordinador Administrativo y
+                    de RRHH tendrá acceso.
                 </p>
                 <br>
-                <p class="card-category">Si presenta alguna novedad de reporte mal realizada, por favor, enviarle un correo a la 
+                <p class="card-category">Si presenta alguna novedad de reporte mal realizada, por favor, enviarle un correo a la
                     Coordinadora indicando cual fue el que quedo mal.
                 </p>
                 <br>
@@ -71,43 +71,43 @@ $fechaValidacion = date('d h:i A');
                 <form method="POST" action="ModuloConsultor/crearReporteHoras.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-10">
-                            <div class="form-group"> 
-                            <label>1. Fecha de Reporte </label>
                             <div class="form-group">
-                            <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
-                            <div class="form-group">
-                            <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $hora_de_registro?>" required>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <div class="form-group">
-                            <label>2. Consultor </label>
-                            <div class="form-group">
-                            <label class="bmd-label-floating"></label>
-                            <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor" value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
-                            </div>
+                                <label>1. Fecha de Reporte </label>
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Por favor indicar el día que trabajo.</label>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" name="fechaReporte" id="fechaReporte" value="<?php echo $hora_de_registro ?>" required>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10">
                             <div class="form-group">
-                            <label>3. Módulo SAP </label>
-                            <div class="form-group">
-                            <label class="bmd-label-floating"></label>
-                            <select name="mod_sap" id="mod_sap" class="form-control" required>
-                                    <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
-                                    <?php
-                                    foreach ($listMod_sap as $t) {
-                                        echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
-                                    }
-                                    ?>
-                                </select>
+                                <label>2. Consultor </label>
+                                <div class="form-group">
+                                    <label class="bmd-label-floating"></label>
+                                    <input type="text" class="form-control" name="nombreConsultor" id="nombreConsultor" value="<?php echo $usuario->getNombre_usuario() ?> <?php echo $usuario->getApellido_usuario() ?>" disabled>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>3. Módulo SAP </label>
+                                <div class="form-group">
+                                    <select name="mod_sap" id="mod_sap" class="form-control" required>
+                                        <option value='<?php echo $usuario->getCod_mod_sap(); ?>'><?php echo $mod_sap->getNombre_mod_sap(); ?></option>
+                                        <?php
+                                        foreach ($listMod_sap as $t) {
+                                            echo '<option value=' . $t->getCod_mod_sap() . '>' . $t->getNombre_mod_sap() . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -119,8 +119,7 @@ $fechaValidacion = date('d h:i A');
                             <div class="form-group">
                                 <label>4. Cliente Partner </label>
                                 <div class="form-group">
-                                <label class="bmd-label-floating"></label>
-                                <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control"  required>
+                                    <select onchange="selectTipo()" name="cliente_partner" id="cliente_partner" class="form-control" required>
                                         <option value=''>Seleccione alguna opcion</option>
                                         <?php
                                         foreach ($listCliente_partner as $e) {
@@ -130,28 +129,51 @@ $fechaValidacion = date('d h:i A');
                                     </select>
                                 </div>
                                 <div class="customar__field" id="espacioTipo" name="espacioTipo">
+                                </div>
                             </div>
+                            <button class="btn btn-primary" type='submit'>Enviar</button>
                         </div>
-                        <button class="btn btn-primary" type='submit'>Enviar</button>
-                    </div>       
-                </form>                  
+                </form>
             </div>
         </div>
-    </div>        
+    </div>
 </div>
-        
+
+
 <script>
-  function selectTipo() {
-  var cliente_partner = $("#cliente_partner").val();
-  $.ajax({
-    url:"ModuloConsultor/selectTipo.ajax.php",
-    method: "POST",
-    data: {
-      "cliente_partner":cliente_partner
-      },
-      success: function(respuesta){
-        $("#espacioTipo").html(respuesta);
-      }
-    })
-  }
+    $(document).ready(function() {
+
+        $('#country').typeahead({
+            source: function(query, result) {
+                $.ajax({
+                    url: "fetch.php",
+                    method: "POST",
+                    data: {
+                        query: query
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        result($.map(data, function(item) {
+                            return item;
+                        }));
+                    }
+                })
+            }
+        });
+
+    });
+
+    function selectTipo() {
+        var cliente_partner = $("#cliente_partner").val();
+        $.ajax({
+            url: "ModuloConsultor/selectTipo.ajax.php",
+            method: "POST",
+            data: {
+                "cliente_partner": cliente_partner
+            },
+            success: function(respuesta) {
+                $("#espacioTipo").html(respuesta);
+            }
+        })
+    };
 </script>

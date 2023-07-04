@@ -921,6 +921,67 @@
 				</div>
 			</div>	 
 		';
+		//CLIENTE EVEDISA
+	}else if ($cliente_partner == 16) {
+		echo 
+		'
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>5. Descripción de las actividades</label>
+						<div class="form-group">
+							<label>Ejemplo SEIDOR: SIN TICKET CLIENTE/CON TICKET CLIENTE - PEP Cliente/Nombre del cliente -Iniciales del Consultor: Actividad a Realizar (No colocar reuniones con el cliente, especificar que hicieron en la Reunión) = Con Ticket PETROMIL 12345 - GL: Restructuración del Sistema en vivo.</label>
+							<div class="form-group">
+								<label>Ejemplo Axity: Ticket No / No aplica Ticket - Mall Plaza - GL: Desarrollo en Vivo del sistema</label>
+								<div class="form-group">
+									<label>Colocar Hora de Inicio - Hora de Fin </label>
+									<div class="form-group">
+										<label>Ejemplo: 08:00 AM - 10:00 AM</label>
+										<div class="form-group">
+										<label>Colocar el ID del proyecto</label>
+											<div class="form-group">
+											<textarea maxlength="1000" class="form-control" name="descripcionActividades" id="descripcionActividades"  placeholder="ID PROYECTO:  DESCRIPCIÓN:  HORA DE INICIO: - HORA DE FIN: " value="" required></textarea>
+												<div class="the-count">
+													<span id="current">0</span>
+													<span id="maximum">/ 1000</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>6. Horas Trabajadas</label>
+						<div class="form-group">
+						<label>Por favor indicar en Numero (p.e. 3) las horas trabajadas de ese día</label>
+							<div class="form-group">
+							<input type="number" placeholder="0.0" max="24" min="0" step="0.5" class="form-control" name="horasTrabajadas" id="horasTrabajadas" value="" required>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label>7. Lugar de trabajo</label>
+					<div class="form-group">
+					<select name="lugarTrabajo" id="lugarTrabajo" class="form-control" required>
+								<option value="">Seleccione alguna opcion</option>
+								<option value="Remoto-Home office-Teletrabajo">Remoto-Home office-Teletrabajo</option>
+								<option value="Oficina (Presencial)">Oficina (Presencial)</option>
+							</select>
+					</div>
+					</div>
+				</div>
+			</div>	 
+		';
 	 }
 
 ?>

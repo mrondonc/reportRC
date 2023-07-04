@@ -34,7 +34,7 @@ $administrador = ManejoAdministrador::consultarAdministrador($cod_administrador)
                 <a href="?menu=historialReporteTotal">Visualizar reporte</a>
                 </div>
                 <div class="stats">
-                <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin2.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6">Descargar Reporte</a>
+                <a style="text-align: right;" type="button" rel="tooltip" title="Descargar" class="btn btn-primary btn-link btn-sm" href="../Vista/exportExcelAdmin.php?cod_administrador=<?php echo $administrador->getCod_administrador();?>&id=6">Descargar Reporte</a>
                 </div>
             </div>
         </div>
