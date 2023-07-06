@@ -77,7 +77,7 @@
          */
         public static function modifyUsuario($usuario){
             $usuarioDAO=UsuarioDAO::getUsuarioDAO(self::$conexionBD);
-            $usuarioDAO->modify($usuario);
+            $usuarioDAO->modifyXUser($usuario);
         }
 
         /**

@@ -57,7 +57,7 @@
          */
         public static function modifyAdministrador($administrador){
             $administradorDAO=AdministradorDAO::getAdministradorDAO(self::$conexionBD);
-            $administradorDAO->modify($administrador);
+            $administradorDAO->modifyNew($administrador);
         }
         /**
          * Delete an usuario

@@ -1,10 +1,10 @@
 <?php
-//header("Status: 301 Moved Permanently");
-//header("Location: ./Vista/Login/index.php");
-//exit;
+header("Status: 301 Moved Permanently");
+header("Location: ./Vista/Login/index.php");
+exit;
 ?> 
 
-<!doctype html>
+<!--<!doctype html>
 <title>Site Maintenance</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 <style>
@@ -26,3 +26,4 @@
         <p>Sorry for the inconvenience. We&rsquo;re performing some maintenance at the moment. If you need anything, please contact the administrator!</p>
     </div>
 </article>
+-->

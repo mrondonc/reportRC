@@ -57,12 +57,12 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-4">
+                      <!--<div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Dirección</label>
                           <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $usuario->getDireccion_usuario() ?>" disabled>
                         </div>
-                      </div>
+                      </div>-->
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Modulo SAP</label>
@@ -75,8 +75,14 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                             <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $usuario->getCumpleaños() ?>" disabled>
                           </div>
                       </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Estado usuario</label>
+                          <input type="text" class="form-control" name="estado" id="estado" value="<?php echo $estado_usuario->getNombre_estado_usuario() ?>" disabled>
+                        </div>
+                      </div>
                     </div>
-                    <div class="row">
+                    <!--<div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">País de residencia</label>
@@ -96,8 +102,8 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                           </div>
                       </div> 
                       
-                    </div> 
-                    <div class="row">   
+                    </div> -->
+                    <!--<div class="row">   
                       <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Contacto de emergencia</label>
@@ -116,7 +122,7 @@ $mod_sap = ManejoMod_sap::consultarMod_sap($usuario->getCod_mod_sap());
                           <input type="text" class="form-control" name="estado" id="estado" value="<?php echo $estado_usuario->getNombre_estado_usuario() ?>" disabled>
                         </div>
                       </div>
-                    </div>  
+                    </div>  -->
                     <div class="row">   
                       <div class="col-md-6">
                           <div class="form-group">

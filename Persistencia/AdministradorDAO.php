@@ -131,6 +131,31 @@ class AdministradorDAO implements DAO
     }
 
     /**
+     * Method that modifies an usuario entered by parameter
+     *
+     * @param Administrador $usuario
+     * @return void
+     */
+    public function modifyNew($administrador)
+    {
+
+        $sql = "UPDATE ADMINISTRADOR SET cod_administrador = " . $administrador->getCod_administrador() . ",
+                                    nombre_administrador = '" . $administrador->getNombre_administrador() . "',
+                                    cod_estado_usuario = ". $administrador->getCod_estado_usuario() .",
+                                    cod_tipo_usuario = ". $administrador->getCod_tipo_usuario() . ",
+                                    contraseña = '". $administrador->getContraseña() ."',
+                                    usuario_login = '". $administrador->getUsuario_login() ."',
+                                    
+                                    correo = '". $administrador->getCorreo() ."',
+                                    
+                                    cumpleaños = '". $administrador->getCumpleaños() ."'
+                                    
+                                   where cod_administrador = " . $administrador->getCod_administrador() . "
+                                ;";
+        pg_query($this->conexion, $sql);
+    }
+
+    /**
      * Method to delete a usuario
      *
      * @param Administrador $usuario

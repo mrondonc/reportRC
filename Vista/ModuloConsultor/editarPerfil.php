@@ -59,76 +59,39 @@ $listMod_sap = ManejoMod_sap::getListActivo();
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Dirección</label>
-                          <input type="text" class="form-control" name="direccion" id="direccion" value="<?php echo $usuario->getDireccion_usuario() ?>" >
-                        </div>
-                      </div>
+                    <div class="row">  
                       <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Fecha de cumpleaños</label>
+                            <label class="bmd-label-floating">Fecha de nacimiento</label>
                             <input type="date" class="form-control" name="cumpleaños" id="cumpleaños" value="<?php echo $usuario->getCumpleaños() ?>" >
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Cuenta de skype</label>
-                            <input type="text" class="form-control" name="cuentaSkype" id="cuentaSkype" value="<?php echo $usuario->getCuenta_skype() ?>" >
-                          </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">País de residencia</label>
-                          <input type="text" class="form-control" name="pais" id="pais" value="<?php echo $usuario->getPais() ?>" >
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $usuario->getTelefono_usuario() ?>" >
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Estado usuario</label>
-                          <input type="text" class="form-control" name="estado" id="estado" value="<?php echo $estado_usuario->getNombre_estado_usuario() ?>" disabled>
-                        </div>
-                      </div>
-                    </div> 
-                    <div class="row">   
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Contacto de emergencia</label>
-                            <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="<?php echo $usuario->getNombre_contacto_emergencia() ?>" >
+                            <label class="bmd-label-floating">Contraseña</label>
+                            <input type="text" class="form-control" name="password" id="password" value="<?php echo $usuario->getContraseña() ?>" >
                           </div>
                       </div> 
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Número contacto de emergencia</label>
-                            <input type="number" class="form-control" name="numeroContacto" id="numeroContacto" value="<?php echo $usuario->getNumero_contacto_emergencia() ?>" >
-                          </div>
-                      </div> 
-                    </div>  
-                    <div class="row">   
-                      <div class="col-md-6">
+                      <div class="col-md-2">
                           <div class="form-group">
                             <label class="bmd-label-floating">Usuario LOGIN</label>
                             <input type="text" class="form-control" name="login" id="login" value="<?php echo $usuario->getUsuario_login() ?>" disabled>
                           </div>
                       </div> 
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Contraseña</label>
-                            <input type="text" class="form-control" name="password" id="password" value="<?php echo $usuario->getContraseña() ?>" >
-                          </div>
-                      </div> 
-                    </div> 
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Estado usuario</label>
+                          <input type="text" class="form-control" name="estado" id="estado" value="<?php echo $estado_usuario->getNombre_estado_usuario() ?>" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!--<div class="row">   
+                      
+                      
+                    </div> -->
                     <div class="row"> 
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                             <div class="form-group">
                               <label class="bmd-label-floating">Modulo SAP</label>
                               
@@ -155,6 +118,7 @@ $listMod_sap = ManejoMod_sap::getListActivo();
 <!-- FIN FORMULARIO PERFIL -->
 
 <!-- FORMULARIO AGREGAR MODULO SAP -->
+<!--
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -195,4 +159,5 @@ $listMod_sap = ManejoMod_sap::getListActivo();
     </div>
   </div>
 </div>
+                    -->
 <!-- FIN AGREGAR MODULO SAP -->

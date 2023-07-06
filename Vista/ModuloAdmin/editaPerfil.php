@@ -12,30 +12,31 @@ $admin = ManejoAdministrador::consultarAdministrador($cod_administrador);
 
 $nombre = $_POST['nombres'];
 $contraseña = $_POST['password'];
-$usuario_login = $_POST['login'];
-$telefono = $_POST['telefono'];
+//$usuario_login = $_POST['login'];
+//$telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
-$direccion = $_POST['direccion'];
-$pais = $_POST['pais'];
+//$direccion = $_POST['direccion'];
+//$pais = $_POST['pais'];
 $cumpleaños = $_POST['cumpleaños'];
-$cuenta_skype = $_POST['cuentaSkype'];
-$nombre_contacto_emergencia = $_POST['nombreContacto'];
-$numero_contacto_emergencia = $_POST['numeroContacto'];
+//$cuenta_skype = $_POST['cuentaSkype'];
+//$nombre_contacto_emergencia = $_POST['nombreContacto'];
+//$numero_contacto_emergencia = $_POST['numeroContacto'];
 
 $admin->setCod_administrador($cod_administrador);
 $admin->setNombre_administrador($nombre);
 $admin->setCod_estado_usuario($admin->getCod_estado_usuario());
 $admin->setCod_tipo_usuario($admin->getCod_tipo_usuario());
 $admin->setContraseña($contraseña);
-$admin->setUsuario_login($usuario_login);
-$admin->setTelefono($telefono);
+$admin->setUsuario_login($admin->getUsuario_login());
+
+//$admin->setTelefono($telefono);
 $admin->setCorreo($correo);
-$admin->setDireccion($direccion);
-$admin->setPais($pais);
+//$admin->setDireccion($direccion);
+//$admin->setPais($pais);
 $admin->setCumpleaños($cumpleaños);
-$admin->setCuenta_skype($cuenta_skype);
-$admin->setNombre_contacto_emergencia($nombre_contacto_emergencia);
-$admin->setNumero_contacto_emergencia($numero_contacto_emergencia);
+//$admin->setCuenta_skype($cuenta_skype);
+//$admin->setNombre_contacto_emergencia($nombre_contacto_emergencia);
+//$admin->setNumero_contacto_emergencia($numero_contacto_emergencia);
 
 ManejoAdministrador::modifyAdministrador($admin);
 
